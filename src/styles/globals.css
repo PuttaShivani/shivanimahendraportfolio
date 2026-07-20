@@ -4,12 +4,12 @@
 
 @layer base {
   :root {
-    /* Light Mode - Blue dominant */
+    /* Light Mode - Violet dominant */
     --background: 210 40% 98%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
-    --primary: 221.2 83.2% 53.3%;
+    --primary: 270 83.2% 53.3%;
     --primary-foreground: 210 40% 98%;
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -18,14 +18,14 @@
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
     --border: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%;
+    --ring: 270 83.2% 53.3%;
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
     --input: 214.3 31.8% 91.4%;
-    --chart-1: 221.2 83.2% 53.3%;
-    --chart-2: 212 96% 78%;
+    --chart-1: 270 83.2% 53.3%;
+    --chart-2: 270 96% 78%;
     --chart-3: 201 96% 32%;
     --chart-4: 199 89% 48%;
     --chart-5: 200 98% 39%;
@@ -33,12 +33,12 @@
   }
 
   .dark {
-    /* Dark Mode - Navy Blue */
+    /* Dark Mode - Violet */
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
-    --primary: 217.2 91.2% 59.8%;
+    --primary: 270 91.2% 59.8%;
     --primary-foreground: 222.2 47.4% 11.2%;
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -53,9 +53,9 @@
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
     --input: 217.2 32.6% 17.5%;
-    --chart-1: 217.2 91.2% 59.8%;
-    --chart-2: 221.2 83.2% 53.3%;
-    --chart-3: 212 96% 78%;
+    --chart-1: 270 91.2% 59.8%;
+    --chart-2: 270 83.2% 53.3%;
+    --chart-3: 270 96% 78%;
     --chart-4: 201 96% 32%;
     --chart-5: 199 89% 48%;
   }
@@ -129,16 +129,16 @@
     box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
   }
 
-  /* Light mode gradient - blue theme */
+  /* Light mode gradient - violet theme */
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, #2563eb, #60a5fa, #3b82f6);
+    background-image: linear-gradient(135deg, #7c3aed, #a78bfa, #8b5cf6);
     background-size: 200% 200%;
     animation: gradient-flow 6s ease infinite;
   }
 
   .dark .text-gradient {
-    background-image: linear-gradient(135deg, #60a5fa, #93c5fd, #3b82f6);
+    background-image: linear-gradient(135deg, #a78bfa, #c4b5fd, #8b5cf6);
   }
 
   .text-shiny {
@@ -193,15 +193,15 @@
       0 0 20px rgba(255, 255, 255, 0.1);
   }
 
-  /* Light mode button - blue */
+  /* Light mode button - violet */
   .btn-creative {
     @apply relative px-8 py-4 font-bold overflow-hidden rounded-full transition-all;
-    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    background: linear-gradient(135deg, #7c3aed, #6d28d9);
     color: white;
   }
 
   .dark .btn-creative {
-    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.2);
   }
@@ -209,11 +209,11 @@
   .btn-creative::before {
     content: '';
     @apply absolute inset-0 rounded-full opacity-0 transition-opacity duration-300;
-    background: linear-gradient(135deg, #1d4ed8, #1e40af);
+    background: linear-gradient(135deg, #6d28d9, #5b21b6);
   }
 
   .dark .btn-creative::before {
-    background: linear-gradient(135deg, #60a5fa, #3b82f6);
+    background: linear-gradient(135deg, #a78bfa, #8b5cf6);
   }
 
   .btn-creative:hover::before {

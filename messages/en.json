@@ -39,7 +39,7 @@
     },
     "hero": {
         "greeting": "Welcome to my digital space",
-        "subtitle": "Data Engineer | ETL/ELT Pipelines | Cloud Data Solutions",
+        "subtitle": "Data Analyst | Business Intelligence | Power BI & Tableau",
         "cta": {
             "primary": "Explore Projects",
             "secondary": "Get in Touch",
@@ -47,13 +47,13 @@
         },
         "badge": "Available for opportunities",
         "scroll": "Scroll Down",
-        "role": "Data Engineer",
-        "description": "Building reliable data architectures at the intersection of <span class='text-primary font-semibold'>Batch Processing</span>, <span class='text-secondary font-semibold'>Cloud Data Warehousing</span>, and <span class='text-accent font-semibold'>Streaming Analytics</span>."
+        "role": "Data Analyst",
+        "description": "Building clear and actionable data solutions at the intersection of <span class='text-primary font-semibold'>Business Intelligence</span>, <span class='text-secondary font-semibold'>Data Modeling</span>, and <span class='text-accent font-semibold'>Operational Analytics</span>."
     },
     "about": {
         "title": "About Me",
-        "subtitle": "Data Engineer",
-        "description": "Data Engineer and SQL Developer with 5+ years of experience across software engineering, database development, batch integration, financial data processing, and cloud-based data solutions.",
+        "subtitle": "Data Analyst",
+        "description": "Data Analyst with 4+ years of experience supporting reporting, performance analysis, KPI tracking, and operational decision-making across financial services, healthcare, and technology environments.",
         "stats": {
             "experience": "Years Experience",
             "projects": "Projects Done",
@@ -62,19 +62,19 @@
         },
         "identity": "Identity Link Established",
         "architecting": "Architecting",
-        "digitalReality": "AI Systems",
+        "digitalReality": "Data Solutions",
         "leadIn": {
             "label": "WHAT I DO",
-            "applied": "Data",
-            "intelligence": "Engineering.",
-            "production": "Cloud",
-            "engineering": "Data Platforms.",
-            "thesis": "I build reliable data flows and <span class='text-primary italic font-serif-elegant font-normal'>scalable cloud architectures</span> that support servicing, compliance, analytics, and informed business decisions.",
-            "scope": "Focusing on AWS & GCP data engineering, Databricks lakehouses, Apache Spark, Airflow orchestration, and complex SQL transformations.",
-            "bridging": "Converting operational requirements into validated datasets.",
-            "integration": "From relational database design to event-time streaming, I develop reliable ETL pipelines, implement incremental loading, and ensure data governance.",
-            "signature": "Prudhvi",
-            "role": "Data Engineer",
+            "applied": "Business",
+            "intelligence": "Intelligence.",
+            "production": "Data",
+            "engineering": "Analytics.",
+            "thesis": "I build clear dashboards and <span class='text-primary italic font-serif-elegant font-normal'>interactive scorecards</span> that help leaders understand performance and act on emerging issues.",
+            "scope": "Focusing on Power BI, Tableau, SQL, DAX, Python, and dimensional modeling.",
+            "bridging": "Converting operational requirements into validated insights.",
+            "integration": "From relational database design to automated reporting, I develop reliable analytics solutions and ensure data quality.",
+            "signature": "Pavan Kumar",
+            "role": "Data Analyst",
             "aboutMe": "About Me",
             "scroll": "Scroll to Explore",
             "shortStory": "My Short Story"
@@ -82,46 +82,46 @@
         "coreEngineering": {
             "label": "Technical Core",
             "title": "Proven <span class='text-primary italic font-serif font-light lowercase'>stack.</span> <br /> Measurable <span class='italic font-serif font-light text-foreground'>results.</span>",
-            "p1": "I specialize in Python, TensorFlow, PyTorch, Scikit-learn, and Hugging Face Transformers for ML and NLP model development.",
-            "p2": "I build RAG pipelines with LangChain, LlamaIndex, Azure OpenAI, FAISS, Pinecone, and vector embeddings for document intelligence.",
-            "p3": "Every AI service includes LLM evaluation, PII masking, hallucination detection, and responsible AI guardrails for secure deployment.",
+            "p1": "I specialize in SQL, Power Query, DAX, and Python for data transformation and preparation.",
+            "p2": "I build interactive executive dashboards and KPI scorecards using Power BI and Tableau.",
+            "p3": "Every reporting solution includes rigorous data validation, reconciliation, and automated quality checks.",
             "gpa": "Academic GPA",
             "projects": "Dashboards Built",
             "years": "Years Exp."
         },
         "emergingResearch": {
             "label": "Analytical Domains",
-            "title": "Generative AI <span class='italic font-serif font-light text-primary lowercase'>&</span> MLOPS DELIVERY",
+            "title": "Operational Intelligence <span class='italic font-serif font-light text-primary lowercase'>&</span> KPI ANALYTICS",
             "agentic": {
-                "title": "LLM & RAG ENGINEERING",
-                "desc": "Applying GPT-4, Claude, LangChain, LlamaIndex, embeddings, and vector search for enterprise document intelligence and AI copilots."
+                "title": "BUSINESS INTELLIGENCE",
+                "desc": "Applying Power BI, Tableau, SQL, and DAX for enterprise operational reporting and performance analysis."
             },
             "web3": {
-                "title": "RESPONSIBLE AI",
-                "desc": "Implementing PII masking, hallucination detection, groundedness checks, audit logging, and compliance validation for secure AI deployment."
+                "title": "DATA AUTOMATION",
+                "desc": "Implementing Python, Pandas, and scheduled reporting workflows to eliminate manual data preparation."
             }
         },
         "profile": {
-            "title": "Building Reliable Data Architectures <br /> Where Scalability Meets Performance.",
+            "title": "Building Reliable Analytics Solutions <br /> Where Data Meets Decisions.",
             "narrativeLabel": "Core Narrative",
-            "narrative": "With 5+ years of experience across Beyond Finance, Commerce Trust, and Wipro, I build and deploy ETL pipelines, cloud data solutions, and stream processing architectures for enterprise analytics.",
-            "narrative2": "My work integrates AWS, GCP, Apache Spark, Airflow, and Databricks for reliable production data delivery.",
+            "narrative": "With 4+ years of experience across VISA, Baylor Scott & White Health, and Cognizant, I build and deploy interactive dashboards, automated reports, and operational analytics.",
+            "narrative2": "My work integrates Power BI, Tableau, SQL, and Python for reliable business insights.",
             "pillars": {
                 "reliable": {
-                    "title": "Data Governance",
-                    "desc": "Automated data-quality rules, schema validation, and audit logging for secure enterprise data."
+                    "title": "Data Validation",
+                    "desc": "Automated data-quality checks, reconciliation, and validation rules for accurate reporting."
                 },
                 "optimized": {
-                    "title": "Data Integration",
-                    "desc": "API integrations, change data capture, and ETL workflows improving data availability."
+                    "title": "Data Modeling",
+                    "desc": "Dimensional modeling, star schemas, and calculated fields improving data availability."
                 },
                 "maintainable": {
-                    "title": "Pipeline Orchestration",
-                    "desc": "Apache Airflow, dbt, CI/CD pipelines, and automated data testing for robust releases."
+                    "title": "Dashboard Design",
+                    "desc": "Interactive drill-through reports, executive summaries, and geographic mapping."
                 },
                 "evolvable": {
-                    "title": "Cloud Data Warehousing",
-                    "desc": "AWS Redshift, GCP BigQuery, Delta Lake, and Kinesis for scalable analytic solutions."
+                    "title": "Automation",
+                    "desc": "Python scripts, Pandas workflows, and automated scheduling for recurring data loads."
                 }
             }
         },
@@ -140,28 +140,28 @@
             },
             "experiencesList": [
                 {
-                    "company": "White Global",
-                    "role": "GENERATIVE AI ENGINEER",
-                    "desc": "Built Azure OpenAI RAG pipelines with LangChain, embeddings, and vector search, improving document answer relevance by 32%."
+                    "company": "VISA",
+                    "role": "DATA ANALYST",
+                    "desc": "Developed Power BI dashboards, streamlined SQL workflows, and analyzed 500K+ operational records."
                 },
                 {
-                    "company": "Amazon",
-                    "role": "AI/ML ENGINEER",
-                    "desc": "Created Python and PySpark pipelines, trained predictive models, and deployed ML inference services on AWS."
+                    "company": "Baylor Scott & White Health",
+                    "role": "REPORTING & BI ANALYST",
+                    "desc": "Built Tableau dashboards and Power BI scorecards to monitor healthcare operational performance across 25 facilities."
                 }
             ],
             "projectsList": [
                 {
-                    "title": "Enterprise GenAI Knowledge Assistant",
-                    "desc": "Built a GenAI assistant with Azure OpenAI, LangChain, embeddings, and Azure Cognitive Search for document intelligence."
+                    "title": "Enterprise Operations Intelligence",
+                    "desc": "Modeled incident, capacity, and SLA data using a star schema for enterprise reporting."
                 },
                 {
-                    "title": "AI-Powered Workload Forecasting Platform",
-                    "desc": "Developed forecasting models with Python, XGBoost, LightGBM, Airflow, and MLflow for operational workload prediction."
+                    "title": "Healthcare Service Analytics",
+                    "desc": "Designed Tableau dashboards with geographic mapping and filters to reveal facility-level service gaps."
                 },
                 {
-                    "title": "Machine Learning Inference API Modernization",
-                    "desc": "Modernized ML inference with Flask REST APIs on AWS Lambda, API Gateway, and Hugging Face Transformers."
+                    "title": "Product and Customer Usage Solution",
+                    "desc": "Structured usage data with SQL dimensional modeling to analyze adoption, retention, and engagement."
                 }
             ],
             "discoverMore": "Discover More"
@@ -169,21 +169,21 @@
         "education": {
             "title": "Education",
             "subtitle": "Academic Journey",
-            "degree": "Master of Science in Data Science",
-            "institution": "Florida Atlantic University",
-            "period": "2019 - 2021",
+            "degree": "Master of Science in Information Systems",
+            "institution": "Saint Louis University",
+            "period": "2023 - 2024",
             "gpa": "",
             "highlights": "Academic Highlights",
             "activities": [
-                "Data Science Graduate Program",
-                "Machine Learning & Statistical Modeling"
+                "Information Systems",
+                "Data Analysis & Business Intelligence"
             ],
-            "focus": "Focus: Data science, machine learning, NLP, and predictive analytics"
+            "focus": "Focus: Data Analysis, BI, SQL, and Python"
         }
     },
     "projects": {
         "title": "Projects",
-        "subtitle": "A showcase of my AI/ML and generative AI engineering work",
+        "subtitle": "A showcase of my Data Analytics and Business Intelligence work",
         "search": "Search projects...",
         "viewAll": "View All Projects",
         "viewProject": "View Project",
@@ -201,7 +201,7 @@
         "sections": {
             "missionBrief": "Mission Brief",
             "keyFeatures": "Key Features",
-            "engineeringChronicles": "Engineering Chronicles",
+            "engineeringChronicles": "Analytics Chronicles",
             "visualGallery": "Visual Gallery",
             "installation": "Installation Instructions",
             "projectAccess": "Project Access",
@@ -224,7 +224,7 @@
             "timeline": "Timeline",
             "team": "Team",
             "techStack": "Tech Stack",
-            "roleValue": "Generative AI Engineer",
+            "roleValue": "Data Analyst",
             "teamValue": "Individual",
             "techStackValue": "{count} Technologies"
         }
@@ -265,7 +265,7 @@
     },
     "expertise": {
         "title": "Core Capabilities",
-        "subtitle": "Specialized in LLMs, RAG pipelines, MLOps, and cloud AI deployment",
+        "subtitle": "Specialized in Data Analysis, BI Dashboards, SQL, and Report Automation",
         "dragHint": "Drag or scroll to explore"
     },
     "skills": {
@@ -345,23 +345,23 @@
         "faqData": [
             {
                 "q": "What is your main area of expertise?",
-                "a": "I specialize in AI/ML and Generative AI engineering — building RAG pipelines, LLM applications, predictive models, NLP systems, and MLOps/LLMOps workflows with Python, Azure OpenAI, LangChain, and cloud deployment on AWS, Azure, and GCP."
+                "a": "I specialize in Data Analysis, Business Intelligence, and Operational Reporting using Power BI, Tableau, SQL, DAX, and Python."
             },
             {
-                "q": "What GenAI technologies do you work with?",
-                "a": "I work with GPT-4, Claude, LLaMA, Azure OpenAI, AWS Bedrock, LangChain, LlamaIndex, FAISS, Pinecone, ChromaDB, embeddings, vector search, prompt engineering, and LLM evaluation frameworks like LangSmith and OpenAI Evals."
+                "q": "What visualization tools do you work with?",
+                "a": "I work extensively with Power BI and Tableau to create interactive executive dashboards, KPI scorecards, and drill-through reports."
             },
             {
-                "q": "What MLOps tools do you use?",
-                "a": "I use MLflow, Airflow, Kubeflow, SageMaker Pipelines, Docker, Kubernetes, GitHub Actions, and CI/CD pipelines for experiment tracking, model versioning, batch inference, and real-time inference deployment."
+                "q": "How do you automate reporting workflows?",
+                "a": "I use Python, Pandas, Power Query, and SQL to automate recurring data transformations, schedule reporting, and build reliable data pipelines."
             },
             {
-                "q": "How do you ensure responsible AI deployment?",
-                "a": "I implement PII masking, hallucination detection, groundedness checks, human-in-the-loop review flows, audit logging, and compliance validation to support secure AI adoption for sensitive enterprise data."
+                "q": "How do you ensure data accuracy?",
+                "a": "I implement rigorous data quality checks, SQL reconciliation, and variance analysis to validate datasets before they are published to production dashboards."
             },
             {
                 "q": "How can we start a partnership or project?",
-                "a": "The most efficient way is to use the contact form above or reach out directly via email at jasper.dasari@applywizard.ai. I respond within 24 hours to discuss opportunities."
+                "a": "The most efficient way is to use the contact form above or reach out directly via email at sai.naga@applywizard.ai. I respond within 24 hours to discuss opportunities."
             }
         ]
     },
@@ -371,16 +371,16 @@
         "more": "More",
         "marquee": [
             "Open to Opportunities",
-            "Generative AI",
-            "RAG Pipelines",
-            "LLM Engineering",
-            "MLOps",
-            "Cloud AI"
+            "Data Analyst",
+            "Business Intelligence",
+            "Power BI",
+            "Tableau",
+            "Data Visualization"
         ],
         "cta": {
             "title": "Let's Work",
             "titleHighlight": "Together",
-            "subtitle": "Have an opportunity in mind? Let's discuss how my AI/ML and GenAI expertise can support your enterprise AI initiatives."
+            "subtitle": "Have an opportunity in mind? Let's discuss how my Data Analytics and Business Intelligence expertise can support your enterprise initiatives."
         },
         "links": "LINKS",
         "socials": "SOCIALS",
@@ -391,7 +391,7 @@
     "ctaSection": {
         "title": "Let's Build Something",
         "together": "Together",
-        "subtitle": "Open to Data Engineer and SQL Developer opportunities. Let us build production-ready ETL pipelines, data integration solutions, and cloud data platforms.",
+        "subtitle": "Open to Data Analyst and Business Intelligence opportunities. Let us build powerful dashboards and actionable reporting solutions.",
         "start": "Hire Me",
         "work": "View My Resume",
         "words": {
@@ -400,32 +400,32 @@
             "intelligent": "Intelligent",
             "creative": "Creative"
         },
-        "ribbon1": "Python | SQL | PySpark | AWS | GCP | Databricks | Apache Airflow |",
-        "ribbon2": "Data Engineer | ETL Pipelines | Data Integration | SQL Developer |"
+        "ribbon1": "Power BI | Tableau | SQL | Python | Excel | Power Query | DAX |",
+        "ribbon2": "Data Analyst | Business Intelligence | Reporting Analyst |"
     },
     "stats": {
-        "systemStatus": "System Status: AI Models Active",
-        "portfolio": "AI Metrics",
-        "totalPulse": "Total Inferences",
-        "peakActivity": "Peak Throughput",
-        "dailyAverage": "Daily Volume",
+        "systemStatus": "System Status: Data Models Active",
+        "portfolio": "BI Metrics",
+        "totalPulse": "Dashboards Built",
+        "peakActivity": "Data Volume",
+        "dailyAverage": "Reports Generated",
         "currentSprint": "Current Sprint",
-        "engageFlow": "Model Flow",
+        "engageFlow": "Data Flow",
         "weeklyEffort": "Pipeline Output",
-        "processSpeed": "Inference Speed",
-        "avgPerf": "Model Accuracy",
+        "processSpeed": "Query Speed",
+        "avgPerf": "Data Accuracy",
         "latency": "LATENCY: 14MS",
         "system": "SYSTEM: STABLE",
         "scanning": "SCANNING_LIVE_RESOURCES",
-        "engineering": "AI ENGINEERING",
+        "engineering": "DATA ANALYTICS",
         "metrics": "METRICS",
-        "analyticsSub": "ML / LLM / RAG PIPELINE DATA",
+        "analyticsSub": "SQL / BI / TABLEAU DATA",
         "statusOnline": "STATUS: ONLINE",
         "loadStable": "SYSTEM_LOAD: STABLE"
     },
     "projectHeader": {
-        "title": "Building Intelligent AI Systems",
-        "subtitle": "A curated showcase of GenAI projects, RAG pipelines, ML models, and MLOps deployments. Document intelligence, predictive forecasting, and production AI delivery."
+        "title": "Building Actionable Data Solutions",
+        "subtitle": "A curated showcase of Business Intelligence projects, Power BI & Tableau dashboards, and automated reporting workflows."
     },
     "common": {
         "loading": "Loading...",
@@ -465,23 +465,23 @@
     },
     "blog": {
         "title": "Insights & Tutorials",
-        "subtitle": "Bridging the gap between machine learning and generative AI. A collection of insights on RAG pipelines, LLMs, MLOps, and cloud AI deployment.",
-        "sectionBadge": "The AI Engineering Blog",
+        "subtitle": "A collection of insights on Data Analysis, Power BI, SQL optimization, and Business Intelligence.",
+        "sectionBadge": "The Analytics Blog",
         "search": "Search articles...",
         "readTime": "min read",
         "readMore": "Read Post",
         "back": "Back to Blog",
         "noResults": "No articles found",
         "categories": {
-            "applied-ai": "Generative AI",
-            "software-development": "ML & Python",
+            "applied-ai": "Business Intelligence",
+            "software-development": "SQL & Data Modeling",
             "about-me": "About Me",
             "more": "More"
         }
     },
     "gallery": {
         "title": "Visual Archive",
-        "subtitle": "A curated collection of RAG pipeline architectures, ML model workflows, and MLOps deployment diagrams.",
+        "subtitle": "A curated collection of Dashboard designs, SQL schemas, and reporting architectures.",
         "filter": {
             "all": "All Media",
             "image": "Photos",
@@ -491,14 +491,14 @@
     },
     "chatbot": {
         "title": "AI Assistant",
-        "subtitle": "Ask me about Jasper",
+        "subtitle": "Ask me about Pavan",
         "placeholder": "Type a message...",
-        "greeting": "Hi! I'm an AI assistant for **{name}**. 👋\n\nI can answer questions about:\n- Skills & AI/ML expertise\n- GenAI & RAG projects\n- Work experience\n- Education\n- And more!\n\nAnything you'd like to ask?",
+        "greeting": "Hi! I'm an AI assistant for **{name}**. 👋\n\nI can answer questions about:\n- Skills & BI expertise\n- Power BI & Tableau projects\n- Work experience\n- Education\n- And more!\n\nAnything you'd like to ask?",
         "suggestions": [
             "What are your main skills?",
-            "Tell me about your GenAI project",
+            "Tell me about your BI projects",
             "What is your work experience?",
-            "What LLM technologies do you use?"
+            "What BI technologies do you use?"
         ],
         "error": "An error occurred. Please try again.",
         "invalidResponse": "Invalid response from server.",
@@ -508,5 +508,3 @@
         "close": "Close chat"
     }
 }
-
-

@@ -9,7 +9,7 @@ function Counter({ value, decimals = 0 }: { value: number; decimals?: number }) 
   const count = useMotionValue(1);
   const rounded = useTransform(count, (latest) => latest.toFixed(decimals));
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "0px" });
 
   useEffect(() => {
     if (isInView) {

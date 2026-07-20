@@ -144,8 +144,6 @@ const CertificateHeroScroll: FC<CertificateHeroScrollProps> = ({ onDownloadClick
 
     useEffect(() => {
         if (typeof window === "undefined" || certificates.length === 0) return;
-        // Skip GSAP animation on mobile — mobile uses the static grid layout
-        if (window.innerWidth < 768) return;
 
         gsap.registerPlugin(ScrollTrigger);
 
@@ -247,58 +245,7 @@ const CertificateHeroScroll: FC<CertificateHeroScrollProps> = ({ onDownloadClick
 
     return (
         <>
-            {/* Mobile: Static Grid Layout (no scroll animation) */}
-            <div className="block md:hidden w-full px-4 pb-16">
-                <div className="mb-8 text-center space-y-3">
-                    <div className="inline-block px-4 py-1.5 rounded-full bg-secondary/50 backdrop-blur-md border border-border/50 text-xs font-medium">
-                        Professional Milestones
-                    </div>
-                    <h2 className="text-4xl font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/50">
-                        Certificates<br />& Credentials
-                    </h2>
-                    <p className="text-base text-muted-foreground max-w-sm mx-auto leading-relaxed">
-                        A dynamic verification of core capabilities and AI/ML engineering credentials.
-                    </p>
-                </div>
-                <div className="grid grid-cols-2 gap-3">
-                    {certificates.map((cert, index) => (
-                        <div
-                            key={cert.id}
-                            className="relative overflow-hidden shadow-lg border border-teal-400/10 dark:border-teal-400/20 bg-white/95 dark:bg-zinc-950/95 rounded-xl p-4 flex flex-col justify-between"
-                        >
-                            {/* Corner red accent */}
-                            <div className="absolute top-0 left-0 w-2 h-2 bg-teal-400 rounded-br-md" />
-                            {/* Grid pattern */}
-                            <div className="absolute inset-0 z-0 bg-[radial-gradient(circle,_#00000003_1px,_transparent_1px)] dark:bg-[radial-gradient(circle,_#ffffff02_1px,_transparent_1px)] bg-[size:14px_14px] pointer-events-none" />
-                            <div className="relative z-10 flex flex-col h-full justify-between gap-3">
-                                <div className="flex justify-between items-start gap-1">
-                                    <span className="text-teal-400 dark:text-teal-300 text-[9px] font-bold uppercase tracking-[0.15em] font-mono leading-tight">
-                                        {cert.issuer}
-                                    </span>
-                                    <span className="text-[8px] text-muted-foreground font-mono leading-none whitespace-nowrap">
-                                        {cert.date}
-                                    </span>
-                                </div>
-                                <h4 className="text-[12px] font-bold text-zinc-900 dark:text-white leading-snug tracking-tight line-clamp-3">
-                                    {cert.title}
-                                </h4>
-                                <div className="border-t border-zinc-100 dark:border-zinc-900/50 pt-2">
-                                    <div className="flex flex-wrap gap-1">
-                                        {getCertSkills(cert.id).slice(0, 3).map((skill) => (
-                                            <span key={skill} className="px-1 py-0.5 rounded bg-zinc-50 dark:bg-zinc-900/50 border border-zinc-100 dark:border-zinc-800/80 text-[7px] font-mono text-zinc-500 dark:text-zinc-400 font-bold uppercase">
-                                                {skill}
-                                            </span>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-
-            {/* Desktop: GSAP scroll animation version */}
-            <div ref={spacerRef} className="hidden md:block relative h-[350vh] w-full z-10 pointer-events-none">
+            <div ref={spacerRef} className="relative h-[350vh] w-full z-10 pointer-events-none">
                 <div ref={fixedContainerRef} style={{ opacity: 0, visibility: 'hidden' }} className="sticky top-0 z-10 h-screen w-full overflow-hidden bg-transparent pointer-events-none">
                     {/* Background Effects */}
                     <div className="absolute inset-0 opacity-20 pointer-events-none">

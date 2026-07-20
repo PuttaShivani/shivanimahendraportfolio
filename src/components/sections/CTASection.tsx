@@ -1,159 +1,23 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useRef, useEffect } from "react";
+import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Link from "next/link";
-import { useTranslations } from 'next-intl';
-import { Mail, Layers, Send, CheckCircle, AlertCircle, Loader2, ArrowUpRight, MapPin, Phone } from "lucide-react";
-import { FaLinkedin } from "react-icons/fa";
-import { InfiniteRibbon } from "@/components/ui/infinite-ribbon";
-import dynamic from "next/dynamic";
-import { ErrorBoundary } from "@/components/ui/ErrorBoundary";
-import { usePerformance } from "@/hooks/usePerformance";
+import { Send, MapPin, Phone, BarChart2 } from "lucide-react";
 import { portfolioData } from "@/data/portfolio";
 
 if (typeof window !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
 }
 
-
-
-function InputGroup({ label, name, type = "text", value, onChange, required = false }: any) {
-    return (
-        <div className="group relative z-0 w-full mb-8 text-left">
-            {type === 'textarea' ? (
-                <textarea
-                    name={name}
-                    value={value}
-                    onChange={onChange}
-                    required={required}
-                    rows={1}
-                    className="peer block w-full appearance-none border-0 border-b-2 border-foreground/20 bg-transparent py-2.5 px-0 text-lg font-medium text-foreground focus:border-foreground focus:outline-none focus:ring-0 transition-colors duration-300 resize-y min-h-[40px] max-h-[150px]"
-                    placeholder=" "
-                />
-            ) : (
-                <input
-                    type={type}
-                    name={name}
-                    value={value}
-                    onChange={onChange}
-                    required={required}
-                    className="peer block w-full appearance-none border-0 border-b-2 border-foreground/20 bg-transparent py-2.5 px-0 text-lg font-medium text-foreground focus:border-foreground focus:outline-none focus:ring-0 transition-colors duration-300"
-                    placeholder=" "
-                />
-            )}
-            <label className="absolute top-3 -z-10 origin-[0] -translate-y-8 scale-75 transform text-sm font-bold tracking-widest text-muted-foreground duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-8 peer-focus:scale-75 peer-focus:text-foreground">
-                {label.toUpperCase()}
-            </label>
-        </div>
-    );
-}
-
-function ContactForm() {
-    const t = useTranslations('contact');
-    const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
-    const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        setStatus('loading');
-
-        try {
-            const response = await fetch('/api/contact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
-
-            if (response.ok) {
-                setStatus('success');
-                setFormData({ name: '', email: '', subject: '', message: '' });
-            } else {
-                setStatus('error');
-            }
-        } catch (error) {
-            console.error('Error submitting form:', error);
-            setStatus('error');
-        } finally {
-            setTimeout(() => setStatus('idle'), 3000);
-        }
-    };
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-    };
-
-    return (
-        <div className="w-full relative z-20">
-            {/* Form Header */}
-            <div className="mb-10 text-left">
-                <h3 className="text-3xl font-black tracking-tight text-foreground uppercase">
-                    {t('title')}
-                </h3>
-                <p className="text-sm text-muted-foreground mt-2 font-light">
-                    {t('subtitle')}
-                </p>
-            </div>
-
-            <form onSubmit={handleSubmit} className="w-full relative z-10">
-                <InputGroup label={t('form.name')} name="name" value={formData.name} onChange={handleChange} required />
-                <InputGroup label={t('form.email')} name="email" type="email" value={formData.email} onChange={handleChange} required />
-                <InputGroup label={t('form.subject')} name="subject" value={formData.subject} onChange={handleChange} required />
-                <InputGroup
-                    label={t('form.messagePlaceholder')}
-                    name="message"
-                    type="textarea"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                />
-
-                {/* Submit button */}
-                <motion.button
-                    type="submit"
-                    disabled={status === 'loading'}
-                    className="group relative w-full flex items-center justify-between border-b-2 border-foreground py-6 text-left hover:bg-foreground/5 transition-colors disabled:opacity-50"
-                    whileTap={{ scale: 0.98 }}
-                >
-                    <span className="text-xl font-bold tracking-tight text-foreground group-hover:pl-4 transition-all duration-300">
-                        {status === 'loading' ? t('form.sending') : status === 'success' ? t('form.sent') : t('form.submit')}
-                    </span>
-
-                    <div className="relative overflow-hidden w-10 h-10 flex items-center justify-center rounded-full bg-foreground text-background group-hover:scale-110 transition-transform duration-500">
-                        {status === 'loading' ? <Loader2 className="w-5 h-5 animate-spin" /> :
-                            status === 'success' ? <CheckCircle className="w-5 h-5" /> :
-                                <ArrowUpRight className="w-5 h-5 group-hover:rotate-45 transition-transform duration-300" />
-                        }
-                    </div>
-                </motion.button>
-            </form>
-        </div>
-    );
-}
-
 export default function CTASection() {
     const sectionRef = useRef<HTMLElement>(null);
-    const t = useTranslations('ctaSection');
-    const linkedinUrl = portfolioData.personal.socialLinks.find(s => s.platform === 'LinkedIn')?.url;
-    const { isLowPowerMode } = usePerformance();
-    const words = [t('words.amazing'), t('words.innovative'), t('words.intelligent'), t('words.creative')];
-    const [currentWord, setCurrentWord] = useState(0);
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentWord((prev) => (prev + 1) % words.length);
-        }, 2500);
-        return () => clearInterval(interval);
-    }, [words.length]);
 
     useEffect(() => {
         if (!sectionRef.current) return;
 
         const ctx = gsap.context(() => {
-            gsap.fromTo('.cta-content',
+            gsap.fromTo('.cta-card',
                 { y: 80, opacity: 0 },
                 {
                     y: 0,
@@ -161,7 +25,7 @@ export default function CTASection() {
                     duration: 1,
                     scrollTrigger: {
                         trigger: sectionRef.current,
-                        start: 'top 70%',
+                        start: 'top 75%',
                     },
                 }
             );
@@ -170,116 +34,102 @@ export default function CTASection() {
         return () => ctx.revert();
     }, []);
 
+    const { email, location, phone, name } = portfolioData.personal;
+
     return (
-        <section ref={sectionRef} className="relative py-12 lg:py-16 overflow-hidden bg-background">
-            {/* Infinite Ribbons - Moved from Stats Section */}
-            <div className="relative flex h-[300px] w-full items-center justify-center overflow-hidden pointer-events-none mb-16">
-                <InfiniteRibbon rotation={6} className="z-10 py-5 border-y border-blue-200 dark:border-white/5 shadow-xl" background="bg-white dark:bg-zinc-900" textColor="text-blue-700 dark:text-zinc-400 font-mono tracking-tighter">
-                    {t('ribbon1')}
-                </InfiniteRibbon>
-                <InfiniteRibbon rotation={-6} reverse={true} className="z-20 py-5 border-y border-white/40 dark:border-white/10 shadow-2xl" background="bg-blue-600 dark:bg-black" textColor="text-white font-bold tracking-widest uppercase">
-                    {t('ribbon2')}
-                </InfiniteRibbon>
-            </div>
+        <section ref={sectionRef} className="relative py-12 lg:py-24 bg-background overflow-hidden flex justify-center items-center px-4 md:px-8" id="contact-section">
+            
+            <div className="cta-card relative w-full max-w-[1100px] rounded-[2rem] bg-zinc-950/80 border border-primary/20 shadow-2xl backdrop-blur-xl overflow-hidden">
+                
+                {/* Background decorative elements */}
+                <div className="absolute top-0 right-0 p-6 flex gap-1 z-0">
+                    <div className="w-4 h-6 bg-primary rounded-l-md opacity-80"></div>
+                    <div className="w-4 h-6 bg-primary/30 rounded-r-md opacity-80"></div>
+                </div>
+                <div className="absolute -bottom-10 right-10 flex items-end gap-2 z-0">
+                    <div className="w-16 h-16 rounded-full bg-primary/20 opacity-50 blur-xl"></div>
+                    <div className="w-32 h-32 rounded-full bg-primary/10 blur-3xl"></div>
+                </div>
 
-            <div className="max-w-[1600px] mx-auto relative z-10 px-6 md:px-12 lg:px-24 cta-content" id="contact-section">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-
-                    {/* Left Column: CTA Text & Action Buttons (7/12 cols) */}
-                    <div className="lg:col-span-7 text-center lg:text-left flex flex-col justify-center">
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-8">
-                            {t('title')}
-                            <br />
-                            <span className="inline-grid place-items-center">
-                                {/* Invisible longest word ensures the container NEVER changes width/height */}
-                                <span className="col-start-1 row-start-1 invisible pointer-events-none text-gradient mx-2">
-                                    {words.reduce((a, b) => a.length > b.length ? a : b, "")}
-                                </span>
-                                <AnimatePresence>
-                                    <motion.span
-                                        key={words[currentWord]}
-                                        initial={{ y: 50, opacity: 0, rotateX: -90 }}
-                                        animate={{ y: 0, opacity: 1, rotateX: 0 }}
-                                        exit={{ y: -50, opacity: 0, rotateX: 90 }}
-                                        transition={{ duration: 0.4, ease: "easeOut" }}
-                                        className="col-start-1 row-start-1 inline-block text-gradient lg:mx-0 mr-2"
-                                    >
-                                        {words[currentWord]}
-                                    </motion.span>
-                                </AnimatePresence>
-                            </span>
-                            <span className="whitespace-nowrap">{t('together')}</span>
-                        </h2>
-
-                        <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-xl mx-auto lg:mx-0">
-                            {t('subtitle')}
-                        </p>
-
-                        <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6">
-                            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                                <button
-                                    onClick={() => {
-                                        const formInput = document.getElementsByName('name')[0];
-                                        if (formInput) {
-                                            formInput.focus();
-                                        }
-                                    }}
-                                    className="btn-creative text-lg px-10 py-5 inline-flex items-center gap-3 w-full sm:w-auto justify-center"
-                                >
-                                    <Mail className="w-5 h-5" />
-                                    <span>{t('start')}</span>
-                                </button>
-                            </motion.div>
-                            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                                <Link href="/resume" className="btn-outline-creative text-lg px-10 py-5 inline-flex items-center gap-3 w-full sm:w-auto justify-center">
-                                    <Layers className="w-5 h-5" />
-                                    <span>{t('work')}</span>
-                                </Link>
-                            </motion.div>
+                {/* Main Content Grid */}
+                <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 p-10 md:p-16 lg:p-20">
+                    
+                    {/* Left Column */}
+                    <div className="flex flex-col justify-between min-h-[300px] relative">
+                        {/* Circular abstract background graphics */}
+                        <div className="absolute top-[10%] left-[-10%] w-[350px] h-[350px] pointer-events-none opacity-40">
+                            <div className="absolute inset-0 rounded-full border-[1px] border-primary/50 scale-[1]"></div>
+                            <div className="absolute inset-0 rounded-full border-[1px] border-primary/20 scale-[1.3] -translate-x-[10%] -translate-y-[10%]"></div>
                         </div>
 
-                        {/* Contact Information */}
-                        <div className="mt-12 pt-8 border-t border-foreground/10 flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-6 text-sm md:text-base text-muted-foreground font-medium">
-                            <div className="flex items-center gap-2">
-                                <MapPin className="w-4 h-4 text-primary" />
-                                <span>{portfolioData.personal.location}</span>
+                        <div className="relative z-10 pt-4">
+                            <h3 className="text-primary text-xl font-semibold mb-2">Contact Me</h3>
+                            <h2 className="text-white text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
+                                Get In Touch
+                            </h2>
+                        </div>
+
+                        <div className="relative z-10 mt-16 md:mt-0 flex items-center gap-4">
+                            <div className="w-12 h-12 rounded-xl bg-white/10 border border-primary/30 flex items-center justify-center shadow-lg backdrop-blur-sm">
+                                <BarChart2 className="w-6 h-6 text-primary" />
                             </div>
-                            <div className="hidden sm:block text-foreground/20">•</div>
-                            <div className="flex items-center gap-2">
-                                <Phone className="w-4 h-4 text-primary" />
-                                <a href={`tel:${portfolioData.personal.phone}`} className="hover:text-foreground transition-colors">{portfolioData.personal.phone}</a>
+                            <div>
+                                <p className="text-xs text-primary/80 font-bold tracking-widest uppercase mb-1">
+                                    DATA ANALYST
+                                </p>
+                                <p className="text-white font-bold text-lg uppercase tracking-wide">
+                                    {name}
+                                </p>
                             </div>
-                            <div className="hidden sm:block text-foreground/20">•</div>
-                            <div className="flex items-center gap-2">
-                                <Mail className="w-4 h-4 text-primary" />
-                                <a href={`mailto:${portfolioData.personal.email}`} className="hover:text-foreground transition-colors">{portfolioData.personal.email}</a>
-                            </div>
-                            {linkedinUrl && (
-                                <>
-                                    <div className="hidden sm:block text-foreground/20">•</div>
-                                    <div className="flex items-center gap-2">
-                                        <FaLinkedin className="w-4 h-4 text-primary" />
-                                        <a
-                                            href={linkedinUrl}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="hover:text-foreground transition-colors"
-                                        >
-                                            LinkedIn
-                                        </a>
-                                    </div>
-                                </>
-                            )}
                         </div>
                     </div>
 
-                    {/* Right Column: Contact Form (5/12 cols) */}
-                    <div className="lg:col-span-5 w-full relative z-20 bg-white/5 dark:bg-zinc-950/40 border border-black/5 dark:border-white/5 rounded-[2rem] p-8 md:p-10 shadow-2xl backdrop-blur-xl">
-                        <ContactForm />
-                    </div>
+                    {/* Right Column (Contact Details) */}
+                    <div className="flex flex-col justify-center gap-8 text-white relative z-10 md:pl-10">
+                        
+                        {/* Email */}
+                        <div className="flex items-center gap-6 group">
+                            <div className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center shrink-0 group-hover:border-primary transition-colors bg-white/5">
+                                <Send className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
+                            </div>
+                            <div className="border-b border-white/10 pb-6 w-full flex flex-col justify-center min-h-[80px]">
+                                <h4 className="text-xl font-semibold mb-1 text-white">Email Address</h4>
+                                <a href={`mailto:${email}`} className="text-gray-400 hover:text-primary transition-colors break-all">
+                                    {email}
+                                </a>
+                            </div>
+                        </div>
 
+                        {/* Location */}
+                        <div className="flex items-center gap-6 group">
+                            <div className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center shrink-0 group-hover:border-primary transition-colors bg-white/5">
+                                <MapPin className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
+                            </div>
+                            <div className="border-b border-white/10 pb-6 w-full flex flex-col justify-center min-h-[80px]">
+                                <h4 className="text-xl font-semibold mb-1 text-white">Location</h4>
+                                <p className="text-gray-400">
+                                    {location}
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Phone */}
+                        <div className="flex items-center gap-6 group">
+                            <div className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center shrink-0 group-hover:border-primary transition-colors bg-white/5">
+                                <Phone className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
+                            </div>
+                            <div className="w-full flex flex-col justify-center min-h-[80px]">
+                                <h4 className="text-xl font-semibold mb-1 text-white">Contact Number</h4>
+                                <a href={`tel:${phone}`} className="text-gray-400 hover:text-primary transition-colors">
+                                    {phone}
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
+
         </section>
     );
 }

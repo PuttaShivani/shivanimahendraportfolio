@@ -142,7 +142,7 @@ export function Navbar() {
                         {/* Make a text logo as a Link to Home */}
                         <Link href="/" className="relative group min-w-[120px]" onClick={handleHomeClick}>
                             <span className="font-mono text-xl md:text-2xl font-black text-gradient tracking-widest transition-all duration-300">
-                                PRUDHVI
+                                PAVAN
                             </span>
                         </Link>
 

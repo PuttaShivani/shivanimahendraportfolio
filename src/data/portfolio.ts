@@ -2,14 +2,14 @@ import { PortfolioData } from '@/types';
 
 export const portfolioData: PortfolioData = {
     personal: {
-        name: 'Prudhvi Kumar Bollepalli',
-        title: 'Data Engineer',
-        subtitle: 'Data Engineer | ETL/ELT Pipelines | Cloud Data Solutions',
-        bio: 'Data Engineer and SQL Developer with 5+ years of experience across software engineering, database development, batch integration, financial data processing, and cloud-based data solutions within financial services and enterprise environments. Experienced in converting operational and reporting requirements into validated datasets, dimensional models, lakehouse layers, and near-real-time data products that support servicing, compliance, analytics, and informed business decisions.',
+        name: 'Pavan Kumar',
+        title: 'Data Analyst',
+        subtitle: 'Data Analyst | Business Intelligence | Power BI & Tableau',
+        bio: 'Data Analyst with 4+ years of experience supporting reporting, performance analysis, KPI tracking, and operational decision-making across financial services, healthcare, and technology environments. Experienced in turning service, incident, capacity, customer-support, and business data into clear dashboards, scorecards, and reports that help leaders understand performance and act on emerging issues.',
         avatar: '/image.png',
-        location: 'Memphis, TN',
-        email: 'prudhvi.bollepalli@applywizard.ai',
-        phone: '+1 (901) 335-0877',
+        location: 'Celina, TX',
+        email: 'sai.naga@applywizard.ai',
+        phone: '+1 (314) 599-0774',
         resumeUrl: '/resume',
         website: '#',
         languages: [
@@ -21,79 +21,118 @@ export const portfolioData: PortfolioData = {
     projects: [
         {
             id: 'project-1',
-            slug: 'cloud-financial-lakehouse',
-            title: 'Cloud Financial Data Lakehouse',
-            image: '/cloud-financial-lakehouse.jpg',
-            description: 'Designed a medallion lakehouse ingesting batch and near-real-time events into Amazon S3 using AWS Glue and Athena.',
-            longDescription: 'Designed a medallion lakehouse that ingested batch data from Amazon RDS and MySQL, near-real-time events through Amazon Kinesis, and REST API and JSON sources into Amazon S3 using AWS Glue, Glue Workflows, Glue Data Catalog, and Athena. Developed PySpark and Spark SQL workloads on Databricks and Amazon EMR with Delta Lake partitioning, schema enforcement, deduplication, watermark-based incremental loads, and SCD Type 1 and Type 2 processing, then published dbt models to Amazon Redshift.',
-            techStack: ['AWS Glue', 'Amazon Athena', 'PySpark', 'Databricks', 'Delta Lake', 'dbt', 'Amazon Redshift', 'Airflow'],
-            tools: ['Airflow', 'CloudWatch'],
+            slug: 'enterprise-ops-intelligence',
+            title: 'Enterprise Operations Intelligence and KPI Analytics Platform',
+            image: '/project1.png',
+            description: 'Modeled incident, capacity, change, and SLA data in SQL and Power Query using a star schema for enterprise operations reporting.',
+            longDescription: 'Modeled incident, capacity, change, and SLA data in SQL and Power Query using a star schema, creating a reliable analytical layer for enterprise operations reporting. Engineered DAX measures, drill-through reports, KPI scorecards, and trend and exception views in Power BI to expose backlog growth, service failures, and capacity risks requiring operational follow-up. Automated Python-based validation and reconciliation checks for recurring data loads.',
+            techStack: ['SQL', 'Power Query', 'Power BI', 'DAX', 'Python'],
+            tools: ['Power BI'],
             status: 'completed',
             repoUrl: '#',
             demoUrl: '#',
             startDate: '2023-01-01',
-            role: 'Data Engineer',
+            role: 'Data Analyst',
             customTimeline: '2023',
-            team: 'Data Platform',
+            team: 'Analytics',
             highlights: [
-                'Designed a medallion lakehouse that ingested batch and near-real-time events into Amazon S3.',
-                'Developed PySpark and Spark SQL workloads on Databricks and Amazon EMR with Delta Lake partitioning and SCD processing.',
-                'Orchestrated Airflow workflows with automated retries and lineage checks, processing over 5 million records daily with 99.9% reliability.'
+                'Modeled incident, capacity, change, and SLA data in SQL and Power Query using a star schema.',
+                'Engineered DAX measures, drill-through reports, KPI scorecards, and trend and exception views in Power BI.',
+                'Automated Python-based validation and reconciliation checks for recurring data loads, increasing dashboard reliability.'
             ],
-            category: 'Data Engineering',
+            category: 'Data Analytics',
             features: [
                 {
-                    title: 'Data Lakehouse',
+                    title: 'Analytics Platform',
                     items: [
-                        '**Medallion Architecture**: Delta Lake partitioning, schema enforcement, and deduplication.',
-                        '**Data Ingestion**: Batch data from RDS/MySQL, events from Kinesis, and REST API/JSON sources.',
-                        '**Orchestration**: Airflow workflows processing 5M+ records daily.'
+                        '**Data Modeling**: Star schema with SQL and Power Query.',
+                        '**Visualization**: Power BI dashboards with drill-through capabilities.',
+                        '**Automation**: Python-based validation for recurring loads.'
                     ]
                 }
             ],
             challengesAndSolutions: [
                 {
-                    problem: 'Needed a scalable solution to handle both batch and real-time financial data.',
-                    solution: 'Implemented a medallion lakehouse architecture using Databricks, Delta Lake, and AWS services.'
+                    problem: 'Needed a reliable analytical layer for enterprise operations reporting.',
+                    solution: 'Implemented a star schema and automated validation checks using Python.'
                 }
             ]
         },
         {
             id: 'project-2',
-            slug: 'gcp-analytics-pipeline',
-            title: 'Real-Time Customer Event Streaming',
-            image: '/gcp-analytics-pipeline.jpg',
-            description: 'Built an event-ingestion pipeline transferring Kafka events through Pub/Sub, using Apache Beam and Dataflow.',
-            longDescription: 'Built an event-ingestion pipeline that transferred Kafka application events through Google Pub/Sub, using Apache Beam and Dataflow to validate schemas, enrich records, route failures to dead-letter queues, and store trusted data in BigQuery and Cloud Storage. Processed event timestamps, watermarks, late arrivals, duplicate messages, and session windows through Dataflow and Spark Structured Streaming on Dataproc, producing near-real-time customer and transaction aggregates.',
-            techStack: ['GCP', 'Pub/Sub', 'Apache Beam', 'Dataflow', 'BigQuery', 'dbt', 'Dataproc'],
-            tools: ['Looker Studio', 'Cloud Composer'],
+            slug: 'healthcare-service-performance',
+            title: 'Healthcare Service Performance Analytics Dashboard',
+            image: '/project2.jpg',
+            description: 'Combined ServiceNow, facility, and service-performance data through SQL and Excel validation rules.',
+            longDescription: 'Combined ServiceNow, facility, and service-performance data through SQL and Excel validation rules, producing a consistent dataset for healthcare location and departmental comparisons. Designed Tableau dashboards with calculated fields, parameters, geographic mapping, filters, and dashboard actions to reveal facility-level service gaps and recurring operational patterns. Applied Python and Pandas to examine outliers, incident concentration, and peak service-impact periods.',
+            techStack: ['SQL', 'Excel', 'Tableau', 'Python', 'Pandas'],
+            tools: ['Tableau', 'ServiceNow'],
             status: 'completed',
             repoUrl: '#',
             demoUrl: '#',
-            startDate: '2022-01-01',
-            role: 'Data Engineer',
-            customTimeline: '2022',
-            team: 'Analytics Engineering',
+            startDate: '2024-01-01',
+            role: 'BI Analyst',
+            customTimeline: '2024',
+            team: 'BI Team',
             highlights: [
-                'Built an event-ingestion pipeline transferring Kafka application events through Google Pub/Sub using Apache Beam and Dataflow.',
-                'Processed event timestamps, watermarks, and session windows for near-real-time customer and transaction aggregates.',
-                'Modeled optimized BigQuery datasets with dbt incremental transformations, reducing analytical query execution time by 40%.'
+                'Combined ServiceNow, facility, and service-performance data through SQL and Excel validation rules.',
+                'Designed Tableau dashboards with calculated fields, parameters, geographic mapping, filters, and dashboard actions.',
+                'Applied Python and Pandas to examine outliers, incident concentration, and peak service-impact periods.'
             ],
-            category: 'Data Engineering',
+            category: 'Business Intelligence',
             features: [
                 {
-                    title: 'Streaming Pipeline',
+                    title: 'Healthcare Analytics',
                     items: [
-                        '**Event Processing**: Handled watermarks, late arrivals, and session windows via Dataflow and Dataproc.',
-                        '**Data Modeling**: Optimized BigQuery datasets with dbt, cutting query time by 40%.',
-                        '**Reporting**: Near-real-time dashboards via Looker Studio and Cloud Composer.'
+                        '**Data Integration**: Merged ServiceNow and facility data via SQL/Excel.',
+                        '**Dashboards**: Tableau views with geographic mapping and filters.',
+                        '**Analysis**: Python/Pandas outlier and peak period examination.'
                     ]
                 }
             ],
             challengesAndSolutions: [
                 {
-                    problem: 'High latency in operational analysis due to batch processing delays.',
-                    solution: 'Developed a near-real-time streaming pipeline using GCP Pub/Sub, Dataflow, and BigQuery.'
+                    problem: 'Difficulty comparing departmental performance across multiple healthcare locations.',
+                    solution: 'Created standardized Tableau dashboards and SQL datasets for uniform analysis.'
+                }
+            ]
+        },
+        {
+            id: 'project-3',
+            slug: 'product-customer-usage-analytics',
+            title: 'Product and Customer Usage Analytics Solution',
+            image: '/project3.jpg',
+            description: 'Structured customer, product, feature, and usage data with SQL dimensional modeling.',
+            longDescription: 'Structured customer, product, feature, and usage data with SQL dimensional modeling, supporting consistent analysis of adoption, retention, engagement, and customer-segment performance. Developed Python and Pandas workflows to calculate usage frequency, feature penetration, support demand, and customer trends, giving product teams evidence for prioritization decisions. Presented cohort analysis, funnel views, segmentation, and KPI trends through Power BI and Tableau.',
+            techStack: ['SQL', 'Python', 'Pandas', 'Power BI', 'Tableau'],
+            tools: ['Power BI', 'Tableau'],
+            status: 'completed',
+            repoUrl: '#',
+            demoUrl: '#',
+            startDate: '2023-06-01',
+            role: 'Data Analyst',
+            customTimeline: '2023',
+            team: 'Product Analytics',
+            highlights: [
+                'Structured customer, product, feature, and usage data with SQL dimensional modeling.',
+                'Developed Python and Pandas workflows to calculate usage frequency and feature penetration.',
+                'Presented cohort analysis, funnel views, and KPI trends through Power BI and Tableau.'
+            ],
+            category: 'Product Analytics',
+            features: [
+                {
+                    title: 'Usage Analytics',
+                    items: [
+                        '**Dimensional Modeling**: SQL structures for adoption and retention analysis.',
+                        '**Workflows**: Python/Pandas calculation of support demand and trends.',
+                        '**Visualization**: Cohort and funnel views in Power BI and Tableau.'
+                    ]
+                }
+            ],
+            challengesAndSolutions: [
+                {
+                    problem: 'Product teams lacked evidence for prioritization decisions.',
+                    solution: 'Built comprehensive usage analytics workflows and dashboards.'
                 }
             ]
         }
@@ -101,62 +140,67 @@ export const portfolioData: PortfolioData = {
     experiences: [
         {
             id: 'prof-1',
-            company: 'Beyond Finance',
-            position: 'Data Engineer',
-            description: 'Designed and maintained scalable AWS data pipelines across 4 financial data domains, processing high-volume client, account, payment, and transaction records.',
+            company: 'VISA',
+            position: 'Data Analyst',
+            description: 'Developed Power BI dashboards, streamlined SQL workflows, and analyzed 500K+ operational records for payment operations.',
             responsibilities: [
-                'Designed and maintained scalable AWS data pipelines across 4 financial data domains, processing high-volume client, account, payment, and transaction records.',
-                'Delivered 25+ REST API integrations with Java, SQL, schema validation, and source-to-target mapping.',
-                'Implemented change data capture, incremental loading, and audit controls to process only new or modified records.',
-                'Tuned SQL execution plans, indexes, stored procedures, and database access patterns, decreasing account-data response times by 30%.',
-                'Established 6 automated data-quality rules for completeness, datatype consistency, duplicate detection, and schema conformity.',
-                'Operationalized pipeline monitoring through Amazon CloudWatch, audit logging, retry handling, and root-cause analysis.',
-                'Secured cloud-based data exchanges with AWS IAM, controlled service permissions, and encrypted REST API communication.'
+                'Developed 8 Power BI dashboards using SQL, Power Query, and DAX to combine payment operations, service-performance, capacity, and operational risk data, giving financial-services leaders faster visibility into business-critical KPIs.',
+                'Streamlined SQL-based data preparation and validation workflows across operational reporting sources, cutting recurring report preparation effort by 40% while increasing confidence in executive performance reporting.',
+                'Built DAX measures, calculated columns, and interactive drill-through reports to evaluate payment operations, capacity trends, and business performance, enabling leadership to prioritize operational planning with current insights.',
+                'Evaluated more than 500K operational records using Python, Pandas, SQL, and Excel to identify demand patterns, utilization trends, and operational exceptions that guided business decision-making.',
+                'Partnered with product, operations, compliance, and engineering teams to translate reporting requirements into Power BI semantic models, KPI definitions, and executive dashboards aligned with organizational objectives.',
+                'Automated recurring data transformation and scheduled reporting with Python, SQL, Power Query, and Power BI Service, allowing analysts to spend more time interpreting business trends instead of preparing reports.',
+                'Assessed operational trends through variance, capacity, and utilization analysis in Power BI and Excel, supporting planning initiatives that boosted operational efficiency by 25%.',
+                'Maintained KPI documentation, reporting standards, dashboard specifications, and validation rules in Confluence and SharePoint, strengthening reporting governance across analytics teams.'
             ],
-            skills: ['AWS', 'Java', 'SQL', 'Change Data Capture', 'Amazon CloudWatch', 'REST API'],
-            startDate: '2024-10-01',
+            skills: ['Power BI', 'SQL', 'DAX', 'Python', 'Pandas', 'Excel'],
+            startDate: '2025-02-01',
             isOngoing: true,
-            location: 'Houston, TX',
+            location: 'Texas',
             type: 'full-time',
             logo: '/assets/dicodinglogo.png',
         },
         {
             id: 'prof-2',
-            company: 'Commerce Trust',
-            position: 'Data Integration Engineer',
-            description: 'Engineered scalable financial data integration pipelines across 3 portfolio domains, improving reporting accuracy.',
+            company: 'Baylor Scott & White Health',
+            position: 'Reporting and Business Intelligence Analyst',
+            description: 'Built Tableau dashboards and Power BI scorecards to monitor healthcare operational performance across 25 facilities.',
             responsibilities: [
-                'Engineered scalable financial data integration pipelines across 3 portfolio domains, accelerating account and transaction availability.',
-                'Formulated analytical SQL transformations with CTEs, window functions, and views for account-level datasets.',
-                'Reconciled source and target records through Python, SQL, and transaction-level matching.',
-                'Investigated 150+ production data defects with SQL troubleshooting, REST API payload analysis, and root-cause analysis.',
-                'Applied 4 financial exception rules covering missing transactions, duplicate activity, and inconsistent status values.',
-                'Automated 3 testing layers covering unit, integration, and regression validation through GitHub, Azure DevOps, and CI/CD.'
+                'Built Tableau dashboards supported by Power BI scorecards to compare operational performance across 25 healthcare facilities, helping regional leaders evaluate clinical support and facility-level service trends.',
+                'Combined healthcare operations, ServiceNow, and Excel reporting data through SQL and Power Query transformations, decreasing recurring reporting effort by 25% while creating standardized datasets for enterprise reporting.',
+                'Designed healthcare scorecards with DAX and Tableau calculated fields to monitor patient-support operations, service availability, incident aging, and departmental performance during leadership reviews.',
+                'Explored operational datasets using Python, Pandas, SQL, and Excel to identify recurring service patterns across facilities, contributing to a 40% decrease in average resolution time.',
+                'Produced Tableau visualizations with geographic mapping, parameters, filters, and dashboard actions that enabled regional managers to compare facility performance and identify location-specific service gaps.',
+                'Collaborated with clinical operations, infrastructure, and service-management teams to define reporting requirements and business rules, delivering analytics aligned with healthcare operational priorities.',
+                'Validated healthcare reporting datasets through SQL reconciliation and Power Query quality checks, increasing source-to-report accuracy to 98% before publication through Power BI Service.',
+                'Documented healthcare KPI definitions, reporting logic, dashboard specifications, and governance standards in Confluence and SharePoint, supporting consistent report delivery across BI teams.'
             ],
-            skills: ['Python', 'SQL', 'Data Integration', 'Azure DevOps', 'CI/CD'],
+            skills: ['Tableau', 'Power BI', 'SQL', 'Power Query', 'DAX', 'Python', 'ServiceNow'],
             startDate: '2024-01-01',
-            endDate: '2024-09-30',
+            endDate: '2024-10-31',
             isOngoing: false,
-            location: 'Pittsburg, KS',
+            location: 'USA, Remote',
             type: 'full-time',
             logo: '/assets/dicodinglogo.png',
         },
         {
             id: 'prof-3',
-            company: 'Wipro',
-            position: 'Database & ETL Developer',
-            description: 'Designed and optimized enterprise ETL solutions across 3 relational database platforms, improving application and database performance by up to 35%.',
+            company: 'Cognizant',
+            position: 'Operations Analyst',
+            description: 'Analyzed operational workload, SLA performance, and service metrics, and automated reporting with Python and Pandas.',
             responsibilities: [
-                'Designed and optimized enterprise ETL solutions across 3 relational database platforms.',
-                'Built scheduled batch ETL workflows for 3 source types using data extraction, transformation, and target loading.',
-                'Structured normalized tables, primary and foreign keys, constraints, and physical data models in Oracle and SQL Server.',
-                'Tuned stored procedures, functions, joins, indexes, and query execution plans.',
-                'Instituted 4 migration-control checks covering record completeness, key relationships, and datatype conformity.',
-                'Automated database-script validation, version control, and deployment gates through Git, Jenkins, and CI/CD.'
+                'Analyzed operational workload, ticket backlog, SLA performance, and service metrics in Excel and ServiceNow for environments supporting 2,000+ users, enabling managers to balance workloads and prioritize operational activities.',
+                'Generated Excel scorecards and operational reports from ServiceNow and SolarWinds using SQL and Power Query, lowering recurring report preparation time by 30% across weekly service reviews.',
+                'Retrieval of operational data through SQL joins, CTEs, aggregations, and subqueries to evaluate ticket aging, backlog movement, escalation trends, and service-level compliance for support managers.',
+                'Organized ticket categories, ownership groups, timestamps, and operational attributes through Power Query standardization, producing consistent datasets for incident and workload reporting.',
+                'Examined recurring operational issues through Excel trend analysis, SQL reporting, and variance analysis, helping service teams decrease repeat operational issues by 25%.',
+                'Automated recurring operational reporting with Python and Pandas to prepare categorized datasets and scheduled reports, saving 10 hours per week for the operations reporting team.',
+                'Worked alongside service desk managers, infrastructure teams, and business stakeholders to define operational KPIs and reporting requirements, delivering reports that supported workforce planning and daily operations.',
+                'Maintained report specifications, KPI documentation, operating procedures, and reporting standards in Confluence and SharePoint, creating consistent reporting practices across multiple support teams.'
             ],
-            skills: ['ETL', 'Oracle', 'SQL Server', 'Database Design', 'Jenkins'],
-            startDate: '2020-04-01',
-            endDate: '2023-03-31',
+            skills: ['Excel', 'ServiceNow', 'SQL', 'Power Query', 'Python', 'Pandas'],
+            startDate: '2021-01-01',
+            endDate: '2022-12-31',
             isOngoing: false,
             location: 'India',
             type: 'full-time',
@@ -166,83 +210,67 @@ export const portfolioData: PortfolioData = {
     education: [
         {
             id: 'edu-1',
-            institution: 'The University of Memphis | Memphis, TN',
+            institution: 'Saint Louis University',
             degree: 'Master of Science',
-            major: 'Data Science',
-            startDate: '2023-08-01',
-            endDate: '2025-05-31',
-            isOngoing: true,
-            activities: ['Data science, data engineering, and analytics'],
-            achievements: ['Master of Science in Data Science']
-        },
-        {
-            id: 'edu-2',
-            institution: 'JNTUK University | India',
-            degree: 'Bachelor of Technology',
-            major: 'Computer Science and Engineering',
-            startDate: '2016-08-01',
-            endDate: '2020-05-31',
+            major: 'Information Systems',
+            startDate: '2023-01-01',
+            endDate: '2024-12-31',
             isOngoing: false,
-            activities: ['Computer Science and Engineering core subjects'],
-            achievements: ['Bachelor of Technology in CSE']
+            activities: ['Information Systems and Data Analysis'],
+            achievements: ['Master of Science in Information Systems']
         }
     ],
     achievements: [
-        { id: 'cert-1', title: 'IBM Data Engineering Professional Certificate', issuer: 'Coursera', date: '', category: 'certification' },
-        { id: 'cert-2', title: 'DeepLearning.AI Data Engineering Professional Certificate', issuer: 'Coursera', date: '', category: 'certification' },
-        { id: 'cert-3', title: 'Preparing for Google Cloud Certification: Cloud Data Engineer', issuer: 'Coursera', date: '', category: 'certification' },
-        { id: 'cert-4', title: 'Data Engineering Foundations Professional Certificate', issuer: 'Astronomer / LinkedIn', date: '', category: 'certification' },
-        { id: 'cert-5', title: 'Data Engineering Professional Certificate', issuer: 'Snowflake / LinkedIn', date: '', category: 'certification' },
-        { id: 'cert-6', title: 'Apache Spark Essential Training: Big Data Engineering', issuer: 'LinkedIn Learning', date: '', category: 'certification' }
+        { id: 'cert-1', title: 'Microsoft Power BI Data Analyst Professional Certificate', issuer: 'Coursera', date: '', category: 'certification' },
+        { id: 'cert-2', title: 'Google Data Analytics Professional Certificate', issuer: 'Coursera', date: '', category: 'certification' },
+        { id: 'cert-3', title: 'IBM Data Analyst Professional Certificate', issuer: 'Coursera', date: '', category: 'certification' },
+        { id: 'cert-4', title: 'Google Advanced Data Analytics Professional Certificate', issuer: 'Coursera', date: '', category: 'certification' },
+        { id: 'cert-5', title: 'Power BI Data Modeling with DAX', issuer: 'LinkedIn Learning', date: '', category: 'certification' },
+        { id: 'cert-6', title: 'Tableau for Data Analysts', issuer: 'LinkedIn Learning', date: '', category: 'certification' }
     ],
     techStack: [
-        { name: 'Python', icon: 'https://cdn.simpleicons.org/python', category: 'language' },
+        { name: 'Power BI', icon: 'https://cdn.simpleicons.org/powerbi', category: 'tool' },
+        { name: 'Tableau', icon: 'https://cdn.simpleicons.org/tableau', category: 'tool' },
         { name: 'SQL', icon: 'https://cdn.simpleicons.org/postgresql', category: 'language' },
-        { name: 'PySpark', icon: 'https://cdn.simpleicons.org/apachespark', category: 'framework' },
-        { name: 'Java', icon: 'https://cdn.simpleicons.org/java', category: 'language' },
-        { name: 'AWS', icon: 'https://cdn.simpleicons.org/amazonaws', category: 'cloud' },
-        { name: 'Google Cloud', icon: 'https://cdn.simpleicons.org/googlecloud', category: 'cloud' },
-        { name: 'Apache Airflow', icon: 'https://cdn.simpleicons.org/apacheairflow', category: 'tool' },
-        { name: 'dbt', icon: 'https://cdn.simpleicons.org/dbt', category: 'tool' },
-        { name: 'Databricks', icon: 'https://cdn.simpleicons.org/databricks', category: 'cloud' },
-        { name: 'Apache Kafka', icon: 'https://cdn.simpleicons.org/apachekafka', category: 'tool' },
+        { name: 'Python', icon: 'https://cdn.simpleicons.org/python', category: 'language' },
+        { name: 'Excel', icon: 'https://cdn.simpleicons.org/microsoftexcel', category: 'tool' },
+        { name: 'Pandas', icon: 'https://cdn.simpleicons.org/pandas', category: 'framework' }
     ],
     hardSkills: [
-        { name: 'Programming Languages', level: 'expert', category: 'data', description: 'Python, SQL, PySpark, Java' },
-        { name: 'Data Engineering & Integration', level: 'expert', category: 'data', description: 'ETL/ELT Pipeline Development, Batch Processing, Data Ingestion, Data Transformation, Incremental Loading, Change Data Capture' },
-        { name: 'AWS & GCP Data Engineering', level: 'expert', category: 'cloud', description: 'Amazon S3, AWS Glue, EMR, Redshift, Athena, BigQuery, Pub/Sub, Dataflow, Dataproc, Cloud Composer' },
-        { name: 'Lakehouse & Data Warehousing', level: 'advanced', category: 'data', description: 'Databricks, Delta Lake, Medallion Architecture, Dimensional Modeling, Star Schema, SCD Type 1 & 2' },
-        { name: 'Databases & SQL Engineering', level: 'expert', category: 'data', description: 'SQL Server, Oracle, PostgreSQL, MySQL, Database Design, Stored Procedures, Window Functions, SQL Performance Tuning' },
-        { name: 'Pipeline Orchestration', level: 'advanced', category: 'devops', description: 'Apache Airflow, dbt, Apache Spark, Structured Streaming, Apache Kafka, Apache Beam' },
+        { name: 'Data Analysis', level: 'expert', category: 'data', description: 'Exploratory Data Analysis, Trend Analysis, Variance Analysis, Root-Cause Analysis, Data Validation, Data Reconciliation' },
+        { name: 'Business Intelligence & Visualization', level: 'expert', category: 'data', description: 'Power BI, Tableau, Power BI Service, Interactive Dashboards, Executive Dashboards, KPI Scorecards, Drill-Through Reporting, Data Storytelling' },
+        { name: 'Power BI & Tableau Development', level: 'expert', category: 'data', description: 'Power Query, DAX, Data Modeling, Semantic Models, Measures, Calculated Fields, Parameters, Filters, Dashboard Actions' },
+        { name: 'SQL & Databases', level: 'advanced', category: 'data', description: 'SQL, Joins, Subqueries, CTEs, Aggregations, Data Extraction' },
+        { name: 'Python & Automation', level: 'advanced', category: 'data', description: 'Python, Pandas, Data Transformation, Report Automation, Scheduled Reporting' },
+        { name: 'Data Modeling & Quality', level: 'advanced', category: 'data', description: 'Dimensional Modeling, Star Schema, Data Dictionaries, Data Quality Checks, KPI Definitions, Data Quality Assurance' },
+        { name: 'Business & Operational Analytics', level: 'expert', category: 'other', description: 'Requirements Gathering, Reporting Requirements, SLA Reporting, Incident Analytics, Service Performance Reporting, Process Improvement' }
     ],
     softSkills: [
-        { name: 'Cross-Functional Collaboration', description: 'Collaborates with product, operations, compliance, QA, DevOps, and engineering teams.' },
-        { name: 'Problem Solving', description: 'Investigating production defects, SQL troubleshooting, and root-cause analysis.' },
-        { name: 'Data Quality & Governance', description: 'Implementing validation rules, referential integrity checks, and deduplication.' },
-        { name: 'Agile & CI/CD', description: 'Working with Git, GitHub, Jenkins, Azure DevOps, and automated data testing.' }
+        { name: 'Cross-Functional Collaboration', description: 'Working with product, operations, compliance, and engineering teams.' },
+        { name: 'Stakeholder Management', description: 'Presenting clear dashboards, scorecards, and reports to leadership.' },
+        { name: 'Analytical Thinking', description: 'Balancing business communication with hands-on reporting experience.' }
     ],
     tools: [
+        { name: 'Power BI', icon: 'https://cdn.simpleicons.org/powerbi', category: 'productivity' },
+        { name: 'Tableau', icon: 'https://cdn.simpleicons.org/tableau', category: 'productivity' },
+        { name: 'Excel', icon: 'https://cdn.simpleicons.org/microsoftexcel', category: 'productivity' },
         { name: 'Python', icon: 'https://cdn.simpleicons.org/python', category: 'productivity' },
-        { name: 'Apache Airflow', icon: 'https://cdn.simpleicons.org/apacheairflow', category: 'devops' },
-        { name: 'AWS', icon: 'https://cdn.simpleicons.org/amazonaws', category: 'devops' },
-        { name: 'Google Cloud', icon: 'https://cdn.simpleicons.org/googlecloud', category: 'devops' },
-        { name: 'Databricks', icon: 'https://cdn.simpleicons.org/databricks', category: 'productivity' },
-        { name: 'PostgreSQL', icon: 'https://cdn.simpleicons.org/postgresql', category: 'productivity' },
-        { name: 'Git', icon: 'https://cdn.simpleicons.org/git', category: 'devops' },
-        { name: 'Jenkins', icon: 'https://cdn.simpleicons.org/jenkins', category: 'devops' }
+        { name: 'ServiceNow', icon: 'https://cdn.simpleicons.org/servicenow', category: 'devops' },
+        { name: 'SharePoint', icon: 'https://cdn.simpleicons.org/microsoftsharepoint', category: 'productivity' },
+        { name: 'Confluence', icon: 'https://cdn.simpleicons.org/confluence', category: 'productivity' }
     ],
     faqs: [
         {
             question: 'What is your core expertise?',
-            answer: 'I specialize in Data Engineering, ETL/ELT pipeline development, cloud data solutions, and SQL development across AWS and GCP environments.',
+            answer: 'I specialize in Data Analysis, Business Intelligence, and Operational Reporting using Power BI, Tableau, SQL, and Python.',
         },
         {
             question: 'What is your technology stack?',
-            answer: 'My tech stack includes Python, SQL, PySpark, AWS (Glue, EMR, Redshift, Athena), GCP (BigQuery, Dataflow, Dataproc), Databricks, Apache Airflow, and dbt.',
+            answer: 'My primary tools include Power BI, Tableau, SQL, Python, Pandas, Excel, DAX, and Power Query.',
         },
         {
             question: 'Where are you located?',
-            answer: 'I am based in Memphis, TN and available for Data Engineer roles.',
+            answer: 'I am based in Celina, TX (Open to Relocate) and available for Data Analyst roles.',
         }
     ],
     blogs: [],

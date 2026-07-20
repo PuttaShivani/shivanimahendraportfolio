@@ -12,7 +12,7 @@ export function usePerformance() {
     const [state, setState] = useState({
         isMobile: false,
         isTablet: false,
-        isLowPowerMode: true, // Default to true (safe mode) initially
+        isLowPowerMode: false,
     });
 
     useEffect(() => {
@@ -25,8 +25,8 @@ export function usePerformance() {
             setState({
                 isMobile,
                 isTablet,
-                // On mobile and tablet, we generally want to avoid heavy 3D/Shaders
-                isLowPowerMode: isMobile || isTablet,
+                // Enable heavy 3D/Shaders on all devices per user request
+                isLowPowerMode: false,
             });
         };
 
@@ -41,7 +41,7 @@ export function usePerformance() {
         return {
             isMobile: false,
             isTablet: false,
-            isLowPowerMode: true,
+            isLowPowerMode: false,
         };
     }
 

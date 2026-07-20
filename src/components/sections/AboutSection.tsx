@@ -20,7 +20,7 @@ import { cn } from "@/lib/utils";
 
 import Testimonial1 from "@/components/ui/testimonial-1";
 import { IdentitySequence } from "./IdentitySequence";
-import TeamShowcase from "@/components/ui/team-showcase";
+import ExperienceCarousel from "@/components/ui/ExperienceCarousel";
 import { CertificateShowcase } from "@/components/ui/certificate-marquee";
 
 const SkillsHomeSection = dynamic(() => import("@/components/sections/SkillsHomeSection"), {
@@ -576,7 +576,7 @@ export default function AboutSection() {
                                 </p>
                             </div>
                             <div className="w-full">
-                                <TeamShowcase members={showcaseMembers} />
+                                <ExperienceCarousel members={showcaseMembers} />
                             </div>
                         </motion.div>
 

@@ -32,27 +32,27 @@ const signature = Alex_Brush({
 
 export const metadata: Metadata = {
     title: {
-        default: 'Prudhvi Kumar Bollepalli | Data Engineer',
+        default: 'PAVAN KUMAR|Data Analyst',
         template: '%s | Portfolio',
     },
     description: 'Data Engineer and SQL Developer with 5+ years of experience across software engineering, database development, batch integration, financial data processing, and cloud-based data solutions.',
     keywords: ['data engineer', 'portfolio', 'sql developer', 'etl pipelines', 'cloud data solutions', 'aws', 'gcp'],
-    authors: [{ name: 'Prudhvi Kumar Bollepalli' }],
-    creator: 'Prudhvi Kumar Bollepalli',
+    authors: [{ name: 'PAVAN KUMAR' }],
+    creator: 'PAVAN KUMAR',
     metadataBase: new URL('https://your-domain.com'),
     openGraph: {
         type: 'website',
         locale: 'en_US',
         url: 'https://your-domain.com',
-        title: 'Prudhvi Kumar Bollepalli | Data Engineer',
-        description: 'Data Engineer specializing in ETL pipelines, data integration, and cloud data platforms.',
+        title: 'Pavan Kumar | Data Analyst',
+        description: 'Data Analyst specializing in Business Intelligence, Power BI, and Tableau.',
         siteName: 'Portfolio',
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Prudhvi Kumar Bollepalli | Data Engineer',
-        description: 'Data Engineer specializing in ETL pipelines, data integration, and cloud data platforms.',
-        creator: '@PrudhviKumar',
+        title: 'Pavan Kumar | Data Analyst',
+        description: 'Data Analyst specializing in Business Intelligence, Power BI, and Tableau.',
+        creator: '@PavanKumar',
     },
     robots: {
         index: true,

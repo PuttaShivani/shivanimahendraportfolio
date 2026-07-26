@@ -30,38 +30,38 @@ interface CertificateHeroScrollProps {
 const getCertDescription = (id: string): string => {
     switch (id) {
         case 'cert-1':
-            return 'Comprehensive training on large language models, prompt engineering, fine-tuning, and production GenAI application development.';
+            return 'Professional certification covering data modeling, DAX measures, Power Query, drill-through reporting, and Power BI dashboard development.';
         case 'cert-2':
-            return 'Professional certification covering generative AI engineering, LLM integration, RAG pipelines, and enterprise AI deployment patterns.';
+            return 'Comprehensive Google certification covering data cleaning, analysis, SQL, R/Python, data visualization, and data storytelling for decision-making.';
         case 'cert-3':
-            return 'End-to-end AI engineering covering deep learning, neural networks, TensorFlow, PyTorch, and production ML model development.';
+            return 'Advanced SQL certification covering complex joins, subqueries, common table expressions (CTEs), window functions, and query optimization.';
         case 'cert-4':
-            return 'Machine learning specialization covering supervised and unsupervised learning, model evaluation, and predictive analytics workflows.';
+            return 'IBM certification covering Python programming, Pandas, NumPy, data structures, and automated data processing.';
         case 'cert-5':
-            return 'Machine learning engineer certification covering model training, deployment, MLOps, and production inference workflows.';
+            return 'Cognitive Class AI certification covering exploratory data analysis, data wrangling, model development, and statistical analysis with Python.';
         case 'cert-6':
-            return 'Microsoft generative AI engineering covering Azure OpenAI, prompt engineering, RAG patterns, and responsible AI deployment.';
+            return 'Professional certification focusing on Matplotlib, Seaborn, Folium, and data storytelling techniques to present visual insights effectively.';
         default:
-            return 'Verification of technical competency in AI/ML engineering, generative AI, and MLOps deployment.';
+            return 'Verification of technical competency in Data Analytics, Business Intelligence, and visualization.';
     }
 };
 
 const getCertSkills = (id: string): string[] => {
     switch (id) {
         case 'cert-1':
-            return ['LLMs', 'Prompt Engineering', 'Fine-Tuning', 'GenAI'];
+            return ['Power BI', 'DAX', 'Power Query', 'Data Modeling'];
         case 'cert-2':
-            return ['Generative AI', 'RAG', 'LangChain', 'LLM Integration'];
+            return ['Data Analysis', 'SQL', 'Data Cleaning', 'Visualization'];
         case 'cert-3':
-            return ['Deep Learning', 'TensorFlow', 'PyTorch', 'Neural Networks'];
+            return ['Advanced SQL', 'CTEs', 'Window Functions', 'Query Optimization'];
         case 'cert-4':
-            return ['Machine Learning', 'Scikit-learn', 'Model Evaluation', 'Predictive Analytics'];
+            return ['Python', 'Pandas', 'NumPy', 'Data Processing'];
         case 'cert-5':
-            return ['MLOps', 'Model Deployment', 'Inference', 'CI/CD'];
+            return ['EDA', 'Data Wrangling', 'SciPy', 'Statistical Analysis'];
         case 'cert-6':
-            return ['Azure OpenAI', 'Generative AI', 'RAG', 'Responsible AI'];
+            return ['Data Visualization', 'Matplotlib', 'Seaborn', 'Data Storytelling'];
         default:
-            return ['AI/ML', 'Generative AI', 'MLOps'];
+            return ['Data Analytics', 'Business Intelligence', 'SQL'];
     }
 };
 

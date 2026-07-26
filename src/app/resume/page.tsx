@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { motion } from 'framer-motion';
 import { ArrowLeft, Mail, MapPin, Phone } from 'lucide-react';
@@ -20,10 +20,10 @@ export default function ResumePage() {
             <motion.div
                 initial={isLowPowerMode ? { opacity: 0 } : { opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="container-creative px-6 mb-8"
+                className="container-creative px-3 sm:px-6 mb-8"
             >
-                <Link href="/" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors group">
-                    <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+                <Link href="/" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors group text-sm">
+                    <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
                     <span>Back to Portfolio</span>
                 </Link>
             </motion.div>
@@ -32,16 +32,16 @@ export default function ResumePage() {
                 initial={isLowPowerMode ? { opacity: 0 } : { opacity: 0, scale: 0.98 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.1 }}
-                className="container-creative px-6 max-w-5xl"
+                className="container-creative px-2 xs:px-4 sm:px-6 max-w-5xl"
             >
-                <div className="rounded-2xl border border-border/60 bg-card/60 p-6 md:p-10 shadow-xl">
-                    <header className="border-b border-border pb-6 mb-8">
-                        <h1 className="text-3xl md:text-5xl font-black tracking-tight">{personal.name}</h1>
-                        <p className="mt-3 text-lg md:text-xl text-primary font-semibold">{personal.title}</p>
-                        <div className="mt-5 flex flex-wrap gap-4 text-sm text-muted-foreground">
-                            <span className="inline-flex items-center gap-2"><MapPin className="w-4 h-4" />{personal.location}</span>
-                            <a className="inline-flex items-center gap-2 hover:text-foreground" href={`tel:${personal.phone}`}><Phone className="w-4 h-4" />{personal.phone}</a>
-                            <a className="inline-flex items-center gap-2 hover:text-foreground" href={`mailto:${personal.email}`}><Mail className="w-4 h-4" />{personal.email}</a>
+                <div className="rounded-2xl border border-border/60 bg-card/60 p-4 xs:p-6 md:p-10 shadow-xl">
+                    <header className="border-b border-border pb-4 xs:pb-6 mb-6 xs:mb-8">
+                        <h1 className="text-2xl xs:text-3xl md:text-5xl font-black tracking-tight break-words">{personal.name}</h1>
+                        <p className="mt-2 xs:mt-3 text-base xs:text-lg md:text-xl text-primary font-semibold">{personal.title}</p>
+                        <div className="mt-4 xs:mt-5 flex flex-wrap gap-3 xs:gap-4 text-xs xs:text-sm text-muted-foreground">
+                            <span className="inline-flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5 shrink-0" />{personal.location}</span>
+                            <a className="inline-flex items-center gap-1.5 hover:text-foreground break-all" href={`tel:${personal.phone}`}><Phone className="w-3.5 h-3.5 shrink-0" />{personal.phone}</a>
+                            <a className="inline-flex items-center gap-1.5 hover:text-foreground break-all" href={`mailto:${personal.email}`}><Mail className="w-3.5 h-3.5 shrink-0" />{personal.email}</a>
                         </div>
                     </header>
 

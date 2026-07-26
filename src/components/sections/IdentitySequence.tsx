@@ -52,11 +52,11 @@ export const IdentitySequence = ({ scrollYProgress, isVisible }: IdentitySequenc
     const cardBgValue = resolvedTheme === 'dark' ? cardBgDark : cardBg;
 
     const marqueeItems = [
-        <span key="1" className="text-[10rem] md:text-[16rem] font-black uppercase tracking-tighter mx-12 text-black dark:text-white leading-none">
+        <span key="1" className="text-[3.5rem] xs:text-[6rem] sm:text-[10rem] md:text-[16rem] font-black uppercase tracking-tighter mx-4 xs:mx-8 sm:mx-12 text-black dark:text-white leading-none">
             {portfolioData.personal.title}
         </span>,
-        <div key="icon" className="w-32 h-32 md:w-48 md:h-48 rounded-full bg-[#D1FF4D] flex items-center justify-center mx-12">
-            <svg viewBox="0 0 100 100" className="w-20 h-20 md:w-32 md:h-32 fill-black dark:fill-zinc-900">
+        <div key="icon" className="w-16 h-16 xs:w-28 xs:h-28 sm:w-32 sm:h-32 md:w-48 md:h-48 rounded-full bg-[#D1FF4D] flex items-center justify-center mx-4 xs:mx-8 sm:mx-12">
+            <svg viewBox="0 0 100 100" className="w-10 h-10 xs:w-16 xs:h-16 sm:w-20 sm:h-20 md:w-32 md:h-32 fill-black dark:fill-zinc-900">
                 <path d="M50 0 C60 30 100 40 100 50 C100 60 60 70 50 100 C40 70 0 60 0 50 C0 40 40 30 50 0" />
             </svg>
         </div>
@@ -70,29 +70,29 @@ export const IdentitySequence = ({ scrollYProgress, isVisible }: IdentitySequenc
                 className="absolute inset-0 z-0 flex flex-col items-center justify-center pointer-events-none -translate-y-12"
             >
                 {/* Center Unified Action - Magnetic Group */}
-                <div className="mb-16 pointer-events-auto">
+                <div className="mb-12 sm:mb-16 pointer-events-auto">
                     <MagneticEffect>
                         <div className="group flex items-center gap-1 cursor-pointer">
-                            <div className="relative px-10 py-5 rounded-full bg-[#D1FF4D] overflow-hidden transition-all duration-500">
+                            <div className="relative px-6 xs:px-8 sm:px-10 py-3.5 sm:py-5 rounded-full bg-[#D1FF4D] overflow-hidden transition-all duration-500">
                                 <div className="absolute inset-0 bg-black dark:bg-white -translate-x-[101%] group-hover:translate-x-0 transition-transform duration-500 ease-out" />
-                                <div className="relative z-10 h-7 overflow-hidden">
+                                <div className="relative z-10 h-6 sm:h-7 overflow-hidden">
                                     <div className="flex flex-col transition-transform duration-500 ease-out group-hover:-translate-y-1/2">
-                                        <span className="text-black group-hover:text-white dark:group-hover:text-black font-bold text-xl leading-7 transition-colors duration-500">
+                                        <span className="text-black group-hover:text-white dark:group-hover:text-black font-bold text-base sm:text-xl leading-6 sm:leading-7 transition-colors duration-500">
                                             {t("leadIn.aboutMe")}
                                         </span>
-                                        <span className="text-black group-hover:text-white dark:group-hover:text-black font-bold text-xl leading-7 transition-colors duration-500">
+                                        <span className="text-black group-hover:text-white dark:group-hover:text-black font-bold text-base sm:text-xl leading-6 sm:leading-7 transition-colors duration-500">
                                             {t("leadIn.aboutMe")}
                                         </span>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="relative w-16 h-16 rounded-full bg-[#D1FF4D] overflow-hidden flex items-center justify-center transition-all duration-500">
+                            <div className="relative w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-[#D1FF4D] overflow-hidden flex items-center justify-center transition-all duration-500">
                                 <div className="absolute inset-0 bg-black dark:bg-white -translate-x-[101%] group-hover:translate-x-0 transition-transform duration-500 ease-out" />
-                                <div className="relative z-10 h-8 overflow-hidden">
+                                <div className="relative z-10 h-6 sm:h-8 overflow-hidden">
                                     <div className="flex flex-col transition-transform duration-500 ease-out group-hover:-translate-y-1/2">
-                                        <ArrowUpRight className="w-8 h-8 text-black group-hover:text-white dark:group-hover:text-black transition-colors duration-500" />
-                                        <ArrowUpRight className="w-8 h-8 text-black group-hover:text-white dark:group-hover:text-black transition-colors duration-500" />
+                                        <ArrowUpRight className="w-6 h-6 sm:w-8 sm:h-8 text-black group-hover:text-white dark:group-hover:text-black transition-colors duration-500" />
+                                        <ArrowUpRight className="w-6 h-6 sm:w-8 sm:h-8 text-black group-hover:text-white dark:group-hover:text-black transition-colors duration-500" />
                                     </div>
                                 </div>
                             </div>
@@ -101,7 +101,7 @@ export const IdentitySequence = ({ scrollYProgress, isVisible }: IdentitySequenc
                 </div>
 
                 {/* Unified Bottom Labels Layer */}
-                <div className="w-full max-w-[1200px] flex items-center justify-between px-12">
+                <div className="w-full max-w-[1200px] flex items-center justify-between px-4 sm:px-12">
                     <div className="flex items-center gap-3 text-zinc-500 dark:text-white/60 text-sm font-medium tracking-tight">
                         <motion.span
                             animate={{ y: [0, 5, 0] }}

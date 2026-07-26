@@ -45,21 +45,21 @@ export const ToolsSection = () => {
                     whileInView={{ opacity: 0.6 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="text-xs font-bold uppercase tracking-[0.4em] text-foreground block mb-6"
+                    className="text-[10px] xs:text-xs font-bold uppercase tracking-[0.25em] xs:tracking-[0.4em] text-foreground block mb-4 xs:mb-6"
                 >
                     WORKFLOW & INFRASTRUCTURE
                 </motion.span>
-                <h2 className="text-5xl md:text-8xl font-bold tracking-tighter text-foreground mb-8 max-w-4xl mx-auto leading-[1.1]">
+                <h2 className="text-2xl xs:text-4xl sm:text-6xl md:text-8xl font-bold tracking-tighter text-foreground mb-4 xs:mb-8 max-w-4xl mx-auto leading-[1.1]">
                     Professional Tooling
                 </h2>
-                <p className="max-w-3xl mx-auto text-lg md:text-xl text-foreground/60 leading-relaxed font-medium px-4">
+                <p className="max-w-3xl mx-auto text-sm xs:text-base md:text-xl text-foreground/60 leading-relaxed font-medium px-2 xs:px-4">
                     Leveraging industrial-grade platforms for development, design, and deployment to ensure rapid and reliable software delivery.
                 </p>
             </motion.div>
 
             {/* MARQUEE ROWS - Constrained container for side spacing */}
-            <div className="relative z-20 w-full max-w-[1700px] mx-auto px-4 md:px-8 lg:px-12">
-                <div className="flex flex-col gap-12 mask-horizontal-fixed">
+            <div className="relative z-20 w-full max-w-[1700px] mx-auto px-2 xs:px-4 md:px-8 lg:px-12">
+                <div className="flex flex-col gap-6 xs:gap-12 mask-horizontal-fixed">
                     {/* Row 1: Left to Right */}
                     <MarqueeRow items={topRow} direction="right" speed={45} />
 
@@ -89,9 +89,9 @@ const MarqueeRow = ({ items, direction, speed }: { items: any[], direction: 'lef
     const doubledItems = [...items, ...items, ...items, ...items];
 
     return (
-        <div className="flex w-full overflow-hidden py-4">
+        <div className="flex w-full overflow-hidden py-2 xs:py-4">
             <motion.div
-                className="flex gap-8 whitespace-nowrap"
+                className="flex gap-4 xs:gap-8 whitespace-nowrap"
                 style={{
                     willChange: "transform",
                     backfaceVisibility: "hidden",
@@ -118,8 +118,8 @@ const ToolPill = ({ tool }: { tool: any }) => {
     const iconUrl = getOnlineSkillIcon(tool.name, toolLogos[tool.name] || tool.icon);
 
     return (
-        <div className="flex items-center gap-6 px-10 py-5 bg-[#0a0a0a]/10 dark:bg-white/5 backdrop-blur-xl border border-black/10 dark:border-white/10 rounded-full transition-all duration-300 hover:scale-105 hover:bg-black/20 dark:hover:bg-white/10 group select-none">
-            <div className="relative w-10 h-10 md:w-12 md:h-12 shrink-0">
+        <div className="flex items-center gap-3 xs:gap-6 px-4 py-2.5 xs:px-8 xs:py-4 sm:px-10 sm:py-5 bg-[#0a0a0a]/10 dark:bg-white/5 backdrop-blur-xl border border-black/10 dark:border-white/10 rounded-full transition-all duration-300 hover:scale-105 hover:bg-black/20 dark:hover:bg-white/10 group select-none">
+            <div className="relative w-6 h-6 xs:w-8 xs:h-8 md:w-12 md:h-12 shrink-0">
                 <IconColorizer
                     name={tool.name}
                     iconUrl={iconUrl}
@@ -129,7 +129,7 @@ const ToolPill = ({ tool }: { tool: any }) => {
                     )}
                 />
             </div>
-            <span className="text-xl md:text-2xl font-bold uppercase tracking-[0.1em] text-black/70 dark:text-white/70 group-hover:text-black dark:group-hover:text-white transition-colors duration-300">
+            <span className="text-sm xs:text-lg sm:text-xl md:text-2xl font-bold uppercase tracking-[0.1em] text-black/70 dark:text-white/70 group-hover:text-black dark:group-hover:text-white transition-colors duration-300">
                 {tool.name}
             </span>
         </div>

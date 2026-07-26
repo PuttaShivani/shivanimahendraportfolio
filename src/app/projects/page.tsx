@@ -133,11 +133,11 @@ function ProjectListItem({
                 )}
 
                 {/* Content */}
-                <div className="relative z-10 flex items-center gap-4 sm:gap-8 py-6 sm:py-10 px-4 sm:px-8">
+                <div className="relative z-10 flex items-center gap-2 xs:gap-4 sm:gap-8 py-4 xs:py-6 sm:py-10 px-3 xs:px-4 sm:px-8">
                     {/* Index */}
                     <motion.span
                         className={cn(
-                            "text-2xl sm:text-4xl md:text-5xl font-black tabular-nums transition-colors duration-500",
+                            "text-xl xs:text-2xl sm:text-4xl md:text-5xl font-black tabular-nums transition-colors duration-500 shrink-0",
                             isHovered
                                 ? (isOngoing ? "text-emerald-500 dark:text-emerald-400" : "text-blue-500 dark:text-blue-400")
                                 : "text-muted-foreground/20"
@@ -585,8 +585,8 @@ function ProjectCard({ project, onClick, index }: { project: Project; onClick: (
             <div className="flex flex-col flex-grow px-1 md:px-0">
                 
                 {/* Title & Badge Row */}
-                <div className="flex items-start justify-between gap-4 mb-3">
-                    <h3 className="text-3xl sm:text-4xl font-serif-elegant text-foreground group-hover:text-primary transition-colors tracking-tight">
+                <div className="flex flex-col xs:flex-row items-start xs:items-center justify-between gap-2 xs:gap-4 mb-3">
+                    <h3 className="text-xl xs:text-2xl sm:text-4xl font-serif-elegant text-foreground group-hover:text-primary transition-colors tracking-tight">
                         {project.title}
                     </h3>
                     <div className="shrink-0 mt-1 sm:mt-2">

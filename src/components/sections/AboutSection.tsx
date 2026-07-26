@@ -141,9 +141,9 @@ const AboutLeadIn = () => {
     const t = useTranslations('about');
 
     return (
-        <div className="w-full max-w-[1650px] mx-auto px-6 py-6 flex justify-center items-center">
+        <div className="w-full max-w-[1650px] mx-auto px-2 xs:px-4 sm:px-6 py-4 sm:py-6 flex justify-center items-center">
             {/* The Reference Card Container (Gambar 1 Style with Dark/Light Support) */}
-            <div className="relative w-full bg-white dark:bg-black border border-teal-400/20 dark:border-teal-400/40 p-6 md:p-12 lg:p-16 overflow-hidden group shadow-xl dark:shadow-2xl transition-colors duration-500">
+            <div className="relative w-full bg-white dark:bg-black border border-teal-400/20 dark:border-teal-400/40 p-4 xs:p-6 md:p-12 lg:p-16 overflow-hidden group shadow-xl dark:shadow-2xl transition-colors duration-500">
 
                 {/* 1. Grid Background Overlay (Dynamic Colors) */}
                 <div className="absolute inset-0 z-0 bg-[radial-gradient(circle,_#00000008_1px,_transparent_1px)] dark:bg-[radial-gradient(circle,_#ffffff08_1px,_transparent_1px)] bg-[size:20px_20px] pointer-events-none transition-opacity" />
@@ -445,7 +445,7 @@ const EducationSection = () => {
             <div className="flex flex-col gap-8 w-full items-center">
                 {portfolioData.education.map((edu) => (
                     /* Premium Lab Card for Education */
-                    <div key={edu.id} className="relative w-full max-w-4xl bg-white dark:bg-black border border-teal-400/20 dark:border-teal-400/40 p-8 md:p-12 overflow-hidden group shadow-xl dark:shadow-2xl transition-colors duration-500">
+                    <div key={edu.id} className="relative w-full max-w-4xl bg-white dark:bg-black border border-teal-400/20 dark:border-teal-400/40 p-4 xs:p-6 sm:p-8 md:p-12 overflow-hidden group shadow-xl dark:shadow-2xl transition-colors duration-500">
                         {/* 1. Grid Background Overlay */}
                         <div className="absolute inset-0 z-0 bg-[radial-gradient(circle,_#00000008_1px,_transparent_1px)] dark:bg-[radial-gradient(circle,_#ffffff08_1px,_transparent_1px)] bg-[size:20px_20px] pointer-events-none transition-opacity" />
 

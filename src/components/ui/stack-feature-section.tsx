@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import {
@@ -38,39 +39,49 @@ const iconConfigs = [
 ];
 
 export default function FeatureSection() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const orbitCount = 3;
-  const orbitGap = 9; // rem between orbits
+  const baseSize = isMobile ? 7 : 18;
+  const orbitGap = isMobile ? 3.2 : 9; // rem between orbits
   const iconsPerOrbit = Math.ceil(iconConfigs.length / orbitCount);
 
   return (
-    <section className="relative w-full max-w-[1500px] mx-auto px-4 sm:px-6 my-16 md:my-32 z-10">
-      <div className="flex flex-col md:flex-row items-center justify-between min-h-[auto] md:min-h-[35rem] border border-gray-200 dark:border-white/10 bg-white dark:bg-black overflow-hidden rounded-[2.5rem] shadow-sm relative">
+    <section className="relative w-full max-w-[1500px] mx-auto px-2 xs:px-4 sm:px-6 my-8 xs:my-16 md:my-32 z-10">
+      <div className="flex flex-col md:flex-row items-center justify-between min-h-[auto] md:min-h-[35rem] border border-gray-200 dark:border-white/10 bg-white dark:bg-black overflow-hidden rounded-[1.5rem] xs:rounded-[2.5rem] shadow-sm relative">
         {/* Left side: Heading and Text */}
-        <div className="w-full md:w-[55%] z-10 p-6 sm:p-8 md:p-14 lg:p-20">
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 text-gray-900 dark:text-white tracking-tight leading-[1.1]">
+        <div className="w-full md:w-[55%] z-10 p-4 xs:p-6 sm:p-8 md:p-14 lg:p-20">
+          <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-3 xs:mb-4 md:mb-6 text-gray-900 dark:text-white tracking-tight leading-[1.1]">
             Engineering <br className="hidden md:block" /> the Future
           </h1>
-          <p className="text-gray-500 dark:text-gray-400 mb-10 max-w-xl text-base md:text-lg leading-relaxed">
+          <p className="text-gray-500 dark:text-gray-400 mb-4 xs:mb-8 max-w-xl text-xs xs:text-sm sm:text-base md:text-lg leading-relaxed">
             {portfolioData.personal.subtitle}
           </p>
 
         </div>
 
         {/* Right side: Orbit animation cropped to 1/2 */}
-        <div className="relative w-full md:w-[45%] h-[25rem] sm:h-[30rem] md:h-full md:min-h-[35rem] flex items-center justify-center md:justify-end overflow-hidden pointer-events-none mt-4 md:mt-0">
+        <div className="relative w-full md:w-[45%] h-[16rem] sm:h-[20rem] md:h-full md:min-h-[35rem] flex items-center justify-center md:justify-end overflow-hidden pointer-events-none mt-2 md:mt-0">
           {/* Positioning the center of orbits exactly on the right edge on desktop, centered bottom on mobile */}
-          <div className="absolute left-1/2 md:left-auto md:right-0 top-1/2 md:top-1/2 -translate-x-1/2 md:translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] md:w-[60rem] md:h-[60rem] flex items-center justify-center">
+          <div className="absolute left-1/2 md:left-auto md:right-0 top-1/2 md:top-1/2 -translate-x-1/2 md:translate-x-1/2 -translate-y-1/2 w-[20rem] h-[20rem] sm:w-[28rem] sm:h-[28rem] md:w-[60rem] md:h-[60rem] flex items-center justify-center">
             
             {/* Center Circle */}
-            <div className="w-16 h-16 md:w-28 md:h-28 rounded-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-white/10 shadow-lg flex items-center justify-center z-10 relative">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-28 md:h-28 rounded-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-white/10 shadow-lg flex items-center justify-center z-10 relative">
               <div className="center-spin">
-                <FaReact className="w-8 h-8 md:w-14 md:h-14 text-[#61DAFB]" />
+                <FaReact className="w-6 h-6 sm:w-8 sm:h-8 md:w-14 md:h-14 text-[#61DAFB]" />
               </div>
             </div>
 
             {/* Generate Orbits */}
             {[...Array(orbitCount)].map((_, orbitIdx) => {
-              const size = `${18 + orbitGap * (orbitIdx + 1)}rem`; // Calculate diameter
+              const size = `${baseSize + orbitGap * (orbitIdx + 1)}rem`; // Calculate diameter
               const angleStep = (2 * Math.PI) / iconsPerOrbit;
 
               return (
@@ -99,11 +110,11 @@ export default function FeatureSection() {
                           }}
                         >
                           <div 
-                            className={`bg-white dark:bg-gray-900 rounded-full p-2.5 md:p-3 shadow-md flex items-center justify-center border border-gray-100 dark:border-white/10 orbit-icon-${orbitIdx}`}
+                            className={`bg-white dark:bg-gray-900 rounded-full p-1.5 sm:p-2.5 md:p-3 shadow-md flex items-center justify-center border border-gray-100 dark:border-white/10 orbit-icon-${orbitIdx}`}
                           >
                             {cfg.Icon ? (
                               <cfg.Icon 
-                                className="w-5 h-5 md:w-7 md:h-7" 
+                                className="w-3.5 h-3.5 sm:w-5 sm:h-5 md:w-7 md:h-7" 
                                 style={{ color: cfg.darkColor ? "inherit" : cfg.color }} 
                               />
                             ) : (
@@ -111,7 +122,7 @@ export default function FeatureSection() {
                               <img
                                 src={cfg.img}
                                 alt="icon"
-                                className="w-5 h-5 md:w-7 md:h-7 object-cover rounded-full"
+                                className="w-3.5 h-3.5 sm:w-5 sm:h-5 md:w-7 md:h-7 object-cover rounded-full"
                               />
                             )}
                           </div>

@@ -131,18 +131,18 @@ export function Navbar() {
                 transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
                 className="fixed top-0 left-0 right-0 z-[100]"
             >
-                <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-24 py-4 md:py-6">
+                <div className="max-w-[1600px] mx-auto px-2 xs:px-6 md:px-12 py-2 sm:py-4 md:py-6">
                     <motion.div
                         className={cn(
                             'flex items-center justify-between transition-all duration-500 rounded-full',
-                            isScrolled ? 'glass-strong px-6 py-3' : 'py-2'
+                            isScrolled ? 'glass-strong px-3 xs:px-6 py-2 xs:py-3' : 'py-2'
                         )}
                         layout
                     >
                         {/* Make a text logo as a Link to Home */}
-                        <Link href="/" className="relative group min-w-[120px]" onClick={handleHomeClick}>
-                            <span className="font-mono text-xl md:text-2xl font-black text-gradient tracking-widest transition-all duration-300">
-                                PAVAN
+                        <Link href="/" className="relative group shrink-0" onClick={handleHomeClick}>
+                            <span className="font-mono text-sm xs:text-lg md:text-2xl font-black text-gradient tracking-wider xs:tracking-widest transition-all duration-300 whitespace-nowrap">
+                                TEJESWARA SAI
                             </span>
                         </Link>
 

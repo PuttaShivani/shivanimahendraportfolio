@@ -12,8 +12,8 @@ const calculateMetrics = () => {
     const totalTechStack = portfolioData.techStack?.length || 0;
     const totalTools = portfolioData.tools?.length || 0;
 
-    // Calculate years of experience (assuming earliest project start date)
-    const yearsExp = 5; // Hardcoded based on resume/experience
+    // Calculate years of experience (based on resume)
+    const yearsExp = 3;
 
     return {
         projects: totalProjects,
@@ -127,31 +127,31 @@ export function ProjectStats({ isLowPowerMode }: { isLowPowerMode?: boolean }) {
     return (
         <section className="relative py-16 sm:py-20 md:py-24 overflow-hidden bg-background">
 
-            <div className="container-creative relative z-10 px-4 sm:px-6 md:px-8">
+            <div className="container-creative relative z-10 px-2 xs:px-4 sm:px-6 md:px-8">
                 {/* Section Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ margin: "-100px" }}
                     transition={{ duration: 0.6 }}
-                    className="text-center mb-12 sm:mb-16"
+                    className="text-center mb-8 xs:mb-12 sm:mb-16"
                 >
                     <motion.div
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 mb-6"
+                        className="inline-flex items-center gap-2 px-3 xs:px-4 py-1.5 xs:py-2 rounded-full bg-primary/10 mb-4 xs:mb-6"
                         animate={isLowPowerMode ? {} : { scale: [1, 1.05, 1] }}
                         transition={isLowPowerMode ? {} : { duration: 2, repeat: Infinity }}
                     >
-                        <Sparkles className="w-4 h-4 text-primary" />
-                        <span className="text-xs sm:text-sm font-semibold text-primary uppercase tracking-wider">
+                        <Sparkles className="w-3.5 h-3.5 xs:w-4 xs:h-4 text-primary" />
+                        <span className="text-[10px] xs:text-xs sm:text-sm font-semibold text-primary uppercase tracking-wider">
                             Project Impact
                         </span>
                     </motion.div>
 
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-3">
+                    <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-3">
                         Building The Future
                     </h2>
 
-                    <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
+                    <p className="text-sm xs:text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
                         Transforming ideas into production-ready solutions that drive real-world impact
                     </p>
                 </motion.div>

@@ -32,27 +32,27 @@ const signature = Alex_Brush({
 
 export const metadata: Metadata = {
     title: {
-        default: 'PAVAN KUMAR|Data Analyst',
+        default: 'TEJESWARA SAI APPIKATLA | Data Analyst',
         template: '%s | Portfolio',
     },
-    description: 'Data Engineer and SQL Developer with 5+ years of experience across software engineering, database development, batch integration, financial data processing, and cloud-based data solutions.',
-    keywords: ['data engineer', 'portfolio', 'sql developer', 'etl pipelines', 'cloud data solutions', 'aws', 'gcp'],
-    authors: [{ name: 'PAVAN KUMAR' }],
-    creator: 'PAVAN KUMAR',
+    description: 'Data Analyst with 3+ years of combined analytics experience supporting product, operational, executive, academic, and data quality reporting.',
+    keywords: ['data analyst', 'business intelligence', 'power bi', 'tableau', 'sql', 'python', 'analytics', 'data modeling', 'dax'],
+    authors: [{ name: 'TEJESWARA SAI APPIKATLA' }],
+    creator: 'TEJESWARA SAI APPIKATLA',
     metadataBase: new URL('https://your-domain.com'),
     openGraph: {
         type: 'website',
         locale: 'en_US',
         url: 'https://your-domain.com',
-        title: 'Pavan Kumar | Data Analyst',
-        description: 'Data Analyst specializing in Business Intelligence, Power BI, and Tableau.',
+        title: 'TEJESWARA SAI APPIKATLA | Data Analyst',
+        description: 'Data Analyst specializing in Business Intelligence, Power BI, Tableau, SQL, and Python.',
         siteName: 'Portfolio',
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Pavan Kumar | Data Analyst',
-        description: 'Data Analyst specializing in Business Intelligence, Power BI, and Tableau.',
-        creator: '@PavanKumar',
+        title: 'TEJESWARA SAI APPIKATLA | Data Analyst',
+        description: 'Data Analyst specializing in Business Intelligence, Power BI, Tableau, SQL, and Python.',
+        creator: '@TejeswaraSai',
     },
     robots: {
         index: true,

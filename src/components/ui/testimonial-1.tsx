@@ -39,30 +39,30 @@ export default function Testimonial1() {
       decimals: 0,
       suffix: "",
       label: "Certifications",
-      href: "/achievements",
+      href: "/#certifications-section",
       cta: "View Credentials",
     },
     {
-      value: 2,
+      value: 3,
       decimals: 0,
       suffix: " Major",
-      label: "Flagship Projects",
+      label: "Key Projects",
       href: "/#projects-section",
       cta: "View Projects",
     },
     {
-      value: 5,
+      value: 3,
       decimals: 0,
       suffix: "+ Years",
-      label: "Data Engineering Exp",
+      label: "Data Analytics Exp",
       href: "/#experience",
-      cta: "Explore Career",
+      cta: "Explore Experience",
     },
     {
-      value: 25,
+      value: 20,
       decimals: 0,
-      suffix: "+ Tools",
-      label: "Tech & Skills",
+      suffix: "+ Skills",
+      label: "Tech & BI Stack",
       href: "/#skills-section",
       cta: "See Skills",
     },
@@ -94,12 +94,12 @@ export default function Testimonial1() {
         </div>
 
         {/* Main Heading with Refined Block Reveal Animation */}
-        <div className="text-center max-w-5xl mx-auto relative text-neutral-900 dark:text-white px-4 space-y-1 md:space-y-2">
+        <div className="text-center max-w-5xl mx-auto relative text-neutral-900 dark:text-white px-2 xs:px-4 space-y-1 md:space-y-2">
           {[
-            { text: "Pipelines that scale. Architectures that deliver.", color: "#6366f1", delay: 0 },
-            { text: "Lakehouses that drive analytics.", color: "#10b981", delay: 0.15 },
-            { text: "Complex ETL workflows, automated integrations,", color: "#f59e0b", delay: 0.3 },
-            { text: "and the data foundations behind every decision.", color: "#ef4444", delay: 0.45 }
+            { text: "Dashboards that inform. Models that predict.", color: "#6366f1", delay: 0 },
+            { text: "Insights that drive strategic decisions.", color: "#10b981", delay: 0.15 },
+            { text: "Optimized SQL queries, automated reporting,", color: "#f59e0b", delay: 0.3 },
+            { text: "and decision-ready metrics for leadership.", color: "#ef4444", delay: 0.45 }
           ].map((line, i) => (
             <div key={i} className="relative block overflow-hidden py-1.5">
               <motion.h1
@@ -110,7 +110,7 @@ export default function Testimonial1() {
                   delay: line.delay + 0.35,
                   duration: 0.01
                 }}
-                className="text-3xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tighter"
+                className="text-xl xs:text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tighter"
               >
                 {line.text}
               </motion.h1>
@@ -138,7 +138,7 @@ export default function Testimonial1() {
         </div>
 
         {/* Glassmorphic Stats Bar */}
-        <div className="sm:flex grid grid-cols-2 gap-8 bg-white/40 dark:bg-zinc-900/40 backdrop-blur-xl mt-12 w-full mx-auto px-8 py-10 border rounded-2xl border-white/20 dark:border-white/5 shadow-2xl relative overflow-hidden">
+        <div className="sm:flex grid grid-cols-2 gap-4 xs:gap-8 bg-white/40 dark:bg-zinc-900/40 backdrop-blur-xl mt-8 sm:mt-12 w-full mx-auto px-3 xs:px-6 sm:px-8 py-6 xs:py-10 border rounded-2xl border-white/20 dark:border-white/5 shadow-2xl relative overflow-hidden">
           {/* Subtle Background Glow inside the bar */}
           <div className="absolute top-0 left-1/4 w-1/2 h-full bg-blue-500/5 blur-[100px] pointer-events-none" />
 

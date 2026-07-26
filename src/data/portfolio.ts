@@ -2,15 +2,15 @@ import { PortfolioData } from '@/types';
 
 export const portfolioData: PortfolioData = {
     personal: {
-        name: 'Pavan Kumar',
+        name: 'Tejeswara Sai Appikatla',
         title: 'Data Analyst',
-        subtitle: 'Data Analyst | Business Intelligence | Power BI & Tableau',
-        bio: 'Data Analyst with 4+ years of experience supporting reporting, performance analysis, KPI tracking, and operational decision-making across financial services, healthcare, and technology environments. Experienced in turning service, incident, capacity, customer-support, and business data into clear dashboards, scorecards, and reports that help leaders understand performance and act on emerging issues.',
+        subtitle: 'Data Analyst | Business Intelligence | Product & Operational Analytics',
+        bio: 'Data Analyst with 3+ years of combined analytics experience supporting product, operational, executive, academic, and data quality reporting across U.S. business and university environments. Experienced in building dashboards, automating recurring reports, validating complex datasets, and turning performance metrics into clear insights for business and leadership teams.',
         avatar: '/image.png',
-        location: 'Celina, TX',
-        email: 'sai.naga@applywizard.ai',
-        phone: '+1 (314) 599-0774',
-        resumeUrl: '/resume',
+        location: 'Delray Beach, FL',
+        email: 'atejeswarasaia@gmail.com',
+        phone: '+1 (561) 599-4577',
+        resumeUrl: '/Tejaswara_sai_resume.pdf',
         website: '#',
         languages: [
             { name: 'English', level: 'Fluent' },
@@ -21,118 +21,118 @@ export const portfolioData: PortfolioData = {
     projects: [
         {
             id: 'project-1',
-            slug: 'enterprise-ops-intelligence',
-            title: 'Enterprise Operations Intelligence and KPI Analytics Platform',
-            image: '/project1.png',
-            description: 'Modeled incident, capacity, change, and SLA data in SQL and Power Query using a star schema for enterprise operations reporting.',
-            longDescription: 'Modeled incident, capacity, change, and SLA data in SQL and Power Query using a star schema, creating a reliable analytical layer for enterprise operations reporting. Engineered DAX measures, drill-through reports, KPI scorecards, and trend and exception views in Power BI to expose backlog growth, service failures, and capacity risks requiring operational follow-up. Automated Python-based validation and reconciliation checks for recurring data loads.',
-            techStack: ['SQL', 'Power Query', 'Power BI', 'DAX', 'Python'],
-            tools: ['Power BI'],
+            slug: 'marketing-campaign-conversion-analytics',
+            title: 'Marketing Campaign and Customer Conversion Analytics',
+            image: '/marketing_analytics.png',
+            description: 'Consolidated campaign spend, customer interactions, conversions, and revenue in Google BigQuery using SQL and Power Query, creating a consistent dataset for channel and audience analysis.',
+            longDescription: 'Consolidated campaign spend, customer interactions, conversions, and revenue in Google BigQuery using SQL and Power Query, creating a consistent dataset for channel and audience analysis. Applied Python, Pandas, customer segmentation, funnel analysis, and statistical analysis to compare acquisition behavior, identify conversion drop-offs, and assess campaign performance. Built Power BI dashboards with DAX measures, KPI scorecards, and drill-through views, enabling marketing teams to evaluate conversion rates, customer value, and channel effectiveness.',
+            techStack: ['Google BigQuery', 'SQL', 'Power Query', 'Power BI', 'DAX', 'Python', 'Pandas'],
+            tools: ['Power BI', 'Google BigQuery', 'Python'],
             status: 'completed',
             repoUrl: '#',
             demoUrl: '#',
-            startDate: '2023-01-01',
+            startDate: '2025-01-01',
             role: 'Data Analyst',
-            customTimeline: '2023',
-            team: 'Analytics',
+            customTimeline: '2025',
+            team: 'Marketing Analytics',
             highlights: [
-                'Modeled incident, capacity, change, and SLA data in SQL and Power Query using a star schema.',
-                'Engineered DAX measures, drill-through reports, KPI scorecards, and trend and exception views in Power BI.',
-                'Automated Python-based validation and reconciliation checks for recurring data loads, increasing dashboard reliability.'
+                'Consolidated campaign spend, customer interactions, conversions, and revenue in Google BigQuery using SQL and Power Query.',
+                'Applied Python, Pandas, customer segmentation, funnel analysis, and statistical analysis to compare acquisition behavior.',
+                'Built Power BI dashboards with DAX measures, KPI scorecards, and drill-through views for marketing teams.'
             ],
-            category: 'Data Analytics',
+            category: 'Marketing Analytics',
             features: [
                 {
-                    title: 'Analytics Platform',
+                    title: 'Campaign Analytics Platform',
                     items: [
-                        '**Data Modeling**: Star schema with SQL and Power Query.',
-                        '**Visualization**: Power BI dashboards with drill-through capabilities.',
-                        '**Automation**: Python-based validation for recurring loads.'
+                        '**Data Consolidation**: Unified spend and interactions in Google BigQuery.',
+                        '**Behavior Analysis**: Segmentation and funnel analysis via Python/Pandas.',
+                        '**Executive Dashboards**: Power BI KPI scorecards and drill-through views.'
                     ]
                 }
             ],
             challengesAndSolutions: [
                 {
-                    problem: 'Needed a reliable analytical layer for enterprise operations reporting.',
-                    solution: 'Implemented a star schema and automated validation checks using Python.'
+                    problem: 'Inconsistent campaign spend and conversion data across disparate marketing channels.',
+                    solution: 'Engineered BigQuery SQL models and Power Query transformations for unified reporting.'
                 }
             ]
         },
         {
             id: 'project-2',
-            slug: 'healthcare-service-performance',
-            title: 'Healthcare Service Performance Analytics Dashboard',
-            image: '/project2.jpg',
-            description: 'Combined ServiceNow, facility, and service-performance data through SQL and Excel validation rules.',
-            longDescription: 'Combined ServiceNow, facility, and service-performance data through SQL and Excel validation rules, producing a consistent dataset for healthcare location and departmental comparisons. Designed Tableau dashboards with calculated fields, parameters, geographic mapping, filters, and dashboard actions to reveal facility-level service gaps and recurring operational patterns. Applied Python and Pandas to examine outliers, incident concentration, and peak service-impact periods.',
-            techStack: ['SQL', 'Excel', 'Tableau', 'Python', 'Pandas'],
-            tools: ['Tableau', 'ServiceNow'],
+            slug: 'financial-variance-performance-reporting',
+            title: 'Financial Variance and Performance Reporting Dashboard',
+            image: '/financial_performance.png',
+            description: 'Structured budget, actual, expense, and revenue records with SQL and Advanced Excel, standardizing financial categories and preparing reconciled data for monthly performance reporting.',
+            longDescription: 'Structured budget, actual, expense, and revenue records with SQL and Advanced Excel, standardizing financial categories and preparing reconciled data for monthly performance reporting. Developed DAX calculations and Power BI data models for budget variance, period-over-period trends, operating costs, and revenue performance, giving finance teams consistent analytical measures. Presented financial trends through Power BI and Tableau dashboards with executive reporting and data storytelling, helping stakeholders identify material variances and investigate underlying business drivers.',
+            techStack: ['SQL', 'Advanced Excel', 'DAX', 'Power BI', 'Tableau', 'Data Modeling'],
+            tools: ['Power BI', 'Tableau', 'Advanced Excel'],
             status: 'completed',
             repoUrl: '#',
             demoUrl: '#',
-            startDate: '2024-01-01',
+            startDate: '2024-06-01',
             role: 'BI Analyst',
             customTimeline: '2024',
-            team: 'BI Team',
+            team: 'Finance Analytics',
             highlights: [
-                'Combined ServiceNow, facility, and service-performance data through SQL and Excel validation rules.',
-                'Designed Tableau dashboards with calculated fields, parameters, geographic mapping, filters, and dashboard actions.',
-                'Applied Python and Pandas to examine outliers, incident concentration, and peak service-impact periods.'
+                'Structured budget, actual, expense, and revenue records with SQL and Advanced Excel.',
+                'Developed DAX calculations and Power BI data models for budget variance and operating costs.',
+                'Presented financial trends through Power BI and Tableau dashboards with data storytelling.'
             ],
-            category: 'Business Intelligence',
+            category: 'Financial Analytics',
             features: [
                 {
-                    title: 'Healthcare Analytics',
+                    title: 'Financial Reporting System',
                     items: [
-                        '**Data Integration**: Merged ServiceNow and facility data via SQL/Excel.',
-                        '**Dashboards**: Tableau views with geographic mapping and filters.',
-                        '**Analysis**: Python/Pandas outlier and peak period examination.'
+                        '**Data Standardization**: Reconciled financial categories using SQL and Excel.',
+                        '**Variance Modeling**: DAX measures for period-over-period budget trends.',
+                        '**Multi-Platform BI**: Dual Power BI & Tableau executive reporting views.'
                     ]
                 }
             ],
             challengesAndSolutions: [
                 {
-                    problem: 'Difficulty comparing departmental performance across multiple healthcare locations.',
-                    solution: 'Created standardized Tableau dashboards and SQL datasets for uniform analysis.'
+                    problem: 'Finance teams struggled with conflicting source calculations and manual variance analysis.',
+                    solution: 'Created standardized DAX measures and automated reconciliation models in Power BI.'
                 }
             ]
         },
         {
             id: 'project-3',
-            slug: 'product-customer-usage-analytics',
-            title: 'Product and Customer Usage Analytics Solution',
-            image: '/project3.jpg',
-            description: 'Structured customer, product, feature, and usage data with SQL dimensional modeling.',
-            longDescription: 'Structured customer, product, feature, and usage data with SQL dimensional modeling, supporting consistent analysis of adoption, retention, engagement, and customer-segment performance. Developed Python and Pandas workflows to calculate usage frequency, feature penetration, support demand, and customer trends, giving product teams evidence for prioritization decisions. Presented cohort analysis, funnel views, segmentation, and KPI trends through Power BI and Tableau.',
-            techStack: ['SQL', 'Python', 'Pandas', 'Power BI', 'Tableau'],
-            tools: ['Power BI', 'Tableau'],
+            slug: 'operations-capacity-sla-performance',
+            title: 'Operations Capacity and SLA Performance Analytics',
+            image: '/operations_sla.png',
+            description: 'Consolidated service requests, staffing levels, workloads, and resolution records through SQL and Power Query, creating an analysis-ready model for capacity utilization, backlog, and SLA reporting.',
+            longDescription: 'Consolidated service requests, staffing levels, workloads, and resolution records through SQL and Power Query, creating an analysis-ready model for capacity utilization, backlog, and SLA reporting. Developed DAX measures and Power BI views for request volume, aging, turnaround time, workload distribution, and SLA exceptions, helping operations teams identify bottlenecks and rebalance resources. Reconciled dashboard totals against source records using Advanced Excel and source-to-report validation, strengthening reporting accuracy and supporting dependable weekly capacity planning.',
+            techStack: ['SQL', 'Power Query', 'DAX', 'Power BI', 'Advanced Excel', 'Data Validation'],
+            tools: ['Power BI', 'SQL', 'Advanced Excel'],
             status: 'completed',
             repoUrl: '#',
             demoUrl: '#',
-            startDate: '2023-06-01',
+            startDate: '2024-01-01',
             role: 'Data Analyst',
-            customTimeline: '2023',
-            team: 'Product Analytics',
+            customTimeline: '2024',
+            team: 'Operations Analytics',
             highlights: [
-                'Structured customer, product, feature, and usage data with SQL dimensional modeling.',
-                'Developed Python and Pandas workflows to calculate usage frequency and feature penetration.',
-                'Presented cohort analysis, funnel views, and KPI trends through Power BI and Tableau.'
+                'Consolidated service requests, staffing levels, workloads, and resolution records via SQL & Power Query.',
+                'Developed DAX measures and Power BI views for request volume, turnaround time, and SLA exceptions.',
+                'Reconciled dashboard totals against source records using Advanced Excel validation.'
             ],
-            category: 'Product Analytics',
+            category: 'Operational Analytics',
             features: [
                 {
-                    title: 'Usage Analytics',
+                    title: 'Operations & SLA Intelligence',
                     items: [
-                        '**Dimensional Modeling**: SQL structures for adoption and retention analysis.',
-                        '**Workflows**: Python/Pandas calculation of support demand and trends.',
-                        '**Visualization**: Cohort and funnel views in Power BI and Tableau.'
+                        '**Capacity Modeling**: Workload and staffing utilization analysis.',
+                        '**SLA Tracking**: Real-time turnaround time and aging dashboards in Power BI.',
+                        '**Quality Assurance**: Source-to-report reconciliation to ensure 98%+ reporting accuracy.'
                     ]
                 }
             ],
             challengesAndSolutions: [
                 {
-                    problem: 'Product teams lacked evidence for prioritization decisions.',
-                    solution: 'Built comprehensive usage analytics workflows and dashboards.'
+                    problem: 'Operational bottlenecks and SLA breaches went unnoticed due to delayed reporting.',
+                    solution: 'Automated weekly capacity and SLA tracking dashboards with exception alerts in Power BI.'
                 }
             ]
         }
@@ -140,69 +140,90 @@ export const portfolioData: PortfolioData = {
     experiences: [
         {
             id: 'prof-1',
-            company: 'VISA',
+            company: 'Talviro Inc.',
             position: 'Data Analyst',
-            description: 'Developed Power BI dashboards, streamlined SQL workflows, and analyzed 500K+ operational records for payment operations.',
+            description: 'Built 12+ production dashboards in Power BI & Tableau, automated recurring reports, optimized PostgreSQL/MySQL queries, and maintained 98% reporting accuracy.',
             responsibilities: [
-                'Developed 8 Power BI dashboards using SQL, Power Query, and DAX to combine payment operations, service-performance, capacity, and operational risk data, giving financial-services leaders faster visibility into business-critical KPIs.',
-                'Streamlined SQL-based data preparation and validation workflows across operational reporting sources, cutting recurring report preparation effort by 40% while increasing confidence in executive performance reporting.',
-                'Built DAX measures, calculated columns, and interactive drill-through reports to evaluate payment operations, capacity trends, and business performance, enabling leadership to prioritize operational planning with current insights.',
-                'Evaluated more than 500K operational records using Python, Pandas, SQL, and Excel to identify demand patterns, utilization trends, and operational exceptions that guided business decision-making.',
-                'Partnered with product, operations, compliance, and engineering teams to translate reporting requirements into Power BI semantic models, KPI definitions, and executive dashboards aligned with organizational objectives.',
-                'Automated recurring data transformation and scheduled reporting with Python, SQL, Power Query, and Power BI Service, allowing analysts to spend more time interpreting business trends instead of preparing reports.',
-                'Assessed operational trends through variance, capacity, and utilization analysis in Power BI and Excel, supporting planning initiatives that boosted operational efficiency by 25%.',
-                'Maintained KPI documentation, reporting standards, dashboard specifications, and validation rules in Confluence and SharePoint, strengthening reporting governance across analytics teams.'
+                'Built 12+ production dashboards in Power BI and Tableau using DAX, Power Query, data modeling, and drill-through analysis, giving operations and leadership teams a reliable view of KPIs and reporting exceptions.',
+                'Gathered requirements from 40+ business and technical stakeholders and translated them into dashboard specifications, executive reports, validation rules, and metric definitions aligned with operational priorities.',
+                'Automated recurring reports through SQL, Power BI Service, scheduled refreshes, and reusable reporting models, cutting manual preparation time by 27% and accelerating access to current performance data.',
+                'Tuned PostgreSQL and MySQL queries using complex joins, common table expressions, window functions, subqueries, aggregations, and query optimization, enabling faster refreshes and more stable downstream reporting.',
+                'Implemented source-to-report reconciliation, data profiling, and root-cause analysis controls that sustained 98% reporting accuracy and stopped transformation defects before dashboard publication.',
+                'Standardized KPI calculations, reporting hierarchies, filters, and business rules with operations, finance, and engineering teams, creating consistent measures across functional and executive reports.',
+                'Investigated operational variances and recurring process gaps through SQL, Tableau, and exploratory data analysis, directing business teams toward the exceptions requiring immediate corrective action.',
+                'Formalized data dictionaries, refresh dependencies, dashboard logic, validation procedures, and troubleshooting guides, strengthening reporting governance and supporting confident self-service analytics.'
             ],
-            skills: ['Power BI', 'SQL', 'DAX', 'Python', 'Pandas', 'Excel'],
-            startDate: '2025-02-01',
+            skills: ['Power BI', 'Tableau', 'DAX', 'Power Query', 'SQL', 'PostgreSQL', 'MySQL', 'Data Profiling'],
+            startDate: '2026-04-01',
             isOngoing: true,
-            location: 'Texas',
+            location: 'Remote | Miami, FL',
             type: 'full-time',
             logo: '/assets/dicodinglogo.png',
         },
         {
             id: 'prof-2',
-            company: 'Baylor Scott & White Health',
-            position: 'Reporting and Business Intelligence Analyst',
-            description: 'Built Tableau dashboards and Power BI scorecards to monitor healthcare operational performance across 25 facilities.',
+            company: 'BIOME',
+            position: 'Product Data Analyst',
+            description: 'Designed product analytics dashboards, engineered Python/Pandas fuzzy matching engine, automated GCS data ingestion, and performed cohort & churn analysis.',
             responsibilities: [
-                'Built Tableau dashboards supported by Power BI scorecards to compare operational performance across 25 healthcare facilities, helping regional leaders evaluate clinical support and facility-level service trends.',
-                'Combined healthcare operations, ServiceNow, and Excel reporting data through SQL and Power Query transformations, decreasing recurring reporting effort by 25% while creating standardized datasets for enterprise reporting.',
-                'Designed healthcare scorecards with DAX and Tableau calculated fields to monitor patient-support operations, service availability, incident aging, and departmental performance during leadership reviews.',
-                'Explored operational datasets using Python, Pandas, SQL, and Excel to identify recurring service patterns across facilities, contributing to a 40% decrease in average resolution time.',
-                'Produced Tableau visualizations with geographic mapping, parameters, filters, and dashboard actions that enabled regional managers to compare facility performance and identify location-specific service gaps.',
-                'Collaborated with clinical operations, infrastructure, and service-management teams to define reporting requirements and business rules, delivering analytics aligned with healthcare operational priorities.',
-                'Validated healthcare reporting datasets through SQL reconciliation and Power Query quality checks, increasing source-to-report accuracy to 98% before publication through Power BI Service.',
-                'Documented healthcare KPI definitions, reporting logic, dashboard specifications, and governance standards in Confluence and SharePoint, supporting consistent report delivery across BI teams.'
+                'Designed product analytics dashboards in Power BI with SQL, DAX, Power Query, and data modeling, giving 15+ stakeholders visibility into engagement, retention, churn, and feature-adoption behavior.',
+                'Created a Python and Pandas mapping engine with fuzzy matching, data cleaning, and business rules, reconciling inconsistent product identifiers and producing trusted records for operational analysis.',
+                'Built Python data extraction and ingestion workflows with Google Cloud Storage, data validation, and anomaly detection, decreasing data errors by 35% and preventing incomplete records from entering reporting datasets.',
+                'Automated data preparation, reconciliation, and exception reporting through Python, SQL, and Pandas, saving 10+ engineering hours each week and shortening delivery cycles for analysis-ready data.',
+                'Combined information from 4 operational sources through SQL transformations, data mapping, and metric standardization, establishing a unified reporting layer for product and supply chain teams.',
+                'Conducted cohort, funnel, retention, churn, segmentation, and feature-adoption analysis with SQL and Python, helping product managers identify behavioral patterns and refine customer-focused priorities.',
+                'Structured reusable SQL datasets and DAX measures for recurring product metrics, eliminating conflicting calculations and supporting consistent performance reviews across business functions.',
+                'Managed stakeholder requirements across product, engineering, and business teams, validated dashboard outputs, controlled Python and SQL changes through Git, and documented analytical assumptions to support practical roadmap decisions.'
             ],
-            skills: ['Tableau', 'Power BI', 'SQL', 'Power Query', 'DAX', 'Python', 'ServiceNow'],
-            startDate: '2024-01-01',
-            endDate: '2024-10-31',
+            skills: ['Power BI', 'SQL', 'DAX', 'Python', 'Pandas', 'Google Cloud Storage', 'Git', 'Cohort Analysis'],
+            startDate: '2025-07-01',
+            endDate: '2026-04-01',
             isOngoing: false,
-            location: 'USA, Remote',
+            location: 'Remote',
             type: 'full-time',
             logo: '/assets/dicodinglogo.png',
         },
         {
             id: 'prof-3',
-            company: 'Cognizant',
-            position: 'Operations Analyst',
-            description: 'Analyzed operational workload, SLA performance, and service metrics, and automated reporting with Python and Pandas.',
+            company: 'Florida Atlantic University',
+            position: 'Graduate Teaching Assistant – Artificial Intelligence',
+            description: 'Built student performance tracking system in Python/Excel for 150+ students, led 12+ hands-on analytics labs, and created 25+ SciPy/scikit-learn notebooks.',
             responsibilities: [
-                'Analyzed operational workload, ticket backlog, SLA performance, and service metrics in Excel and ServiceNow for environments supporting 2,000+ users, enabling managers to balance workloads and prioritize operational activities.',
-                'Generated Excel scorecards and operational reports from ServiceNow and SolarWinds using SQL and Power Query, lowering recurring report preparation time by 30% across weekly service reviews.',
-                'Retrieval of operational data through SQL joins, CTEs, aggregations, and subqueries to evaluate ticket aging, backlog movement, escalation trends, and service-level compliance for support managers.',
-                'Organized ticket categories, ownership groups, timestamps, and operational attributes through Power Query standardization, producing consistent datasets for incident and workload reporting.',
-                'Examined recurring operational issues through Excel trend analysis, SQL reporting, and variance analysis, helping service teams decrease repeat operational issues by 25%.',
-                'Automated recurring operational reporting with Python and Pandas to prepare categorized datasets and scheduled reports, saving 10 hours per week for the operations reporting team.',
-                'Worked alongside service desk managers, infrastructure teams, and business stakeholders to define operational KPIs and reporting requirements, delivering reports that supported workforce planning and daily operations.',
-                'Maintained report specifications, KPI documentation, operating procedures, and reporting standards in Confluence and SharePoint, creating consistent reporting practices across multiple support teams.'
+                'Built a Python and Advanced Excel performance-tracking system for 150+ students using Pandas, PivotTables, and XLOOKUP, giving faculty clear visibility into assignment progress and learning gaps.',
+                'Led 12+ hands-on labs covering Python, NumPy, statistical analysis, exploratory data analysis, and data visualization, helping students apply analytical methods to structured datasets.',
+                'Created 25+ reusable notebooks with Pandas, SciPy, and scikit-learn for data cleaning, hypothesis testing, regression, and classification, providing repeatable workflows for coursework and project analysis.',
+                'Evaluated student projects through SQL validation, data profiling, statistical analysis, and data storytelling, helping learners produce accurate findings and clearly supported recommendations.',
+                'Demonstrated Power BI, Tableau, and Advanced Excel techniques for dashboard development and visual reporting, preparing students to communicate analytical findings to non-technical audiences.',
+                'Automated grading consolidation and progress reporting through Python, Pandas, and Advanced Excel, decreasing administrative preparation time by 30% and creating more capacity for targeted student support.'
             ],
-            skills: ['Excel', 'ServiceNow', 'SQL', 'Power Query', 'Python', 'Pandas'],
-            startDate: '2021-01-01',
+            skills: ['Python', 'Pandas', 'NumPy', 'SciPy', 'scikit-learn', 'Advanced Excel', 'SQL', 'Power BI'],
+            startDate: '2024-12-01',
+            endDate: '2025-05-31',
+            isOngoing: false,
+            location: 'Boca Raton, FL',
+            type: 'part-time',
+            logo: '/assets/dicodinglogo.png',
+        },
+        {
+            id: 'prof-4',
+            company: 'Agile Solutions',
+            position: 'Data Analyst',
+            description: 'Integrated SQL/Python analytics into executive reporting, built Python/Pandas ETL app, automated GCP processing for 2TB+ data, and delivered ML models via REST APIs.',
+            responsibilities: [
+                'Integrated SQL and Python analytics into an executive reporting platform with KPI scorecards and visual reports, driving 60% higher leadership adoption and faster access to operational performance indicators.',
+                'Developed a Python and Pandas ETL application with data cleaning, deduplication, anomaly detection, and validation controls, lifting analytical accuracy and data compliance by 45%.',
+                'Automated cloud-based processing through Google Cloud Functions and Google Cloud Storage for 2TB+ of operational data, supplying structured datasets for recurring reporting and predictive analysis.',
+                'Consolidated records from 6 operational sources using SQL joins, common table expressions, data mapping, and transformation rules, creating a dependable foundation for departmental analysis.',
+                'Delivered regression and classification outputs through REST API integrations built with Python, SciPy, and scikit-learn, embedding validated analytical results into existing business applications.',
+                'Applied hypothesis testing, regression analysis, classification analysis, and anomaly detection to operational datasets, converting statistical patterns into clear findings for risk and process planning.',
+                'Organized SQL-based reporting datasets around standardized metrics and business rules, enabling management teams to compare operational results without relying on conflicting source calculations.',
+                'Collaborated with engineering, operations, and management teams on requirements gathering, data validation, metric standardization, and technical documentation, keeping analytics deliverables tied to defined business objectives.'
+            ],
+            skills: ['SQL', 'Python', 'Pandas', 'GCP', 'Google Cloud Functions', 'SciPy', 'scikit-learn', 'ETL', 'REST API'],
+            startDate: '2021-05-01',
             endDate: '2022-12-31',
             isOngoing: false,
-            location: 'India',
+            location: 'Bangalore, India',
             type: 'full-time',
             logo: '/assets/dicodinglogo.png',
         }
@@ -210,23 +231,23 @@ export const portfolioData: PortfolioData = {
     education: [
         {
             id: 'edu-1',
-            institution: 'Saint Louis University',
+            institution: 'Florida Atlantic University',
             degree: 'Master of Science',
-            major: 'Information Systems',
+            major: 'Computer Science',
             startDate: '2023-01-01',
-            endDate: '2024-12-31',
+            endDate: '2025-05-31',
             isOngoing: false,
-            activities: ['Information Systems and Data Analysis'],
-            achievements: ['Master of Science in Information Systems']
+            activities: ['Artificial Intelligence, Data Mining, Database Systems, & Advanced Analytics'],
+            achievements: ['Master of Science in Computer Science (2023 – 2025)']
         }
     ],
     achievements: [
         { id: 'cert-1', title: 'Microsoft Power BI Data Analyst Professional Certificate', issuer: 'Coursera', date: '', category: 'certification' },
         { id: 'cert-2', title: 'Google Data Analytics Professional Certificate', issuer: 'Coursera', date: '', category: 'certification' },
-        { id: 'cert-3', title: 'IBM Data Analyst Professional Certificate', issuer: 'Coursera', date: '', category: 'certification' },
-        { id: 'cert-4', title: 'Google Advanced Data Analytics Professional Certificate', issuer: 'Coursera', date: '', category: 'certification' },
-        { id: 'cert-5', title: 'Power BI Data Modeling with DAX', issuer: 'LinkedIn Learning', date: '', category: 'certification' },
-        { id: 'cert-6', title: 'Tableau for Data Analysts', issuer: 'LinkedIn Learning', date: '', category: 'certification' }
+        { id: 'cert-3', title: 'SQL (Advanced) Skills Certification', issuer: 'HackerRank', date: '', category: 'certification' },
+        { id: 'cert-4', title: 'Python for Data Science', issuer: 'IBM', date: '', category: 'certification' },
+        { id: 'cert-5', title: 'Data Analysis with Python', issuer: 'Cognitive Class AI', date: '', category: 'certification' },
+        { id: 'cert-6', title: 'Data Visualization with Python', issuer: 'Coursera', date: '', category: 'certification' }
     ],
     techStack: [
         { name: 'Power BI', icon: 'https://cdn.simpleicons.org/powerbi', category: 'tool' },
@@ -237,40 +258,40 @@ export const portfolioData: PortfolioData = {
         { name: 'Pandas', icon: 'https://cdn.simpleicons.org/pandas', category: 'framework' }
     ],
     hardSkills: [
-        { name: 'Data Analysis', level: 'expert', category: 'data', description: 'Exploratory Data Analysis, Trend Analysis, Variance Analysis, Root-Cause Analysis, Data Validation, Data Reconciliation' },
-        { name: 'Business Intelligence & Visualization', level: 'expert', category: 'data', description: 'Power BI, Tableau, Power BI Service, Interactive Dashboards, Executive Dashboards, KPI Scorecards, Drill-Through Reporting, Data Storytelling' },
-        { name: 'Power BI & Tableau Development', level: 'expert', category: 'data', description: 'Power Query, DAX, Data Modeling, Semantic Models, Measures, Calculated Fields, Parameters, Filters, Dashboard Actions' },
-        { name: 'SQL & Databases', level: 'advanced', category: 'data', description: 'SQL, Joins, Subqueries, CTEs, Aggregations, Data Extraction' },
-        { name: 'Python & Automation', level: 'advanced', category: 'data', description: 'Python, Pandas, Data Transformation, Report Automation, Scheduled Reporting' },
-        { name: 'Data Modeling & Quality', level: 'advanced', category: 'data', description: 'Dimensional Modeling, Star Schema, Data Dictionaries, Data Quality Checks, KPI Definitions, Data Quality Assurance' },
-        { name: 'Business & Operational Analytics', level: 'expert', category: 'other', description: 'Requirements Gathering, Reporting Requirements, SLA Reporting, Incident Analytics, Service Performance Reporting, Process Improvement' }
+        { name: 'Business Intelligence & Visualization', level: 'expert', category: 'data', description: 'Power BI, Power BI Service, DAX, Power Query, Data Modeling, Tableau, Dashboard Development, Scheduled Refresh, Drill-Through Reporting, Executive Reporting, KPI Scorecards, Data Visualization, Data Storytelling' },
+        { name: 'SQL & Data Platforms', level: 'expert', category: 'data', description: 'SQL, PostgreSQL, MySQL, Google BigQuery, Complex Joins, Common Table Expressions, Window Functions, Subqueries, Aggregations, Query Optimization' },
+        { name: 'Data Analysis & Programming', level: 'expert', category: 'data', description: 'Python, Pandas, NumPy, Advanced Excel, PivotTables, XLOOKUP, Exploratory Data Analysis, Automated Reporting' },
+        { name: 'Product & Business Analytics', level: 'expert', category: 'data', description: 'KPI Definition, Product Metrics, User Engagement, Retention Analysis, Churn Analysis, Cohort Analysis, Funnel Analysis, Customer Segmentation, Feature Adoption, Marketing Analytics, Financial Reporting, Variance Analysis, Trend Analysis, Operational Analytics' },
+        { name: 'Statistical & Predictive Analytics', level: 'advanced', category: 'data', description: 'Statistical Analysis, Hypothesis Testing, Regression Analysis, Classification Analysis, Predictive Modeling, SciPy, scikit-learn, Anomaly Detection' },
+        { name: 'Data Preparation & Quality', level: 'expert', category: 'data', description: 'ETL, Data Extraction, Data Cleaning, Data Transformation, Data Mapping, Data Profiling, Data Validation, Source-to-Report Reconciliation, Deduplication, Fuzzy Matching, Root-Cause Analysis, Business Rules, Data Integrity, Data Governance' },
+        { name: 'Cloud & Analytics Delivery', level: 'advanced', category: 'other', description: 'Google Cloud Storage, Google Cloud Functions, REST API Integration, Git, Requirements Gathering, Stakeholder Management, Metric Standardization, Technical Documentation' }
     ],
     softSkills: [
-        { name: 'Cross-Functional Collaboration', description: 'Working with product, operations, compliance, and engineering teams.' },
-        { name: 'Stakeholder Management', description: 'Presenting clear dashboards, scorecards, and reports to leadership.' },
-        { name: 'Analytical Thinking', description: 'Balancing business communication with hands-on reporting experience.' }
+        { name: 'Stakeholder & Cross-Functional Collaboration', description: 'Working effectively with product managers, engineers, operations teams, faculty, and business stakeholders.' },
+        { name: 'Metric Standardization & Data Governance', description: 'Clarifying reporting needs, defining consistent business rules, and formalizing data dictionaries.' },
+        { name: 'Root-Cause Analysis & Decision Support', description: 'Investigating operational variances, resolving data defects, and communicating findings clearly.' }
     ],
     tools: [
         { name: 'Power BI', icon: 'https://cdn.simpleicons.org/powerbi', category: 'productivity' },
         { name: 'Tableau', icon: 'https://cdn.simpleicons.org/tableau', category: 'productivity' },
-        { name: 'Excel', icon: 'https://cdn.simpleicons.org/microsoftexcel', category: 'productivity' },
+        { name: 'SQL', icon: 'https://cdn.simpleicons.org/postgresql', category: 'productivity' },
         { name: 'Python', icon: 'https://cdn.simpleicons.org/python', category: 'productivity' },
-        { name: 'ServiceNow', icon: 'https://cdn.simpleicons.org/servicenow', category: 'devops' },
-        { name: 'SharePoint', icon: 'https://cdn.simpleicons.org/microsoftsharepoint', category: 'productivity' },
-        { name: 'Confluence', icon: 'https://cdn.simpleicons.org/confluence', category: 'productivity' }
+        { name: 'BigQuery', icon: 'https://cdn.simpleicons.org/googlebigquery', category: 'productivity' },
+        { name: 'Excel', icon: 'https://cdn.simpleicons.org/microsoftexcel', category: 'productivity' },
+        { name: 'Git', icon: 'https://cdn.simpleicons.org/git', category: 'devops' }
     ],
     faqs: [
         {
-            question: 'What is your core expertise?',
-            answer: 'I specialize in Data Analysis, Business Intelligence, and Operational Reporting using Power BI, Tableau, SQL, and Python.',
+            question: 'What is your core analytics expertise?',
+            answer: 'I specialize in Data Analysis, Business Intelligence, Product & Operational Analytics, KPI Reporting, SQL query optimization, and dashboard development using Power BI and Tableau.',
         },
         {
-            question: 'What is your technology stack?',
-            answer: 'My primary tools include Power BI, Tableau, SQL, Python, Pandas, Excel, DAX, and Power Query.',
+            question: 'What technologies and platforms do you use?',
+            answer: 'My primary stack includes Power BI (DAX, Power Query), Tableau, SQL (PostgreSQL, MySQL, BigQuery), Python (Pandas, NumPy, SciPy, scikit-learn), Advanced Excel, and Google Cloud Platform (GCS, Cloud Functions).',
         },
         {
-            question: 'Where are you located?',
-            answer: 'I am based in Celina, TX (Open to Relocate) and available for Data Analyst roles.',
+            question: 'Where are you located and what roles are you looking for?',
+            answer: 'I am based in Delray Beach, FL (open to remote and on-site opportunities) seeking Data Analyst, Product Data Analyst, or BI Analyst roles.',
         }
     ],
     blogs: [],

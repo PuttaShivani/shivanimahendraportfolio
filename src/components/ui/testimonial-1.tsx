@@ -69,12 +69,13 @@ export default function Testimonial1() {
   ];
 
   return (
-    <div className="bg-white dark:bg-black min-h-screen w-full grid place-content-center py-16 px-4 md:px-8 lg:px-16 relative">
-      <div className="max-w-6xl mx-auto">
-        {/* Community Badge */}
-        <div className="flex justify-center mb-6">
-          <div className="bg-[#f1efec] dark:bg-zinc-900 border border-neutral-200 dark:border-zinc-800 text-black dark:text-white px-5 py-1.5 rounded-full text-xs uppercase tracking-wider font-semibold flex items-center gap-2.5 shadow-sm">
-            <span className="relative flex h-2.5 w-2.5">
+    <div className="bg-white dark:bg-black h-screen w-full flex items-center justify-center p-4 sm:p-6 md:p-8 relative overflow-hidden">
+      <div className="max-w-4xl mx-auto flex flex-col items-center justify-center gap-4 sm:gap-6 md:gap-8 w-full">
+        
+        {/* Top Badge */}
+        <div className="flex justify-center">
+          <div className="bg-[#f1efec] dark:bg-zinc-900 border border-neutral-200 dark:border-zinc-800 text-black dark:text-white px-4 py-1 rounded-full text-[10px] sm:text-xs uppercase tracking-wider font-semibold flex items-center gap-2 shadow-sm">
+            <span className="relative flex h-2 w-2">
               <motion.span
                 animate={{
                   scale: [1, 2, 1],
@@ -87,21 +88,21 @@ export default function Testimonial1() {
                 }}
                 className="absolute inline-flex h-full w-full rounded-full bg-green-400/60"
               />
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.8)]" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.8)]" />
             </span>
             Professional Statistics
           </div>
         </div>
 
-        {/* Main Heading with Refined Block Reveal Animation */}
-        <div className="text-center max-w-5xl mx-auto relative text-neutral-900 dark:text-white px-2 xs:px-4 space-y-1 md:space-y-2">
+        {/* Main Heading with Block Reveal Animation */}
+        <div className="text-center max-w-3xl mx-auto relative text-neutral-900 dark:text-white px-2 space-y-1 sm:space-y-1.5">
           {[
             { text: "Dashboards that inform. Models that predict.", color: "#6366f1", delay: 0 },
             { text: "Insights that drive strategic decisions.", color: "#10b981", delay: 0.15 },
             { text: "Optimized SQL queries, automated reporting,", color: "#f59e0b", delay: 0.3 },
             { text: "and decision-ready metrics for leadership.", color: "#ef4444", delay: 0.45 }
           ].map((line, i) => (
-            <div key={i} className="relative block overflow-hidden py-1.5">
+            <div key={i} className="relative block overflow-hidden py-0.5">
               <motion.h1
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -110,12 +111,12 @@ export default function Testimonial1() {
                   delay: line.delay + 0.35,
                   duration: 0.01
                 }}
-                className="text-xl xs:text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tighter"
+                className="text-sm sm:text-xl md:text-2xl lg:text-3xl font-black leading-snug tracking-tight"
               >
                 {line.text}
               </motion.h1>
 
-              {/* The Refined Revealer Block */}
+              {/* The Revealer Block */}
               <motion.div
                 initial={{ clipPath: i % 2 === 0 ? "inset(0 100% 0 0)" : "inset(0 0 0 100%)" }}
                 whileInView={{
@@ -137,8 +138,8 @@ export default function Testimonial1() {
           ))}
         </div>
 
-        {/* Glassmorphic Stats Bar */}
-        <div className="sm:flex grid grid-cols-2 gap-4 xs:gap-8 bg-white/40 dark:bg-zinc-900/40 backdrop-blur-xl mt-8 sm:mt-12 w-full mx-auto px-3 xs:px-6 sm:px-8 py-6 xs:py-10 border rounded-2xl border-white/20 dark:border-white/5 shadow-2xl relative overflow-hidden">
+        {/* Glassmorphic Stats Bar - Perfectly Centered & Fully Visible */}
+        <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-3 bg-white/40 dark:bg-zinc-900/40 backdrop-blur-xl px-4 py-3 sm:py-4 border rounded-2xl border-white/20 dark:border-white/5 shadow-2xl relative overflow-hidden">
           {/* Subtle Background Glow inside the bar */}
           <div className="absolute top-0 left-1/4 w-1/2 h-full bg-blue-500/5 blur-[100px] pointer-events-none" />
 
@@ -150,42 +151,41 @@ export default function Testimonial1() {
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              <div className="flex flex-col items-center justify-center relative h-full group">
+              <div className="flex flex-col items-center justify-center relative h-full group py-1">
                 {index !== 0 && (
-                  <div className="hidden sm:block w-0.5 h-12 border border-dashed border-neutral-200 dark:border-zinc-700 absolute -left-4" />
+                  <div className="hidden sm:block w-0.5 h-8 border border-dashed border-neutral-200 dark:border-zinc-700 absolute -left-2" />
                 )}
 
                 <div className="flex flex-col items-center text-center transition-all duration-300 group-hover:opacity-40">
-                  <span className="text-[10px] sm:text-xs font-medium text-neutral-500 dark:text-zinc-400 uppercase tracking-wider mb-2">
+                  <span className="text-[10px] sm:text-xs font-semibold text-neutral-500 dark:text-zinc-400 uppercase tracking-wider mb-0.5">
                     {stat.label}
                   </span>
-                  <div className="text-2xl sm:text-3xl font-black text-neutral-900 dark:text-white tracking-tighter flex items-baseline">
+                  <div className="text-base sm:text-xl md:text-2xl font-black text-neutral-900 dark:text-white tracking-tight flex items-baseline justify-center">
                     <Counter value={stat.value} decimals={stat.decimals} />
-                    <span className="text-lg sm:text-2xl ml-0.5">{stat.suffix}</span>
+                    <span className="text-xs sm:text-sm ml-0.5 font-bold">{stat.suffix}</span>
                   </div>
                 </div>
 
-                {/* Smoky / Foggy Hover Reveal - Perfected Opacity */}
+                {/* Hover Reveal */}
                 <AnimatePresence>
                   {hoveredIndex === index && (
                     <motion.div
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 0.8 }}
-                      className="absolute inset-[-20px] flex items-center justify-center z-20 pointer-events-none"
+                      className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none"
                     >
-                      {/* The 'Smoke' Layer - Solid Center Masking */}
                       <div
-                        className="absolute inset-0 bg-white dark:bg-zinc-950 backdrop-blur-[50px]"
+                        className="absolute inset-0 bg-white dark:bg-zinc-950 backdrop-blur-[50px] rounded-xl"
                         style={{
                           maskImage: 'radial-gradient(circle, black 45%, transparent 95%)',
                           WebkitMaskImage: 'radial-gradient(circle, black 45%, transparent 95%)',
                         }}
                       />
 
-                      <span className="relative text-xs font-bold text-neutral-900 dark:text-white flex items-center gap-1.5 drop-shadow-md z-30">
+                      <span className="relative text-[10px] sm:text-xs font-bold text-neutral-900 dark:text-white flex items-center gap-1 drop-shadow-md z-30">
                         {stat.cta}
-                        <ExternalLink className="w-3.5 h-3.5" />
+                        <ExternalLink className="w-3 h-3" />
                       </span>
                     </motion.div>
                   )}

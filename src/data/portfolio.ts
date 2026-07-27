@@ -158,7 +158,7 @@ export const portfolioData: PortfolioData = {
             isOngoing: true,
             location: 'Remote | Miami, FL',
             type: 'full-time',
-            logo: '/assets/dicodinglogo.png',
+            logo: '/logo2.png',
         },
         {
             id: 'prof-2',
@@ -181,7 +181,7 @@ export const portfolioData: PortfolioData = {
             isOngoing: false,
             location: 'Remote',
             type: 'full-time',
-            logo: '/assets/dicodinglogo.png',
+            logo: '/logo2.png',
         },
         {
             id: 'prof-3',
@@ -202,7 +202,7 @@ export const portfolioData: PortfolioData = {
             isOngoing: false,
             location: 'Boca Raton, FL',
             type: 'part-time',
-            logo: '/assets/dicodinglogo.png',
+            logo: '/logo2.png',
         },
         {
             id: 'prof-4',
@@ -225,7 +225,7 @@ export const portfolioData: PortfolioData = {
             isOngoing: false,
             location: 'Bangalore, India',
             type: 'full-time',
-            logo: '/assets/dicodinglogo.png',
+            logo: '/logo2.png',
         }
     ],
     education: [
@@ -238,24 +238,29 @@ export const portfolioData: PortfolioData = {
             endDate: '2025-05-31',
             isOngoing: false,
             activities: ['Artificial Intelligence, Data Mining, Database Systems, & Advanced Analytics'],
-            achievements: ['Master of Science in Computer Science (2023 – 2025)']
+            achievements: ['Master of Science in Computer Science (2023 – 2025) | Boca Raton, FL']
         }
     ],
     achievements: [
-        { id: 'cert-1', title: 'Microsoft Power BI Data Analyst Professional Certificate', issuer: 'Coursera', date: '', category: 'certification' },
-        { id: 'cert-2', title: 'Google Data Analytics Professional Certificate', issuer: 'Coursera', date: '', category: 'certification' },
-        { id: 'cert-3', title: 'SQL (Advanced) Skills Certification', issuer: 'HackerRank', date: '', category: 'certification' },
-        { id: 'cert-4', title: 'Python for Data Science', issuer: 'IBM', date: '', category: 'certification' },
-        { id: 'cert-5', title: 'Data Analysis with Python', issuer: 'Cognitive Class AI', date: '', category: 'certification' },
-        { id: 'cert-6', title: 'Data Visualization with Python', issuer: 'Coursera', date: '', category: 'certification' }
+        { id: 'cert-1', title: 'Microsoft Power BI Data Analyst Professional Certificate', issuer: 'Coursera', date: '2024', category: 'certification' },
+        { id: 'cert-2', title: 'Google Data Analytics Professional Certificate', issuer: 'Coursera', date: '2024', category: 'certification' },
+        { id: 'cert-3', title: 'SQL (Advanced) Skills Certification', issuer: 'HackerRank', date: '2024', category: 'certification' },
+        { id: 'cert-4', title: 'Python for Data Science', issuer: 'IBM', date: '2023', category: 'certification' },
+        { id: 'cert-5', title: 'Data Analysis with Python', issuer: 'Cognitive Class AI', date: '2023', category: 'certification' },
+        { id: 'cert-6', title: 'Data Visualization with Python', issuer: 'Coursera', date: '2023', category: 'certification' }
     ],
     techStack: [
         { name: 'Power BI', icon: 'https://cdn.simpleicons.org/powerbi', category: 'tool' },
         { name: 'Tableau', icon: 'https://cdn.simpleicons.org/tableau', category: 'tool' },
         { name: 'SQL', icon: 'https://cdn.simpleicons.org/postgresql', category: 'language' },
+        { name: 'PostgreSQL', icon: 'https://cdn.simpleicons.org/postgresql', category: 'database' },
+        { name: 'MySQL', icon: 'https://cdn.simpleicons.org/mysql', category: 'database' },
+        { name: 'BigQuery', icon: 'https://cdn.simpleicons.org/googlebigquery', category: 'database' },
         { name: 'Python', icon: 'https://cdn.simpleicons.org/python', category: 'language' },
+        { name: 'Pandas', icon: 'https://cdn.simpleicons.org/pandas', category: 'framework' },
+        { name: 'NumPy', icon: 'https://cdn.simpleicons.org/numpy', category: 'framework' },
         { name: 'Excel', icon: 'https://cdn.simpleicons.org/microsoftexcel', category: 'tool' },
-        { name: 'Pandas', icon: 'https://cdn.simpleicons.org/pandas', category: 'framework' }
+        { name: 'Git', icon: 'https://cdn.simpleicons.org/git', category: 'tool' }
     ],
     hardSkills: [
         { name: 'Business Intelligence & Visualization', level: 'expert', category: 'data', description: 'Power BI, Power BI Service, DAX, Power Query, Data Modeling, Tableau, Dashboard Development, Scheduled Refresh, Drill-Through Reporting, Executive Reporting, KPI Scorecards, Data Visualization, Data Storytelling' },
@@ -272,13 +277,16 @@ export const portfolioData: PortfolioData = {
         { name: 'Root-Cause Analysis & Decision Support', description: 'Investigating operational variances, resolving data defects, and communicating findings clearly.' }
     ],
     tools: [
-        { name: 'Power BI', icon: 'https://cdn.simpleicons.org/powerbi', category: 'productivity' },
-        { name: 'Tableau', icon: 'https://cdn.simpleicons.org/tableau', category: 'productivity' },
-        { name: 'SQL', icon: 'https://cdn.simpleicons.org/postgresql', category: 'productivity' },
-        { name: 'Python', icon: 'https://cdn.simpleicons.org/python', category: 'productivity' },
-        { name: 'BigQuery', icon: 'https://cdn.simpleicons.org/googlebigquery', category: 'productivity' },
-        { name: 'Excel', icon: 'https://cdn.simpleicons.org/microsoftexcel', category: 'productivity' },
-        { name: 'Git', icon: 'https://cdn.simpleicons.org/git', category: 'devops' }
+        { name: 'Power BI Service', icon: 'https://cdn.simpleicons.org/powerbi', category: 'productivity' },
+        { name: 'Tableau Desktop', icon: 'https://cdn.simpleicons.org/tableau', category: 'productivity' },
+        { name: 'DAX & Power Query', icon: 'https://cdn.simpleicons.org/powerbi', category: 'productivity' },
+        { name: 'PostgreSQL', icon: 'https://cdn.simpleicons.org/postgresql', category: 'productivity' },
+        { name: 'MySQL', icon: 'https://cdn.simpleicons.org/mysql', category: 'productivity' },
+        { name: 'Google Cloud', icon: 'https://cdn.simpleicons.org/googlecloud', category: 'productivity' },
+        { name: 'scikit-learn', icon: 'https://cdn.simpleicons.org/scikitlearn', category: 'productivity' },
+        { name: 'SciPy', icon: 'https://cdn.simpleicons.org/scipy', category: 'productivity' },
+        { name: 'Jupyter', icon: 'https://cdn.simpleicons.org/jupyter', category: 'productivity' },
+        { name: 'Advanced Excel', icon: 'https://cdn.simpleicons.org/microsoftexcel', category: 'productivity' }
     ],
     faqs: [
         {

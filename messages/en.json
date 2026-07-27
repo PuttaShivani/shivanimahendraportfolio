@@ -38,8 +38,8 @@
         }
     },
     "hero": {
-        "greeting": "Welcome to my digital space",
-        "subtitle": "Data Analyst | Business Intelligence | Power BI & Tableau",
+        "greeting": "Welcome to my digital portfolio",
+        "subtitle": "Data Analyst | Business Intelligence | Product & Operational Analytics",
         "cta": {
             "primary": "Explore Projects",
             "secondary": "Get in Touch",
@@ -48,17 +48,17 @@
         "badge": "Available for opportunities",
         "scroll": "Scroll Down",
         "role": "Data Analyst",
-        "description": "Building clear and actionable data solutions at the intersection of <span class='text-primary font-semibold'>Business Intelligence</span>, <span class='text-secondary font-semibold'>Data Modeling</span>, and <span class='text-accent font-semibold'>Operational Analytics</span>."
+        "description": "Data Analyst with 3+ years of combined analytics experience supporting product, operational, executive, academic, and data quality reporting across U.S. business and university environments."
     },
     "about": {
         "title": "About Me",
         "subtitle": "Data Analyst",
-        "description": "Data Analyst with 4+ years of experience supporting reporting, performance analysis, KPI tracking, and operational decision-making across financial services, healthcare, and technology environments.",
+        "description": "Data Analyst with 3+ years of combined analytics experience supporting product, operational, executive, academic, and data quality reporting across U.S. business and university environments.",
         "stats": {
             "experience": "Years Experience",
-            "projects": "Projects Done",
+            "projects": "Dashboards & Projects",
             "certifications": "Certifications",
-            "competitions": "Competitions"
+            "competitions": "Key Skills"
         },
         "identity": "Identity Link Established",
         "architecting": "Architecting",
@@ -69,32 +69,32 @@
             "intelligence": "Intelligence.",
             "production": "Data",
             "engineering": "Analytics.",
-            "thesis": "I build clear dashboards and <span class='text-primary italic font-serif-elegant font-normal'>interactive scorecards</span> that help leaders understand performance and act on emerging issues.",
-            "scope": "Focusing on Power BI, Tableau, SQL, DAX, Python, and dimensional modeling.",
-            "bridging": "Converting operational requirements into validated insights.",
-            "integration": "From relational database design to automated reporting, I develop reliable analytics solutions and ensure data quality.",
-            "signature": "Pavan Kumar",
+            "thesis": "I build clear production dashboards and <span class='text-primary italic font-serif-elegant font-normal'>interactive scorecards</span> that help leaders understand performance and act on emerging issues.",
+            "scope": "Focusing on Power BI, Tableau, SQL, DAX, Python, and dimensional data modeling.",
+            "bridging": "Converting complex operational requirements into validated, decision-ready insights.",
+            "integration": "From SQL data pipeline design to automated reporting, I build reliable analytics solutions and enforce data quality.",
+            "signature": "Tejeswara Sai Appikatla",
             "role": "Data Analyst",
             "aboutMe": "About Me",
             "scroll": "Scroll to Explore",
-            "shortStory": "My Short Story"
+            "shortStory": "My Professional Story"
         },
         "coreEngineering": {
             "label": "Technical Core",
             "title": "Proven <span class='text-primary italic font-serif font-light lowercase'>stack.</span> <br /> Measurable <span class='italic font-serif font-light text-foreground'>results.</span>",
-            "p1": "I specialize in SQL, Power Query, DAX, and Python for data transformation and preparation.",
+            "p1": "I specialize in SQL, Power Query, DAX, and Python for data transformation, modeling, and automated preparation.",
             "p2": "I build interactive executive dashboards and KPI scorecards using Power BI and Tableau.",
-            "p3": "Every reporting solution includes rigorous data validation, reconciliation, and automated quality checks.",
-            "gpa": "Academic GPA",
+            "p3": "Every reporting solution includes source-to-report reconciliation, data profiling, and root-cause analysis.",
+            "gpa": "Degree Completed",
             "projects": "Dashboards Built",
-            "years": "Years Exp."
+            "years": "Years Analytics Exp."
         },
         "emergingResearch": {
             "label": "Analytical Domains",
             "title": "Operational Intelligence <span class='italic font-serif font-light text-primary lowercase'>&</span> KPI ANALYTICS",
             "agentic": {
                 "title": "BUSINESS INTELLIGENCE",
-                "desc": "Applying Power BI, Tableau, SQL, and DAX for enterprise operational reporting and performance analysis."
+                "desc": "Applying Power BI, Tableau, SQL, and DAX for enterprise operational reporting and executive performance analysis."
             },
             "web3": {
                 "title": "DATA AUTOMATION",
@@ -103,25 +103,25 @@
         },
         "profile": {
             "title": "Building Reliable Analytics Solutions <br /> Where Data Meets Decisions.",
-            "narrativeLabel": "Core Narrative",
-            "narrative": "With 4+ years of experience across VISA, Baylor Scott & White Health, and Cognizant, I build and deploy interactive dashboards, automated reports, and operational analytics.",
-            "narrative2": "My work integrates Power BI, Tableau, SQL, and Python for reliable business insights.",
+            "narrativeLabel": "Core Summary",
+            "narrative": "Data Analyst with 3+ years of combined analytics experience supporting product, operational, executive, academic, and data quality reporting across U.S. business and university environments.",
+            "narrative2": "Experienced in building dashboards, automating recurring reports, validating complex datasets, and turning performance metrics into clear insights for business and leadership teams.",
             "pillars": {
                 "reliable": {
                     "title": "Data Validation",
-                    "desc": "Automated data-quality checks, reconciliation, and validation rules for accurate reporting."
+                    "desc": "Source-to-report reconciliation, data profiling, and root-cause analysis controls sustaining 98%+ reporting accuracy."
                 },
                 "optimized": {
                     "title": "Data Modeling",
-                    "desc": "Dimensional modeling, star schemas, and calculated fields improving data availability."
+                    "desc": "Star schemas, complex joins, CTEs, window functions, and DAX measures for high-performance dashboards."
                 },
                 "maintainable": {
                     "title": "Dashboard Design",
-                    "desc": "Interactive drill-through reports, executive summaries, and geographic mapping."
+                    "desc": "Production Power BI & Tableau dashboards with drill-through views, KPI scorecards, and executive reporting."
                 },
                 "evolvable": {
                     "title": "Automation",
-                    "desc": "Python scripts, Pandas workflows, and automated scheduling for recurring data loads."
+                    "desc": "Python ETL scripts, Pandas workflows, BigQuery, and scheduled refreshes cutting preparation time."
                 }
             }
         },
@@ -134,56 +134,63 @@
             },
             "projects": {
                 "label": "PORTFOLIO",
-                "title1": "FLAGSHIP",
+                "title1": "FEATURED",
                 "title2": "PROJECTS",
                 "viewMore": "All Projects"
             },
             "experiencesList": [
                 {
-                    "company": "VISA",
+                    "company": "Talviro Inc.",
                     "role": "DATA ANALYST",
-                    "desc": "Developed Power BI dashboards, streamlined SQL workflows, and analyzed 500K+ operational records."
+                    "desc": "Built 12+ production dashboards in Power BI & Tableau, automated recurring reports cutting prep time by 27%, and tuned PostgreSQL/MySQL queries."
                 },
                 {
-                    "company": "Baylor Scott & White Health",
-                    "role": "REPORTING & BI ANALYST",
-                    "desc": "Built Tableau dashboards and Power BI scorecards to monitor healthcare operational performance across 25 facilities."
+                    "company": "BIOME",
+                    "role": "PRODUCT DATA ANALYST",
+                    "desc": "Designed product analytics dashboards in Power BI, created Python/Pandas mapping engine with fuzzy matching, and conducted retention/churn analysis."
+                },
+                {
+                    "company": "Florida Atlantic University",
+                    "role": "GRADUATE TEACHING ASSISTANT",
+                    "desc": "Built student performance tracking system for 150+ students, led 12+ analytics labs, and created 25+ Python/SciPy/scikit-learn notebooks."
                 }
             ],
             "projectsList": [
                 {
-                    "title": "Enterprise Operations Intelligence",
-                    "desc": "Modeled incident, capacity, and SLA data using a star schema for enterprise reporting."
+                    "title": "Marketing Campaign and Customer Conversion Analytics",
+                    "desc": "Consolidated spend and revenue in BigQuery, performed funnel/retention analysis, and built Power BI KPI scorecards."
                 },
                 {
-                    "title": "Healthcare Service Analytics",
-                    "desc": "Designed Tableau dashboards with geographic mapping and filters to reveal facility-level service gaps."
+                    "title": "Financial Variance and Performance Reporting Dashboard",
+                    "desc": "Structured budget and actual records with SQL and Excel, developed DAX models, and presented trends in Power BI/Tableau."
                 },
                 {
-                    "title": "Product and Customer Usage Solution",
-                    "desc": "Structured usage data with SQL dimensional modeling to analyze adoption, retention, and engagement."
+                    "title": "Operations Capacity and SLA Performance Analytics",
+                    "desc": "Consolidated service requests and staffing levels with SQL, built capacity dashboards, and enforced SLA tracking."
                 }
             ],
             "discoverMore": "Discover More"
         },
         "education": {
             "title": "Education",
-            "subtitle": "Academic Journey",
-            "degree": "Master of Science in Information Systems",
-            "institution": "Saint Louis University",
-            "period": "2023 - 2024",
+            "subtitle": "Academic Background",
+            "degree": "Master of Science in Computer Science",
+            "institution": "Florida Atlantic University",
+            "period": "2023 - 2025",
             "gpa": "",
-            "highlights": "Academic Highlights",
+            "highlights": "Academic Focus & Highlights",
             "activities": [
-                "Information Systems",
-                "Data Analysis & Business Intelligence"
+                "Artificial Intelligence & Machine Learning",
+                "Data Mining & Exploratory Data Analysis",
+                "Database Systems & Advanced SQL",
+                "Data Visualization & Reporting Systems"
             ],
-            "focus": "Focus: Data Analysis, BI, SQL, and Python"
+            "focus": "Master of Science in Computer Science | Boca Raton, FL"
         }
     },
     "projects": {
         "title": "Projects",
-        "subtitle": "A showcase of my Data Analytics and Business Intelligence work",
+        "subtitle": "A showcase of my Data Analytics, Business Intelligence, and Reporting work",
         "search": "Search projects...",
         "viewAll": "View All Projects",
         "viewProject": "View Project",
@@ -199,13 +206,13 @@
             "completed": "Completed"
         },
         "sections": {
-            "missionBrief": "Mission Brief",
+            "missionBrief": "Overview",
             "keyFeatures": "Key Features",
-            "engineeringChronicles": "Analytics Chronicles",
-            "visualGallery": "Visual Gallery",
-            "installation": "Installation Instructions",
-            "projectAccess": "Project Access",
-            "technologies": "Technologies",
+            "engineeringChronicles": "Analytics Case Study",
+            "visualGallery": "Dashboard Previews",
+            "installation": "Instructions",
+            "projectAccess": "Project Details",
+            "technologies": "Technologies Used",
             "contents": "Table of Contents",
             "moreProjects": "More Projects",
             "backToProjects": "Back to Projects",
@@ -216,7 +223,7 @@
             "sourceCode": "Source Code"
         },
         "status": {
-            "ongoing": "Active Development",
+            "ongoing": "Active Project",
             "completed": "Completed Project"
         },
         "metadata": {
@@ -225,21 +232,21 @@
             "team": "Team",
             "techStack": "Tech Stack",
             "roleValue": "Data Analyst",
-            "teamValue": "Individual",
+            "teamValue": "Analytics Team",
             "techStackValue": "{count} Technologies"
         }
     },
     "experience": {
         "title": "Experience",
-        "subtitle": "My professional journey and growth",
-        "showDetail": "Show Detail",
-        "hideDetail": "Hide Detail",
-        "tasks": "TASKS",
-        "learned": "WHAT I LEARNED",
-        "impact": "IMPACT",
+        "subtitle": "My professional journey in Data Analytics & BI",
+        "showDetail": "Show Details",
+        "hideDetail": "Hide Details",
+        "tasks": "RESPONSIBILITIES",
+        "learned": "KEY ACHIEVEMENTS",
+        "impact": "BUSINESS IMPACT",
         "present": "Present",
-        "responsibilities": "Responsibilities",
-        "skills": "Skills Used",
+        "responsibilities": "Responsibilities & Achievements",
+        "skills": "Skills & Tech",
         "month": "month",
         "months": "months",
         "year": "year",
@@ -269,25 +276,25 @@
         "dragHint": "Drag or scroll to explore"
     },
     "skills": {
-        "title": "Skills & Tools",
-        "subtitle": "Technologies and tools I work with",
+        "title": "Skills & Technologies",
+        "subtitle": "Technologies, platforms, and analytical frameworks I specialize in",
         "hard": "Hard Skills",
         "soft": "Soft Skills",
         "technical": "Technical Proficiency",
         "tools": "Tools & Software",
         "pillars": "Core Pillars",
-        "achievements": "Verified Achievements",
+        "achievements": "Certifications & Credentials",
         "level": {
-            "beginner": "Beginner",
-            "intermediate": "Intermediate",
+            "beginner": "Proficient",
+            "intermediate": "Advanced",
             "advanced": "Advanced",
             "expert": "Expert"
         }
     },
     "achievements": {
-        "title": "Achievements",
-        "subtitle": "Certifications and milestones",
-        "search": "Search achievements...",
+        "title": "Certifications",
+        "subtitle": "Professional certifications and verified credentials",
+        "search": "Search certifications...",
         "viewCredential": "View Credential",
         "category": {
             "all": "All",
@@ -301,20 +308,20 @@
             "oldest": "Oldest"
         },
         "stats": {
-            "total": "Total Credentials",
-            "awards": "Awards Won",
+            "total": "Total Certifications",
+            "awards": "Verified Badges",
             "certifications": "Certifications"
         }
     },
     "contact": {
         "title": "Get in Touch",
-        "subtitle": "Let's build something amazing together",
+        "subtitle": "Open for Data Analyst and Business Intelligence opportunities",
         "form": {
             "name": "Your Name",
             "email": "Your Email",
             "subject": "Subject",
             "message": "Your Message",
-            "messagePlaceholder": "Tell me about your project...",
+            "messagePlaceholder": "Tell me about the role or project...",
             "send": "Send Message",
             "submit": "SEND MESSAGE",
             "sending": "SENDING...",
@@ -323,7 +330,7 @@
             "error": "Something went wrong. Please try again."
         },
         "social": {
-            "title": "Connect on Social Media"
+            "title": "Contact Information"
         },
         "faq": {
             "title": "Frequently Asked Questions"
@@ -332,36 +339,36 @@
             "email": "Email",
             "phone": "Phone",
             "location": "Location",
-            "availability": "Open for opportunities"
+            "availability": "Open for Data Analyst Opportunities"
         },
         "hero": {
-            "title": "LET'S TALK",
-            "subtitle": "Have an idea? Let's build something extraordinary together.",
+            "title": "LET'S CONNECT",
+            "subtitle": "Looking for a Data Analyst to build production dashboards and drive operational insights?",
             "ticker": {
-                "build": "Let's Build Something Amazing · ",
-                "freelance": "Available for Opportunities · "
+                "build": "Available for Data Analyst Roles · ",
+                "freelance": "Delray Beach, FL · +1 (561) 599-4577 · "
             }
         },
         "faqData": [
             {
-                "q": "What is your main area of expertise?",
-                "a": "I specialize in Data Analysis, Business Intelligence, and Operational Reporting using Power BI, Tableau, SQL, DAX, and Python."
+                "q": "What is your core analytics expertise?",
+                "a": "I specialize in Data Analysis, Business Intelligence, Product & Operational Analytics, KPI Reporting, SQL query optimization, and dashboard development using Power BI and Tableau."
             },
             {
                 "q": "What visualization tools do you work with?",
-                "a": "I work extensively with Power BI and Tableau to create interactive executive dashboards, KPI scorecards, and drill-through reports."
+                "a": "I work extensively with Power BI (DAX, Power Query, Power BI Service) and Tableau to create interactive executive dashboards, KPI scorecards, and drill-through reports."
             },
             {
                 "q": "How do you automate reporting workflows?",
-                "a": "I use Python, Pandas, Power Query, and SQL to automate recurring data transformations, schedule reporting, and build reliable data pipelines."
+                "a": "I use Python, Pandas, SQL, Google BigQuery, and Cloud Functions to automate recurring data preparation, schedule refreshes, and streamline data pipelines."
             },
             {
-                "q": "How do you ensure data accuracy?",
-                "a": "I implement rigorous data quality checks, SQL reconciliation, and variance analysis to validate datasets before they are published to production dashboards."
+                "q": "How do you ensure data accuracy in reporting?",
+                "a": "I implement source-to-report reconciliation, data profiling, deduplication, fuzzy matching, and root-cause analysis controls that sustain 98%+ reporting accuracy."
             },
             {
-                "q": "How can we start a partnership or project?",
-                "a": "The most efficient way is to use the contact form above or reach out directly via email at sai.naga@applywizard.ai. I respond within 24 hours to discuss opportunities."
+                "q": "How can I get in touch with you?",
+                "a": "You can send a message using the form above or email me directly at atejeswarasaia@gmail.com or call +1 (561) 599-4577."
             }
         ]
     },
@@ -370,62 +377,62 @@
         "madeWith": "Made with",
         "more": "More",
         "marquee": [
-            "Open to Opportunities",
+            "Tejeswara Sai Appikatla",
             "Data Analyst",
             "Business Intelligence",
-            "Power BI",
-            "Tableau",
-            "Data Visualization"
+            "Power BI & Tableau",
+            "SQL & Python",
+            "Product & Operational Analytics"
         ],
         "cta": {
             "title": "Let's Work",
             "titleHighlight": "Together",
-            "subtitle": "Have an opportunity in mind? Let's discuss how my Data Analytics and Business Intelligence expertise can support your enterprise initiatives."
+            "subtitle": "Seeking Data Analyst or BI Analyst roles? Let's discuss how my analytical skills and reporting expertise can support your team."
         },
-        "links": "LINKS",
-        "socials": "SOCIALS",
+        "links": "NAVIGATION",
+        "socials": "CONTACT",
         "localTime": "LOCAL TIME",
         "version": "VERSION",
-        "versionEdition": "2026 © Edition"
+        "versionEdition": "2026 Edition"
     },
     "ctaSection": {
-        "title": "Let's Build Something",
-        "together": "Together",
-        "subtitle": "Open to Data Analyst and Business Intelligence opportunities. Let us build powerful dashboards and actionable reporting solutions.",
-        "start": "Hire Me",
-        "work": "View My Resume",
+        "title": "Let's Build Impactful",
+        "together": "Data Solutions",
+        "subtitle": "Available for Data Analyst, Product Data Analyst, and Business Intelligence roles.",
+        "start": "Contact Me",
+        "work": "View Resume",
         "words": {
-            "amazing": "Amazing",
-            "innovative": "Innovative",
-            "intelligent": "Intelligent",
-            "creative": "Creative"
+            "amazing": "Insightful",
+            "innovative": "Automated",
+            "intelligent": "Accurate",
+            "creative": "Actionable"
         },
-        "ribbon1": "Power BI | Tableau | SQL | Python | Excel | Power Query | DAX |",
-        "ribbon2": "Data Analyst | Business Intelligence | Reporting Analyst |"
+        "ribbon1": "Power BI | Tableau | SQL | Python | DAX | Power Query | BigQuery |",
+        "ribbon2": "Data Analyst | Product Data Analyst | Business Intelligence Analyst |"
     },
     "stats": {
         "systemStatus": "System Status: Data Models Active",
-        "portfolio": "BI Metrics",
+        "portfolio": "Analytics Metrics",
         "totalPulse": "Dashboards Built",
-        "peakActivity": "Data Volume",
-        "dailyAverage": "Reports Generated",
-        "currentSprint": "Current Sprint",
+        "peakActivity": "Data Volume Processed",
+        "dailyAverage": "Automated Reports",
+        "currentSprint": "Current Focus",
         "engageFlow": "Data Flow",
         "weeklyEffort": "Pipeline Output",
-        "processSpeed": "Query Speed",
-        "avgPerf": "Data Accuracy",
-        "latency": "LATENCY: 14MS",
-        "system": "SYSTEM: STABLE",
-        "scanning": "SCANNING_LIVE_RESOURCES",
+        "processSpeed": "Accuracy Rate",
+        "avgPerf": "Data Quality",
+        "latency": "LATENCY: FAST",
+        "system": "SYSTEM: ONLINE",
+        "scanning": "SCANNING_RESOURCES",
         "engineering": "DATA ANALYTICS",
         "metrics": "METRICS",
-        "analyticsSub": "SQL / BI / TABLEAU DATA",
+        "analyticsSub": "POWER BI / TABLEAU / SQL / PYTHON",
         "statusOnline": "STATUS: ONLINE",
-        "loadStable": "SYSTEM_LOAD: STABLE"
+        "loadStable": "SYSTEM_LOAD: OPTIMAL"
     },
     "projectHeader": {
-        "title": "Building Actionable Data Solutions",
-        "subtitle": "A curated showcase of Business Intelligence projects, Power BI & Tableau dashboards, and automated reporting workflows."
+        "title": "Data Analytics & BI Portfolio",
+        "subtitle": "Production Power BI & Tableau dashboards, SQL optimization, and automated Python reporting workflows."
     },
     "common": {
         "loading": "Loading...",
@@ -441,8 +448,8 @@
     },
     "technical": {
         "github": {
-            "title": "GitHub Contributions",
-            "description": "My GitHub activity over the last year.",
+            "title": "GitHub Activity",
+            "description": "Analytics projects and repository updates.",
             "total": "Total",
             "thisWeek": "This Week",
             "best": "Best",
@@ -451,8 +458,8 @@
             "more": "More"
         },
         "wakatime": {
-            "title": "WakaTime Stats",
-            "description": "Coding activity over the last 7 days.",
+            "title": "Analytics Activity",
+            "description": "SQL, Python, and BI development activity.",
             "lastUpdate": "Last Updated",
             "startDate": "Start Date",
             "endDate": "End Date",
@@ -460,13 +467,13 @@
             "totalWeek": "Total This Week",
             "bestDay": "Best Day",
             "totalSince": "Total Since Joined",
-            "topLanguages": "Top Languages"
+            "topLanguages": "Top Skills"
         }
     },
     "blog": {
-        "title": "Insights & Tutorials",
-        "subtitle": "A collection of insights on Data Analysis, Power BI, SQL optimization, and Business Intelligence.",
-        "sectionBadge": "The Analytics Blog",
+        "title": "Analytics Insights",
+        "subtitle": "Articles and tutorials on Power BI, SQL optimization, Python data preparation, and Business Intelligence.",
+        "sectionBadge": "Analytics Blog",
         "search": "Search articles...",
         "readTime": "min read",
         "readMore": "Read Post",
@@ -475,30 +482,30 @@
         "categories": {
             "applied-ai": "Business Intelligence",
             "software-development": "SQL & Data Modeling",
-            "about-me": "About Me",
+            "about-me": "Data Analytics",
             "more": "More"
         }
     },
     "gallery": {
         "title": "Visual Archive",
-        "subtitle": "A curated collection of Dashboard designs, SQL schemas, and reporting architectures.",
+        "subtitle": "Dashboards, SQL data models, and analytical architecture.",
         "filter": {
             "all": "All Media",
-            "image": "Photos",
-            "video": "Videos"
+            "image": "Dashboards",
+            "video": "Demos"
         },
         "viewMedia": "View Media"
     },
     "chatbot": {
         "title": "AI Assistant",
-        "subtitle": "Ask me about Pavan",
-        "placeholder": "Type a message...",
-        "greeting": "Hi! I'm an AI assistant for **{name}**. 👋\n\nI can answer questions about:\n- Skills & BI expertise\n- Power BI & Tableau projects\n- Work experience\n- Education\n- And more!\n\nAnything you'd like to ask?",
+        "subtitle": "Ask about Tejeswara Sai Appikatla",
+        "placeholder": "Type your question...",
+        "greeting": "Hi! I am the AI assistant for **Tejeswara Sai Appikatla**. 👋\n\nI can answer questions about:\n- Data Analytics & BI Experience\n- Power BI & Tableau Dashboards\n- SQL, Python, & Data Modeling Skills\n- Education & Certifications\n- Contact Details\n\nWhat would you like to know?",
         "suggestions": [
-            "What are your main skills?",
-            "Tell me about your BI projects",
+            "What are your core technical skills?",
+            "Tell me about your Power BI & Tableau dashboards",
             "What is your work experience?",
-            "What BI technologies do you use?"
+            "How can I contact Tejeswara Sai?"
         ],
         "error": "An error occurred. Please try again.",
         "invalidResponse": "Invalid response from server.",

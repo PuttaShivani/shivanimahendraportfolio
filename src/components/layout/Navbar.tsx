@@ -294,55 +294,34 @@ export function Navbar() {
                             />
 
                             <div className="relative flex flex-col items-center justify-center h-full overflow-y-auto py-20">
-                                <nav className="flex flex-col items-center gap-6">
-                                    {/* Mobile Home */}
-                                    <Link
-                                        href="/"
-                                        onClick={handleHomeClick}
-                                        className="text-3xl font-black text-muted-foreground hover:text-foreground transition-colors"
-                                    >
-                                        {t('home')}
-                                    </Link>
-
-                                    <Link
-                                        href="/#contact-section"
-                                        onClick={(e) => {
-                                            closeMenu();
-                                            if (pathname === '/') {
-                                                e.preventDefault();
-                                                const contactSection = document.getElementById('contact-section');
-                                                if (contactSection) {
-                                                    contactSection.scrollIntoView({ behavior: 'smooth' });
-                                                }
-                                            }
-                                        }}
-                                        className="text-3xl font-black text-muted-foreground hover:text-foreground transition-colors"
-                                    >
-                                        {t('contact')}
-                                    </Link>
-
-                                    {/* Mobile Section Links */}
+                                <nav className="flex flex-col items-center gap-5">
                                     {[
+                                        { label: t('home'), href: '/' },
                                         { label: t('about'), href: '/#about' },
                                         { label: tMenu('skills'), href: '/#skills-section' },
                                         { label: tMenu('projects'), href: '/#projects-section' },
                                         { label: tMenu('certifications'), href: '/#certifications-section' },
+                                        { label: t('contact'), href: '/#contact-section' },
                                     ].map((link) => (
                                         <Link
                                             key={link.href}
                                             href={link.href}
                                             onClick={(e) => {
-                                                closeMenu();
-                                                if (pathname === '/' && link.href.startsWith('/#')) {
-                                                    const hash = link.href.split('#')[1];
-                                                    const targetEl = document.getElementById(hash);
-                                                    if (targetEl) {
-                                                        e.preventDefault();
-                                                        targetEl.scrollIntoView({ behavior: 'smooth' });
+                                                if (link.href === '/') {
+                                                    handleHomeClick(e);
+                                                } else {
+                                                    closeMenu();
+                                                    if (pathname === '/' && link.href.startsWith('/#')) {
+                                                        const hash = link.href.split('#')[1];
+                                                        const targetEl = document.getElementById(hash);
+                                                        if (targetEl) {
+                                                            e.preventDefault();
+                                                            targetEl.scrollIntoView({ behavior: 'smooth' });
+                                                        }
                                                     }
                                                 }
                                             }}
-                                            className="text-2xl font-bold text-muted-foreground/60 hover:text-foreground transition-all hover:scale-110 active:scale-95 duration-200"
+                                            className="text-xl sm:text-2xl font-semibold text-muted-foreground hover:text-foreground transition-all hover:scale-105 active:scale-95 duration-200"
                                         >
                                             {link.label}
                                         </Link>

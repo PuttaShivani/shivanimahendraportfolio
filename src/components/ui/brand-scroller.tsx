@@ -10,15 +10,15 @@ const techStackItems = portfolioData.techStack;
 const toolItems = portfolioData.tools;
 
 const ScrollerItem = ({ name, icon }: { name: string; icon: string }) => (
-    <div className="flex items-center gap-3.5 px-8 sm:px-10 py-3 transition-all duration-300 group">
-        <div className="relative w-8 h-8 sm:w-9 sm:h-9 flex-shrink-0 transition-all duration-500">
+    <div className="flex items-center gap-4 px-6 sm:px-8 py-3.5 mx-2 my-1 rounded-2xl bg-[#0c0614]/80 border-2 border-purple-500/50 hover:border-purple-400 hover:scale-105 transition-all duration-300 backdrop-blur-xl shadow-lg shadow-purple-950/40 group cursor-pointer">
+        <div className="relative w-7 h-7 sm:w-8 sm:h-8 flex-shrink-0 transition-transform duration-300 group-hover:scale-110">
             <IconColorizer
                 name={name}
                 iconUrl={getOnlineSkillIcon(name, icon)}
                 className="object-contain"
             />
         </div>
-        <p className="text-lg sm:text-xl font-bold text-zinc-600 dark:text-zinc-400 group-hover:text-black dark:group-hover:text-white transition-colors duration-500 whitespace-nowrap">
+        <p className="text-sm sm:text-base font-mono font-bold text-purple-200 group-hover:text-purple-300 transition-colors duration-300 whitespace-nowrap">
             {name}
         </p>
     </div>

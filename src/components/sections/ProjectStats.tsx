@@ -7,22 +7,23 @@ import { Counter } from '@/components/ui/Counter';
 
 // Calculate metrics from portfolio data
 const calculateMetrics = () => {
-    const totalProjects = portfolioData.projects?.length || 0;
-    const completedProjects = portfolioData.projects?.filter(p => p.status === 'completed').length || 0;
-    const totalTechStack = portfolioData.techStack?.length || 0;
-    const totalTools = portfolioData.tools?.length || 0;
+    const totalProjects = portfolioData.projects?.length || 3;
+    const completedProjects = portfolioData.projects?.filter(p => p.status === 'completed').length || 3;
+    const totalTechStack = portfolioData.techStack?.length || 10;
+    const totalTools = portfolioData.tools?.length || 5;
+    const totalCerts = portfolioData.achievements?.filter(a => a.category === 'certification').length || 6;
 
-    // Calculate years of experience (based on resume)
-    const yearsExp = 3;
+    // Shivani's years of experience (1+ Year SDE Experience)
+    const yearsExp = 1;
 
     return {
         projects: totalProjects,
         completed: completedProjects,
         techCount: totalTechStack + totalTools,
         yearsExp,
-        // Creative metrics
-        impactScore: '25+', // GitHub stars, downloads, or impact metric
-        satisfaction: '98%'   // Client/user satisfaction rate
+        certsCount: totalCerts,
+        impactScore: `${totalCerts}+`,
+        satisfaction: '100%'
     };
 };
 
@@ -45,7 +46,7 @@ const StatCard = ({ value, label, icon, delay, gradient, isLowPowerMode }: StatC
             className="group relative"
         >
             <motion.div
-                className="relative h-full p-6 sm:p-8 flex flex-col items-center justify-center text-center"
+                className="relative h-full p-6 sm:p-8 flex flex-col items-center justify-center text-center rounded-2xl bg-[#0e061b]/90 border-2 border-purple-500/60 backdrop-blur-xl shadow-[0_0_25px_rgba(168,85,247,0.25)] hover:shadow-[0_0_40px_rgba(168,85,247,0.5)] hover:border-purple-400 transition-all duration-300"
                 whileHover={isLowPowerMode ? {} : { scale: 1.05, y: -8 }}
                 transition={{ duration: 0.3 }}
             >
@@ -53,7 +54,7 @@ const StatCard = ({ value, label, icon, delay, gradient, isLowPowerMode }: StatC
                 <div className="relative z-10">
                     {/* Value */}
                     <motion.div
-                        className="text-4xl sm:text-5xl md:text-6xl font-black bg-gradient-to-br from-foreground via-primary to-foreground bg-clip-text text-transparent mb-2"
+                        className="text-4xl sm:text-5xl md:text-6xl font-black bg-gradient-to-br from-white via-purple-300 to-purple-400 bg-clip-text text-transparent mb-2"
                         animate={isLowPowerMode ? {} : {
                             backgroundPosition: ["0%", "100%", "0%"]
                         }}
@@ -75,7 +76,7 @@ const StatCard = ({ value, label, icon, delay, gradient, isLowPowerMode }: StatC
                     </motion.div>
 
                     {/* Label */}
-                    <p className="text-sm sm:text-base font-medium text-muted-foreground uppercase tracking-wider">
+                    <p className="text-sm sm:text-base font-medium text-purple-200/80 uppercase tracking-wider">
                         {label}
                     </p>
                 </div>
@@ -85,7 +86,7 @@ const StatCard = ({ value, label, icon, delay, gradient, isLowPowerMode }: StatC
                     <motion.div
                         className="absolute inset-0 -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl"
                         style={{
-                            background: `radial-gradient(circle at center, ${gradient.split(',')[0]}20, transparent 70%)`
+                            background: `radial-gradient(circle at center, rgba(168,85,247,0.25), transparent 70%)`
                         }}
                     />
                 )}
@@ -101,26 +102,26 @@ export function ProjectStats({ isLowPowerMode }: { isLowPowerMode?: boolean }) {
         {
             value: `${metrics.projects}+`,
             label: 'Projects Built',
-            icon: <Code2 className="w-6 h-6 text-primary" />,
-            gradient: 'rgba(59, 130, 246, 0.3), rgba(139, 92, 246, 0.3), rgba(59, 130, 246, 0.3)'
+            icon: <Code2 className="w-6 h-6 text-purple-400" />,
+            gradient: 'rgba(168, 85, 247, 0.3), rgba(139, 92, 246, 0.3)'
         },
         {
             value: `${metrics.yearsExp}+`,
-            label: 'Years Experience',
-            icon: <TrendingUp className="w-6 h-6 text-emerald-500" />,
-            gradient: 'rgba(16, 185, 129, 0.3), rgba(6, 182, 212, 0.3), rgba(16, 185, 129, 0.3)'
+            label: 'Year SDE Experience',
+            icon: <TrendingUp className="w-6 h-6 text-purple-400" />,
+            gradient: 'rgba(168, 85, 247, 0.3), rgba(139, 92, 246, 0.3)'
         },
         {
             value: `${metrics.techCount}+`,
-            label: 'Tech Stack',
-            icon: <Code2 className="w-6 h-6 text-violet-500" />,
-            gradient: 'rgba(139, 92, 246, 0.3), rgba(236, 72, 153, 0.3), rgba(139, 92, 246, 0.3)'
+            label: 'Tech Stack & Tools',
+            icon: <Code2 className="w-6 h-6 text-purple-400" />,
+            gradient: 'rgba(168, 85, 247, 0.3), rgba(139, 92, 246, 0.3)'
         },
         {
-            value: metrics.impactScore,
-            label: 'Integrations',
-            icon: <Award className="w-6 h-6 text-amber-500" />,
-            gradient: 'rgba(245, 158, 11, 0.3), rgba(251, 146, 60, 0.3), rgba(245, 158, 11, 0.3)'
+            value: `${metrics.certsCount}+`,
+            label: 'Certifications',
+            icon: <Award className="w-6 h-6 text-purple-400" />,
+            gradient: 'rgba(168, 85, 247, 0.3), rgba(139, 92, 246, 0.3)'
         }
     ];
 
@@ -157,7 +158,7 @@ export function ProjectStats({ isLowPowerMode }: { isLowPowerMode?: boolean }) {
                 </motion.div>
 
                 {/* Stats Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
                     {stats.map((stat, index) => (
                         <StatCard
                             key={stat.label}

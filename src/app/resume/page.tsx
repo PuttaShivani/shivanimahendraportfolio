@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowLeft, Mail, MapPin, Phone } from 'lucide-react';
+import { ArrowLeft, Mail, MapPin, Phone, Download } from 'lucide-react';
 import Link from 'next/link';
 import { portfolioData } from '@/data/portfolio';
 import { usePerformance } from '@/hooks/usePerformance';
@@ -20,12 +20,20 @@ export default function ResumePage() {
             <motion.div
                 initial={isLowPowerMode ? { opacity: 0 } : { opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="container-creative px-3 sm:px-6 mb-8"
+                className="container-creative px-3 sm:px-6 mb-8 flex items-center justify-between gap-4"
             >
                 <Link href="/" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors group text-sm">
                     <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
                     <span>Back to Portfolio</span>
                 </Link>
+                <a
+                    href={personal.resumeUrl || '/ShivaniNew_resume.docx'}
+                    download="ShivaniNew_resume.docx"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-purple-600 hover:bg-purple-700 text-white font-semibold text-xs sm:text-sm shadow-lg shadow-purple-950/40 transition-all hover:scale-105 active:scale-95"
+                >
+                    <Download className="w-4 h-4" />
+                    <span>Download DOCX</span>
+                </a>
             </motion.div>
 
             <motion.article

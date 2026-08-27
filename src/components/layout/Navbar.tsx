@@ -10,6 +10,8 @@ import { useTheme } from 'next-themes';
 import { cn } from '@/lib/utils';
 
 import { AnimatedThemeToggler } from '@/components/ui/animated-theme-toggler';
+import { portfolioData } from '@/data/portfolio';
+import { FaLinkedinIn, FaGithub } from 'react-icons/fa';
 
 function Clock() {
     const [time, setTime] = useState<string>('');
@@ -41,6 +43,7 @@ function Clock() {
 
 
 export function Navbar() {
+    const { socialLinks } = portfolioData.personal;
     const t = useTranslations('navigation');
     const tMenu = useTranslations('navigation.menu');
     const { theme, setTheme, resolvedTheme } = useTheme();
@@ -134,15 +137,16 @@ export function Navbar() {
                 <div className="max-w-[1600px] mx-auto px-2 xs:px-6 md:px-12 py-2 sm:py-4 md:py-6">
                     <motion.div
                         className={cn(
-                            'flex items-center justify-between transition-all duration-500 rounded-full',
-                            isScrolled ? 'glass-strong px-3 xs:px-6 py-2 xs:py-3' : 'py-2'
+                            'flex items-center justify-between transition-all duration-500 rounded-full border backdrop-blur-2xl shadow-2xl',
+                            isScrolled 
+                                ? 'glass-strong px-4 xs:px-6 py-2.5 bg-[#0c0614]/90 border-purple-500/40 shadow-purple-950/60' 
+                                : 'glass px-4 xs:px-6 py-3 bg-[#0c0614]/70 border-purple-500/25'
                         )}
                         layout
                     >
-                        {/* Make a text logo as a Link to Home */}
                         <Link href="/" className="relative group shrink-0" onClick={handleHomeClick}>
                             <span className="font-mono text-sm xs:text-lg md:text-2xl font-black text-gradient tracking-wider xs:tracking-widest transition-all duration-300 whitespace-nowrap">
-                                TEJESWARA SAI
+                                {portfolioData.personal.name.replace(/putta\s*/i, '').toUpperCase()}
                             </span>
                         </Link>
 
@@ -172,6 +176,20 @@ export function Navbar() {
                                 className="relative px-5 py-2 text-sm font-bold transition-all duration-300 rounded-full text-muted-foreground hover:text-foreground"
                             >
                                 <span className="relative z-10">{t('about')}</span>
+                            </Link>
+
+                            {/* EXPERIENCE */}
+                            <Link
+                                href="/#experience-section"
+                                onClick={(e) => {
+                                    if (pathname === '/') {
+                                        e.preventDefault();
+                                        document.getElementById('experience-section')?.scrollIntoView({ behavior: 'smooth' });
+                                    }
+                                }}
+                                className="relative px-5 py-2 text-sm font-bold transition-all duration-300 rounded-full text-muted-foreground hover:text-foreground"
+                            >
+                                <span className="relative z-10">{tMenu('experience')}</span>
                             </Link>
 
                             {/* SKILLS */}
@@ -239,7 +257,31 @@ export function Navbar() {
 
                         {/* Controls */}
                         <div className="flex items-center gap-2 md:gap-3">
-                            {/* View Resume â€” desktop only */}
+                            {/* Desktop Social Links */}
+                            {socialLinks.find(s => s.platform === 'LinkedIn') && (
+                                <a
+                                    href={socialLinks.find(s => s.platform === 'LinkedIn')?.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="hidden sm:flex items-center justify-center w-9 h-9 rounded-full bg-white/5 hover:bg-white/15 border border-white/10 hover:border-teal-400/40 text-teal-300 hover:text-white transition-all duration-300 shadow-sm"
+                                    aria-label="LinkedIn Profile"
+                                >
+                                    <FaLinkedinIn className="w-4 h-4" />
+                                </a>
+                            )}
+                            {socialLinks.find(s => s.platform === 'GitHub') && (
+                                <a
+                                    href={socialLinks.find(s => s.platform === 'GitHub')?.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="hidden sm:flex items-center justify-center w-9 h-9 rounded-full bg-white/5 hover:bg-white/15 border border-white/10 hover:border-cyan-400/40 text-cyan-300 hover:text-white transition-all duration-300 shadow-sm"
+                                    aria-label="GitHub Profile"
+                                >
+                                    <FaGithub className="w-4 h-4" />
+                                </a>
+                            )}
+
+                            {/* View Resume — desktop only */}
                             <a
                                 href="/resume"
                                 className="hidden lg:flex items-center gap-2 px-4 py-2 text-sm font-bold rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 shadow-sm"
@@ -298,6 +340,7 @@ export function Navbar() {
                                     {[
                                         { label: t('home'), href: '/' },
                                         { label: t('about'), href: '/#about' },
+                                        { label: tMenu('experience'), href: '/#experience-section' },
                                         { label: tMenu('skills'), href: '/#skills-section' },
                                         { label: tMenu('projects'), href: '/#projects-section' },
                                         { label: tMenu('certifications'), href: '/#certifications-section' },
@@ -333,9 +376,9 @@ export function Navbar() {
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: 20 }}
                                     transition={{ delay: 0.5 }}
-                                    className="flex flex-col items-center gap-4 mt-12"
+                                    className="flex flex-col items-center gap-4 mt-8"
                                 >
-                                    {/* View Resume â€” mobile */}
+                                    {/* View Resume — mobile */}
                                     <a
                                         href="/resume"
                                         onClick={closeMenu}
@@ -344,8 +387,30 @@ export function Navbar() {
                                         <Download className="w-4 h-4" />
                                         View Resume
                                     </a>
-                                    <div className="flex items-center gap-4">
 
+                                    <div className="flex items-center gap-4 mt-2">
+                                        {socialLinks.find(s => s.platform === 'LinkedIn') && (
+                                            <a
+                                                href={socialLinks.find(s => s.platform === 'LinkedIn')?.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="p-3 rounded-full bg-white/5 hover:bg-white/15 border border-white/10 text-teal-400"
+                                                aria-label="LinkedIn"
+                                            >
+                                                <FaLinkedinIn className="w-5 h-5" />
+                                            </a>
+                                        )}
+                                        {socialLinks.find(s => s.platform === 'GitHub') && (
+                                            <a
+                                                href={socialLinks.find(s => s.platform === 'GitHub')?.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="p-3 rounded-full bg-white/5 hover:bg-white/15 border border-white/10 text-cyan-400"
+                                                aria-label="GitHub"
+                                            >
+                                                <FaGithub className="w-5 h-5" />
+                                            </a>
+                                        )}
                                     </div>
                                 </motion.div>
                             </div>

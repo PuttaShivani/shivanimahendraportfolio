@@ -39,7 +39,7 @@
     },
     "hero": {
         "greeting": "Welcome to my digital portfolio",
-        "subtitle": "Data Analyst | Business Intelligence | Product & Operational Analytics",
+        "subtitle": "Full Stack Web Developer | React.js & Node.js | ",
         "cta": {
             "primary": "Explore Projects",
             "secondary": "Get in Touch",
@@ -47,47 +47,47 @@
         },
         "badge": "Available for opportunities",
         "scroll": "Scroll Down",
-        "role": "Data Analyst",
-        "description": "Data Analyst with 3+ years of combined analytics experience supporting product, operational, executive, academic, and data quality reporting across U.S. business and university environments."
+        "role": "Full Stack Developer",
+        "description": "Motivated B.Tech (ECE) graduate with hands-on experience in building responsive web applications using React and Node.js. Skilled in developing scalable front-end architectures and RESTful APIs."
     },
     "about": {
         "title": "About Me",
-        "subtitle": "Data Analyst",
-        "description": "Data Analyst with 3+ years of combined analytics experience supporting product, operational, executive, academic, and data quality reporting across U.S. business and university environments.",
+        "subtitle": "Full Stack Developer",
+        "description": "Motivated B.Tech (ECE) graduate with hands-on experience in building responsive web applications using React and Node.js. Skilled in developing scalable front-end architectures and RESTful APIs.",
         "stats": {
-            "experience": "Years Experience",
-            "projects": "Dashboards & Projects",
+            "experience": "B.Tech ECE",
+            "projects": "Full Stack Apps",
             "certifications": "Certifications",
             "competitions": "Key Skills"
         },
         "identity": "Identity Link Established",
         "architecting": "Architecting",
-        "digitalReality": "Data Solutions",
+        "digitalReality": "Web Solutions",
         "leadIn": {
             "label": "WHAT I DO",
-            "applied": "Business",
-            "intelligence": "Intelligence.",
-            "production": "Data",
-            "engineering": "Analytics.",
-            "thesis": "I build clear production dashboards and <span class='text-primary italic font-serif-elegant font-normal'>interactive scorecards</span> that help leaders understand performance and act on emerging issues.",
-            "scope": "Focusing on Power BI, Tableau, SQL, DAX, Python, and dimensional data modeling.",
-            "bridging": "Converting complex operational requirements into validated, decision-ready insights.",
-            "integration": "From SQL data pipeline design to automated reporting, I build reliable analytics solutions and enforce data quality.",
-            "signature": "Tejeswara Sai Appikatla",
-            "role": "Data Analyst",
+            "applied": "Full Stack",
+            "intelligence": "Engineering.",
+            "production": "React & Node",
+            "engineering": "Web Apps.",
+            "thesis": "I build responsive web applications and <span class='text-primary italic font-serif-elegant font-normal'>scalable RESTful APIs</span> using React.js, Express.js, and MongoDB.",
+            "scope": "Focusing on React.js, Node.js, Express.js, MongoDB, JavaScript (ES6+), and modern UI components.",
+            "bridging": "Building clean, maintainable front-end architectures coupled with reliable back-end services.",
+            "integration": "From modular UI component design to database operations, I deliver user-friendly, high-performance web applications.",
+            "signature": "Putta Shivani",
+            "role": "Full Stack Developer",
             "aboutMe": "About Me",
             "scroll": "Scroll to Explore",
             "shortStory": "My Professional Story"
         },
         "coreEngineering": {
             "label": "Technical Core",
-            "title": "Proven <span class='text-primary italic font-serif font-light lowercase'>stack.</span> <br /> Measurable <span class='italic font-serif font-light text-foreground'>results.</span>",
-            "p1": "I specialize in SQL, Power Query, DAX, and Python for data transformation, modeling, and automated preparation.",
-            "p2": "I build interactive executive dashboards and KPI scorecards using Power BI and Tableau.",
-            "p3": "Every reporting solution includes source-to-report reconciliation, data profiling, and root-cause analysis.",
-            "gpa": "Degree Completed",
-            "projects": "Dashboards Built",
-            "years": "Years Analytics Exp."
+            "title": "Modern <span class='text-primary italic font-serif font-light lowercase'>stack.</span> <br /> Clean <span class='italic font-serif font-light text-foreground'>code.</span>",
+            "p1": "I specialize in React.js, JavaScript, HTML5, and CSS3 for creating responsive, intuitive user interfaces.",
+            "p2": "I build robust backend REST APIs using Node.js, Express.js, and MongoDB for database management.",
+            "p3": "Every project is crafted with reusable components, clean architecture, and modern developer tools like Git and Postman.",
+            "gpa": "CGPA 8.0",
+            "projects": "Featured Projects",
+            "years": "B.Tech ECE 2025"
         },
         "emergingResearch": {
             "label": "Analytical Domains",
@@ -498,14 +498,14 @@
     },
     "chatbot": {
         "title": "AI Assistant",
-        "subtitle": "Ask about Tejeswara Sai Appikatla",
+        "subtitle": "Ask about Putta Shivani",
         "placeholder": "Type your question...",
-        "greeting": "Hi! I am the AI assistant for **Tejeswara Sai Appikatla**. 👋\n\nI can answer questions about:\n- Data Analytics & BI Experience\n- Power BI & Tableau Dashboards\n- SQL, Python, & Data Modeling Skills\n- Education & Certifications\n- Contact Details\n\nWhat would you like to know?",
+        "greeting": "Hi! I am the AI assistant for **Putta Shivani**. 👋\n\nI can answer questions about:\n- Full Stack Web Development (React & Node.js)\n- Projects (Vendor Vortex, Recruitr Dashboard)\n- ECE & Microstrip Antenna Design\n- Education & Certifications (NPTEL Silver Elite)\n- Contact Details\n\nWhat would you like to know?",
         "suggestions": [
             "What are your core technical skills?",
-            "Tell me about your Power BI & Tableau dashboards",
-            "What is your work experience?",
-            "How can I contact Tejeswara Sai?"
+            "Tell me about your full stack projects",
+            "What is your educational background?",
+            "How can I contact Putta Shivani?"
         ],
         "error": "An error occurred. Please try again.",
         "invalidResponse": "Invalid response from server.",

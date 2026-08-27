@@ -5,14 +5,14 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { WarpBackground } from "@/components/ui/warp-background";
-import { motion, useScroll, useTransform, useSpring, useMotionValueEvent, AnimatePresence } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring, useMotionValueEvent, useMotionTemplate, useMotionValue, AnimatePresence } from "framer-motion";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import InfiniteMenu from "@/components/InfiniteMenu";
 import { portfolioData } from "@/data/portfolio";
 import { BeamDivider } from "@/components/ui/BeamDivider";
 import ScrollReveal from "@/components/ScrollReveal";
-import { MessageSquare, ArrowRight, ArrowUpRight } from "lucide-react";
+import { MessageSquare, ArrowRight, ArrowUpRight, GraduationCap, BookOpen, Sparkles } from "lucide-react";
 import { useIsMobile } from "@/hooks/useIsMobile";
 import { useCountUp } from "@/hooks/useCountUp";
 import { SocialCorner } from "@/components/layout/SocialCorner";
@@ -43,7 +43,7 @@ const formatExperiencePeriod = (startDate: string, endDate?: string, isOngoing?:
     return `${format(startDate)} - ${isOngoing ? 'Present' : endDate ? format(endDate) : 'Present'}`;
 };
 
-const showcaseImages = ['/beyond_finance_logo.png', '/commerce_trust_logo.png', '/wipro_logo.png'];
+const showcaseImages = ['/woman_sde_3d_render.png'];
 
 const showcaseMembers = portfolioData.experiences.map((exp, index) => ({
     id: exp.id,
@@ -52,7 +52,7 @@ const showcaseMembers = portfolioData.experiences.map((exp, index) => ({
     description: exp.description,
     period: formatExperiencePeriod(exp.startDate, exp.endDate, exp.isOngoing),
     points: exp.responsibilities,
-    image: showcaseImages[index % showcaseImages.length],
+    image: exp.logo || showcaseImages[0],
     social: exp.externalLink ? { website: exp.externalLink } : undefined
 }));
 
@@ -107,11 +107,12 @@ const AboutLeadInImageStack = () => {
                             src={item.src}
                             alt="Gallery Piece"
                             fill
-                            className="object-cover"
-                            sizes="(max-width: 768px) 100px, 120px"
+                            className="object-cover contrast-[1.05] brightness-[1.03] saturate-[1.05]"
+                            sizes="(max-width: 768px) 150px, 200px"
+                            quality={100}
                             priority={i === 1}
+                            unoptimized
                         />
-                        <div className="absolute inset-0 bg-black/5 pointer-events-none" />
                     </div>
                 </div>
             ))}
@@ -141,61 +142,85 @@ const AboutLeadIn = () => {
     const t = useTranslations('about');
 
     return (
-        <div className="w-full max-w-[1650px] mx-auto px-2 xs:px-4 sm:px-6 py-4 sm:py-6 flex justify-center items-center">
-            {/* The Reference Card Container (Gambar 1 Style with Dark/Light Support) */}
-            <div className="relative w-full bg-white dark:bg-black border border-teal-400/20 dark:border-teal-400/40 p-4 xs:p-6 md:p-12 lg:p-16 overflow-hidden group shadow-xl dark:shadow-2xl transition-colors duration-500">
+        <div className="w-full max-w-[1650px] mx-auto px-2 xs:px-4 sm:px-6 py-2 sm:py-6 flex justify-center items-center">
+            {/* The Reference Card Container */}
+            <div className="relative w-full rounded-2xl sm:rounded-3xl bg-[#0e061b]/95 dark:bg-[#0c0614]/95 border border-purple-500/35 dark:border-purple-400/40 p-4 sm:p-10 md:p-14 overflow-hidden group shadow-2xl backdrop-blur-3xl transition-all duration-500">
 
-                {/* 1. Grid Background Overlay (Dynamic Colors) */}
-                <div className="absolute inset-0 z-0 bg-[radial-gradient(circle,_#00000008_1px,_transparent_1px)] dark:bg-[radial-gradient(circle,_#ffffff08_1px,_transparent_1px)] bg-[size:20px_20px] pointer-events-none transition-opacity" />
+                {/* 1. Grid Background Overlay */}
+                <div className="absolute inset-0 z-0 bg-[radial-gradient(circle,_#8b5cf615_1px,_transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
 
-                {/* 2. Red Corner Tabs */}
-                <div className="absolute top-0 left-0 w-2.5 h-2.5 bg-teal-400 -translate-x-1 translate-y-[-50%] z-10" />
-                <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-teal-400 translate-x-1 translate-y-[-50%] z-10" />
-                <div className="absolute bottom-0 left-0 w-2.5 h-2.5 bg-teal-400 -translate-x-1 translate-y-[50%] z-10" />
-                <div className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-teal-400 translate-x-1 translate-y-[50%] z-10" />
+                {/* 2. Neon Corner Tabs */}
+                <div className="absolute top-0 left-0 w-3 h-3 bg-purple-400 -translate-x-1 translate-y-[-50%] z-10" />
+                <div className="absolute top-0 right-0 w-3 h-3 bg-purple-400 translate-x-1 translate-y-[-50%] z-10" />
+                <div className="absolute bottom-0 left-0 w-3 h-3 bg-purple-400 -translate-x-1 translate-y-[50%] z-10" />
+                <div className="absolute bottom-0 right-0 w-3 h-3 bg-purple-400 translate-x-1 translate-y-[50%] z-10" />
 
                 {/* 3. Content Layer */}
                 <div className="relative z-10">
-                    <div className="grid grid-cols-1 gap-8 lg:gap-12 items-stretch">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
-                        {/* Tagline + text content */}
-                        <div className="flex flex-col justify-between gap-8">
+                        {/* Left Column: Tagline + text content */}
+                        <div className="lg:col-span-7 flex flex-col justify-between gap-8">
                             {/* Top Tagline */}
                             <div className="flex justify-between items-center relative">
-                                <span className="text-teal-400 dark:text-teal-300 text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] select-none">I BELIEVE</span>
+                                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-purple-500/15 text-purple-300 border border-purple-500/30">
+                                    <span className="w-2 h-2 rounded-full bg-purple-400 animate-pulse" />
+                                    ENGINEERING PHILOSOPHY
+                                </span>
                                 <div className="flex items-center gap-4">
-                                    <span className="text-zinc-400 dark:text-zinc-600 text-[9px] font-mono tracking-widest uppercase hidden md:block select-none">{t('leadIn.role')}</span>
+                                    <span className="text-purple-300/60 text-xs font-mono tracking-widest uppercase hidden md:block select-none">{t('leadIn.role')}</span>
                                 </div>
                             </div>
 
                             {/* Detail Grid */}
-                            <div className="flex flex-col gap-8 border-t border-zinc-100 dark:border-zinc-900 pt-8 flex-1 justify-between">
+                            <div className="flex flex-col gap-8 border-t border-purple-500/20 pt-8 flex-1 justify-between">
                                 {/* Thesis narrative */}
                                 <p
-                                    className="text-base md:text-lg lg:text-xl font-medium text-zinc-600 dark:text-zinc-400 leading-relaxed tracking-tight"
+                                    className="text-base md:text-lg lg:text-xl font-medium text-purple-100 leading-relaxed tracking-tight"
                                     dangerouslySetInnerHTML={{ __html: t.raw('leadIn.thesis') }}
                                 />
 
                                 {/* Scope & Integration columns */}
-                                <div className="flex flex-col sm:flex-row gap-8 text-[13px]">
+                                <div className="flex flex-col sm:flex-row gap-8 text-sm">
                                     <div className="flex-1 space-y-3">
-                                        <span className="text-zinc-800 dark:text-zinc-200 font-bold uppercase tracking-widest block border-b border-zinc-100 dark:border-zinc-900 pb-3">Scope &amp; Platform</span>
-                                        <p className="text-zinc-500 leading-relaxed">
+                                        <span className="text-purple-300 font-bold uppercase tracking-widest block border-b border-purple-500/20 pb-3 font-mono text-xs">Scope &amp; Platform</span>
+                                        <p className="text-purple-200/90 leading-relaxed">
                                             {t('leadIn.scope')}
                                         </p>
-                                        <p className="text-teal-400/80 dark:text-teal-300/70 font-medium italic">
+                                        <p className="text-violet-300 font-medium italic">
                                             {t('leadIn.bridging')}
                                         </p>
                                     </div>
                                     <div className="flex-1 space-y-3 flex flex-col">
-                                        <span className="text-zinc-800 dark:text-zinc-200 font-bold uppercase tracking-widest block border-b border-zinc-100 dark:border-zinc-900 pb-3">Integration</span>
-                                        <p className="text-zinc-500 leading-relaxed">
+                                        <span className="text-purple-300 font-bold uppercase tracking-widest block border-b border-purple-500/20 pb-3 font-mono text-xs">Integration</span>
+                                        <p className="text-purple-200/90 leading-relaxed">
                                             {t('leadIn.integration')}
                                         </p>
                                         <div className="mt-6 md:mt-auto pt-4">
-                                            <span className="text-3xl lg:text-4xl font-signature text-zinc-900 dark:text-white/90">{t('leadIn.signature')}</span>
+                                            <span className="text-3xl lg:text-4xl font-signature text-white">{t('leadIn.signature')}</span>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Right Column: Photo in the same row on the right side */}
+                        <div className="lg:col-span-5 flex items-center justify-center h-full">
+                            <div className="relative w-full max-w-md aspect-[3/4] sm:aspect-[4/5] rounded-3xl overflow-hidden border-2 border-purple-400/40 dark:border-purple-400/50 shadow-2xl group/photo transition-all duration-500 hover:border-purple-400/70">
+                                <Image
+                                    src="/shivaniimage.png"
+                                    alt="Profile Photo"
+                                    fill
+                                    className="object-cover object-top group-hover/photo:scale-105 transition-transform duration-700 contrast-[1.06] brightness-[1.04] saturate-[1.06] sharpen"
+                                    sizes="(max-width: 768px) 100vw, 600px"
+                                    quality={100}
+                                    priority
+                                    unoptimized
+                                />
+                                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between z-10 pointer-events-none">
+                                    <span className="text-xs font-mono font-semibold text-purple-300 dark:text-purple-200 bg-[#0c0614]/80 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-purple-400/40 shadow-lg">
+                                        Profile Photo
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -380,45 +405,196 @@ const ScrollHijackSection = () => {
     const exitOpacity = useTransform(exitProgress, [0, 1], [1, 0]); // Changed to 1 to ensure full fade out
     const exitBorderRadius = useTransform(exitProgress, [0, 1], ["0px", "40px"]);
 
+    const fallbackProgress = useMotionValue(0.85);
+
     return (
-        <div ref={sectionRef} className="relative h-[600vh]">
-            <div className="sticky top-0 h-screen w-full overflow-hidden z-10">
-                <motion.div
-                    style={{ scale: exitScale, opacity: exitOpacity, borderRadius: exitBorderRadius }}
-                    className="w-full h-full relative origin-center"
-                >
-                    {/* Decorative curved edges with hard unmount for guaranteed removal */}
-                    <AnimatePresence>
-                        {showBorder && (
-                            <motion.div
-                                initial={{ opacity: 1 }}
-                                exit={{ opacity: 0, transition: { duration: 0.3 } }}
-                                style={{
-                                    opacity: borderOpacity,
-                                    maskImage: 'linear-gradient(to bottom, black 0%, transparent 100%)',
-                                    WebkitMaskImage: 'linear-gradient(to bottom, black 0%, transparent 100%)'
-                                }}
-                                className="absolute top-0 left-0 right-0 h-48 border-t-2 border-x-2 border-neutral-200 dark:border-zinc-800 rounded-t-[50px] md:rounded-t-[80px] pointer-events-none z-[100]"
-                            />
-                        )}
-                    </AnimatePresence>
+        <>
+            {/* Desktop Scroll-Hijack View */}
+            <div ref={sectionRef} className="hidden lg:block relative h-[600vh]">
+                <div className="sticky top-0 h-screen w-full overflow-hidden z-10">
                     <motion.div
-                        className="flex h-full"
-                        style={{
-                            width: "200vw",
-                            x: xShift
-                        }}
+                        style={{ scale: exitScale, opacity: exitOpacity, borderRadius: exitBorderRadius }}
+                        className="w-full h-full relative origin-center"
                     >
-                        <div className="h-full w-screen flex-shrink-0">
-                            <CoreEngineeringPanel scrollYProgress={smoothProgress} />
-                        </div>
-                        <div className="h-full w-screen flex-shrink-0">
-                            <IdentitySequence isVisible={isComp2Visible} scrollYProgress={smoothProgress} />
-                        </div>
+                        {/* Decorative curved edges with hard unmount for guaranteed removal */}
+                        <AnimatePresence>
+                            {showBorder && (
+                                <motion.div
+                                    initial={{ opacity: 1 }}
+                                    exit={{ opacity: 0, transition: { duration: 0.3 } }}
+                                    style={{
+                                        opacity: borderOpacity,
+                                        maskImage: 'linear-gradient(to bottom, black 0%, transparent 100%)',
+                                        WebkitMaskImage: 'linear-gradient(to bottom, black 0%, transparent 100%)'
+                                    }}
+                                    className="absolute top-0 left-0 right-0 h-48 border-t-2 border-x-2 border-neutral-200 dark:border-zinc-800 rounded-t-[50px] md:rounded-t-[80px] pointer-events-none z-[100]"
+                                />
+                            )}
+                        </AnimatePresence>
+                        <motion.div
+                            className="flex h-full"
+                            style={{
+                                width: "200vw",
+                                x: xShift
+                            }}
+                        >
+                            <div className="h-full w-screen flex-shrink-0">
+                                <CoreEngineeringPanel scrollYProgress={smoothProgress} />
+                            </div>
+                            <div className="h-full w-screen flex-shrink-0">
+                                <IdentitySequence isVisible={isComp2Visible} scrollYProgress={smoothProgress} />
+                            </div>
+                        </motion.div>
                     </motion.div>
-                </motion.div>
+                </div>
             </div>
-        </div>
+
+            {/* Mobile & Tablet Clean Vertical Flow View */}
+            <div className="block lg:hidden w-full flex flex-col gap-4 sm:gap-6 py-4 bg-background dark:bg-black relative z-20">
+                <div className="w-full">
+                    <Testimonial1 />
+                </div>
+                <div className="w-full">
+                    <IdentitySequence isVisible={true} scrollYProgress={fallbackProgress} />
+                </div>
+            </div>
+        </>
+    );
+};
+
+const Education3DCard = ({ edu }: { edu: any }) => {
+    const cardRef = useRef<HTMLDivElement>(null);
+    const [isHovered, setIsHovered] = useState(false);
+    const mouseX = useMotionValue(0);
+    const mouseY = useMotionValue(0);
+    const pixelX = useMotionValue(0);
+    const pixelY = useMotionValue(0);
+
+    const rafRef = useRef<number | null>(null);
+
+    const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [12, -12]), { stiffness: 250, damping: 25 });
+    const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-12, 12]), { stiffness: 250, damping: 25 });
+    const shineX = useSpring(pixelX, { stiffness: 300, damping: 30 });
+    const shineY = useSpring(pixelY, { stiffness: 300, damping: 30 });
+
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        if (!cardRef.current) return;
+        if (rafRef.current) cancelAnimationFrame(rafRef.current);
+
+        const rect = cardRef.current.getBoundingClientRect();
+
+        rafRef.current = requestAnimationFrame(() => {
+            const x = (e.clientX - rect.left) / rect.width - 0.5;
+            const y = (e.clientY - rect.top) / rect.height - 0.5;
+            mouseX.set(x);
+            mouseY.set(y);
+            pixelX.set(e.clientX - rect.left);
+            pixelY.set(e.clientY - rect.top);
+        });
+    };
+
+    const handleMouseLeave = () => {
+        if (rafRef.current) cancelAnimationFrame(rafRef.current);
+        mouseX.set(0);
+        mouseY.set(0);
+        setIsHovered(false);
+    };
+
+    const spotlightGradient = useMotionTemplate`radial-gradient(600px circle at ${shineX}px ${shineY}px, rgba(168, 85, 247, 0.25), transparent 70%)`;
+
+    return (
+        <motion.div
+            ref={cardRef}
+            onMouseMove={handleMouseMove}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={handleMouseLeave}
+            style={{
+                rotateX,
+                rotateY,
+                transformStyle: 'preserve-3d',
+            }}
+            whileHover={{ scale: 1.025 }}
+            transition={{ duration: 0.3 }}
+            className="relative w-full max-w-5xl rounded-3xl bg-[#0e061b]/95 dark:bg-[#0c0614]/95 border-2 border-purple-500/40 p-6 sm:p-10 md:p-14 overflow-hidden group shadow-[0_0_40px_rgba(168,85,247,0.15)] hover:shadow-[0_0_65px_rgba(168,85,247,0.35)] backdrop-blur-3xl transition-all duration-500 cursor-pointer"
+        >
+            {/* Dynamic Spotlight Light Glow */}
+            <motion.div
+                className="pointer-events-none absolute -inset-px rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"
+                style={{
+                    background: spotlightGradient
+                }}
+            />
+
+            {/* Glowing 3D Ambient Background Elements */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle,_#a855f718_1px,_transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
+            <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-purple-600/20 blur-[100px] pointer-events-none group-hover:bg-purple-500/30 transition-colors duration-700" />
+            <div className="absolute -bottom-10 -left-10 w-72 h-72 rounded-full bg-indigo-600/15 blur-[80px] pointer-events-none" />
+
+            {/* Top Accent Bar with 3D Elevate effect */}
+            <div className="relative z-10 flex flex-wrap items-center justify-between gap-4 mb-8 pb-6 border-b border-purple-500/25 [transform:translateZ(30px)]">
+                <span className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-purple-500/20 text-purple-200 border border-purple-400/40 shadow-[0_0_15px_rgba(168,85,247,0.3)]">
+                    <GraduationCap className="w-4 h-4 text-purple-400" />
+                    <span className="w-2 h-2 rounded-full bg-purple-400 animate-pulse" />
+                    {edu.institution}
+                </span>
+                <span className="text-xs font-mono text-purple-200 bg-purple-950/60 px-4 py-2 rounded-full border border-purple-500/30 shadow-md">
+                    {edu.startDate ? `${new Date(edu.startDate).getFullYear()} - ${edu.endDate ? new Date(edu.endDate).getFullYear() : 'Present'}` : '2021 - 2025'}
+                </span>
+            </div>
+
+            {/* Main Grid Content with 3D Z-Depth Layers */}
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start [transform:translateZ(45px)]">
+                {/* Left Column: Degree & GPA */}
+                <div className="md:col-span-5 space-y-5">
+                    <h4 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight leading-tight group-hover:text-purple-300 transition-colors">
+                        {edu.degree} in {edu.major}
+                    </h4>
+                    <p className="text-sm text-purple-300/90 font-medium leading-relaxed">
+                        Academic Specialization in Electronics & Communication Engineering
+                    </p>
+
+                    <div className="pt-3">
+                        <div className="inline-flex items-center gap-3 px-4 py-3 bg-purple-900/40 border border-purple-400/40 rounded-2xl shadow-[0_0_20px_rgba(168,85,247,0.2)]">
+                            <Sparkles className="w-4 h-4 text-purple-400 animate-spin" style={{ animationDuration: '6s' }} />
+                            <span className="text-xs sm:text-sm font-mono font-bold text-purple-200">
+                                CGPA: 8.0 / 10.0
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Right Column: Key Coursework & Focus */}
+                <div className="md:col-span-7 space-y-6 border-t md:border-t-0 md:border-l border-purple-500/25 pt-6 md:pt-0 md:pl-8">
+                    <div>
+                        <span className="text-xs font-mono uppercase tracking-[0.2em] text-purple-300/80 font-bold block mb-4 flex items-center gap-2">
+                            <BookOpen className="w-3.5 h-3.5 text-purple-400" />
+                            Academic Coursework & Key Focus
+                        </span>
+
+                        <ul className="space-y-3.5">
+                            {(edu.activities ?? []).map((activity: string, idx: number) => (
+                                <li key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-purple-200/90 leading-relaxed group-hover:text-purple-100 transition-colors">
+                                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0 shadow-[0_0_8px_#a855f7]" />
+                                    <span>{activity}</span>
+                                </li>
+                            ))}
+                        </ul>
+
+                        {edu.achievements && edu.achievements.length > 0 && (
+                            <div className="border-t border-purple-500/20 pt-4 mt-4">
+                                <ul className="space-y-2">
+                                    {edu.achievements.map((achievement: string, idx: number) => (
+                                        <li key={idx} className="text-xs sm:text-sm italic text-purple-300/90 font-mono">
+                                            ✨ {achievement}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+                    </div>
+                </div>
+            </div>
+        </motion.div>
     );
 };
 
@@ -430,7 +606,7 @@ const EducationSection = () => {
             initial={{ opacity: 0, scale: 0.98, filter: "blur(10px)" }}
             whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             className="w-full flex flex-col items-center max-w-[1700px] px-4 md:px-6 mt-32 md:mt-48"
         >
             <div className="mb-12 md:mb-16 text-center space-y-4">
@@ -442,78 +618,9 @@ const EducationSection = () => {
                 </p>
             </div>
 
-            <div className="flex flex-col gap-8 w-full items-center">
+            <div className="flex flex-col gap-8 w-full items-center perspective-1000">
                 {portfolioData.education.map((edu) => (
-                    /* Premium Lab Card for Education */
-                    <div key={edu.id} className="relative w-full max-w-4xl bg-white dark:bg-black border border-teal-400/20 dark:border-teal-400/40 p-4 xs:p-6 sm:p-8 md:p-12 overflow-hidden group shadow-xl dark:shadow-2xl transition-colors duration-500">
-                        {/* 1. Grid Background Overlay */}
-                        <div className="absolute inset-0 z-0 bg-[radial-gradient(circle,_#00000008_1px,_transparent_1px)] dark:bg-[radial-gradient(circle,_#ffffff08_1px,_transparent_1px)] bg-[size:20px_20px] pointer-events-none transition-opacity" />
-
-                        {/* 2. Red Corner Tabs */}
-                        <div className="absolute top-0 left-0 w-2.5 h-2.5 bg-teal-400 -translate-x-1 translate-y-[-50%] z-10" />
-                        <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-teal-400 translate-x-1 translate-y-[-50%] z-10" />
-                        <div className="absolute bottom-0 left-0 w-2.5 h-2.5 bg-teal-400 -translate-x-1 translate-y-[50%] z-10" />
-                        <div className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-teal-400 translate-x-1 translate-y-[50%] z-10" />
-
-                        {/* Content */}
-                        <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
-                            {/* Left Column: Degree & University Details */}
-                            <div className="md:col-span-5 flex flex-col justify-between space-y-6">
-                                <div>
-                                    <span className="text-teal-400 dark:text-teal-300 text-[10px] font-bold uppercase tracking-[0.3em] block mb-3">
-                                        {edu.institution}
-                                    </span>
-                                    <h4 className="text-2xl md:text-3xl font-bold tracking-tight text-zinc-900 dark:text-white leading-tight">
-                                        {edu.degree} in {edu.major}
-                                    </h4>
-                                    <p className="text-zinc-500 dark:text-zinc-400 mt-2 font-medium">
-                                        {edu.startDate ? `${new Date(edu.startDate).getFullYear()} - ${edu.endDate ? new Date(edu.endDate).getFullYear() : 'Present'}` : ''}
-                                    </p>
-                                </div>
-
-                                {/* {edu.gpa && (
-                                    <div>
-                                        <div className="inline-flex items-center gap-3 px-4 py-2 bg-zinc-50 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 rounded-lg">
-                                            <span className="w-2.5 h-2.5 rounded-full bg-[#D1FF4D] animate-pulse" />
-                                            <span className="text-sm font-mono font-bold text-zinc-800 dark:text-zinc-200">
-                                                GPA: {edu.gpa}
-                                            </span>
-                                        </div>
-                                    </div>
-                                )} */}
-                            </div>
-
-                            {/* Right Column: Highlights & Research Details */}
-                            <div className="md:col-span-7 flex flex-col justify-between space-y-6 border-t md:border-t-0 md:border-l border-zinc-100 dark:border-zinc-900 pt-6 md:pt-0 md:pl-8">
-                                <div>
-                                    <span className="text-zinc-400 dark:text-zinc-600 text-[10px] font-mono tracking-widest uppercase block mb-4">
-                                        {t('highlights')}
-                                    </span>
-
-                                    <ul className="space-y-4">
-                                        {(edu.activities ?? []).map((activity: string, idx: number) => (
-                                            <li key={idx} className="flex items-start gap-3 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
-                                                <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0" />
-                                                <span>{activity}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-
-                                {edu.achievements && edu.achievements.length > 0 && (
-                                    <div className="border-t border-zinc-100 dark:border-zinc-900 pt-6">
-                                        <ul className="space-y-2">
-                                            {edu.achievements.map((achievement: string, idx: number) => (
-                                                <li key={idx} className="text-sm italic text-zinc-500 dark:text-zinc-400">
-                                                    {achievement}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                )}
-                            </div>
-                        </div>
-                    </div>
+                    <Education3DCard key={edu.id} edu={edu} />
                 ))}
             </div>
         </motion.div>
@@ -538,10 +645,10 @@ export default function AboutSection() {
         <section
             id="about"
             ref={containerRef}
-            className="relative bg-background text-foreground dark:bg-black dark:text-white transition-colors duration-500"
+            className="relative bg-background text-foreground dark:bg-black dark:text-white transition-colors duration-500 z-10"
         >
-            {/* 1. STICKY PLANE - Lead-in */}
-            <div className="sticky top-0 h-screen w-full flex items-center justify-center z-10">
+            {/* 1. STICKY PLANE (Desktop) / RELATIVE PLANE (Mobile) - Lead-in */}
+            <div className="relative lg:sticky top-0 min-h-screen w-full flex items-center justify-center z-10 py-8 lg:py-0">
                 <motion.div
                     style={{ scale, opacity, y: yLeadIn }}
                     className="relative px-4 md:px-6 w-full max-w-[1700px] mx-auto pointer-events-none"
@@ -554,13 +661,14 @@ export default function AboutSection() {
             </div>
 
             {/* 2. OVERLAY LAYER - Hijack Zone & Footer */}
-            <div className="relative pointer-events-none mt-[20vh] md:mt-[20vh]">
-                {/* Content wrapper with background - rounded corners removed to allow animated border to control the shape */}
-                <div className="bg-background dark:bg-black transition-colors duration-500 pointer-events-auto relative">
+            <div className="relative pointer-events-none mt-0 lg:mt-[20vh] z-20">
+                {/* Content wrapper with background with explicit z-20 and shadow overlay */}
+                <div className="bg-background dark:bg-black transition-colors duration-500 pointer-events-auto relative z-20 shadow-[0_-30px_60px_rgba(0,0,0,0.5)]">
 
                     <ScrollHijackSection />
-                    <div className="flex flex-col items-center w-full bg-background relative z-20 pt-32 pb-32">
+                    <div id="experience" className="flex flex-col items-center w-full bg-background relative z-20 pt-32 pb-32 scroll-mt-24">
                         <motion.div
+                            id="experience-section"
                             initial={{ opacity: 0, scale: 0.98, filter: "blur(10px)" }}
                             whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
                             viewport={{ once: true, margin: "-100px" }}

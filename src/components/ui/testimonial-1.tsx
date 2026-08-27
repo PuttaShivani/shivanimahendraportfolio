@@ -37,7 +37,7 @@ export default function Testimonial1() {
     {
       value: 6,
       decimals: 0,
-      suffix: "",
+      suffix: "+",
       label: "Certifications",
       href: "/#certifications-section",
       cta: "View Credentials",
@@ -51,30 +51,30 @@ export default function Testimonial1() {
       cta: "View Projects",
     },
     {
-      value: 3,
+      value: 1,
       decimals: 0,
-      suffix: "+ Years",
-      label: "Data Analytics Exp",
-      href: "/#experience",
+      suffix: "+ Year",
+      label: "SDE Experience",
+      href: "/#experience-section",
       cta: "Explore Experience",
     },
     {
-      value: 20,
+      value: 15,
       decimals: 0,
       suffix: "+ Skills",
-      label: "Tech & BI Stack",
+      label: "Tech & Dev Stack",
       href: "/#skills-section",
       cta: "See Skills",
     },
   ];
 
   return (
-    <div className="bg-white dark:bg-black h-screen w-full flex items-center justify-center p-4 sm:p-6 md:p-8 relative overflow-hidden">
+    <div className="bg-white dark:bg-black h-auto min-h-0 lg:h-screen w-full flex items-center justify-center p-4 sm:p-6 md:p-8 py-6 sm:py-8 lg:py-0 relative overflow-hidden">
       <div className="max-w-4xl mx-auto flex flex-col items-center justify-center gap-4 sm:gap-6 md:gap-8 w-full">
         
         {/* Top Badge */}
         <div className="flex justify-center">
-          <div className="bg-[#f1efec] dark:bg-zinc-900 border border-neutral-200 dark:border-zinc-800 text-black dark:text-white px-4 py-1 rounded-full text-[10px] sm:text-xs uppercase tracking-wider font-semibold flex items-center gap-2 shadow-sm">
+          <div className="bg-[#f1efec] dark:bg-zinc-900 border border-neutral-200 dark:border-zinc-800 text-black dark:text-white px-4 py-1.5 rounded-full text-[10px] sm:text-xs uppercase tracking-wider font-semibold flex items-center gap-2 shadow-sm">
             <span className="relative flex h-2 w-2">
               <motion.span
                 animate={{
@@ -86,9 +86,9 @@ export default function Testimonial1() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="absolute inline-flex h-full w-full rounded-full bg-green-400/60"
+                className="absolute inline-flex h-full w-full rounded-full bg-emerald-400/60"
               />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.8)]" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.8)]" />
             </span>
             Professional Statistics
           </div>
@@ -97,10 +97,10 @@ export default function Testimonial1() {
         {/* Main Heading with Block Reveal Animation */}
         <div className="text-center max-w-3xl mx-auto relative text-neutral-900 dark:text-white px-2 space-y-1 sm:space-y-1.5">
           {[
-            { text: "Dashboards that inform. Models that predict.", color: "#6366f1", delay: 0 },
-            { text: "Insights that drive strategic decisions.", color: "#10b981", delay: 0.15 },
-            { text: "Optimized SQL queries, automated reporting,", color: "#f59e0b", delay: 0.3 },
-            { text: "and decision-ready metrics for leadership.", color: "#ef4444", delay: 0.45 }
+            { text: "Scalable web architectures. Modern UI workflows.", color: "#6366f1", delay: 0 },
+            { text: "Full-stack solutions engineered for performance.", color: "#10b981", delay: 0.15 },
+            { text: "Optimized REST APIs, PostgreSQL JSONB mappings,", color: "#f59e0b", delay: 0.3 },
+            { text: "and production-ready web applications.", color: "#ef4444", delay: 0.45 }
           ].map((line, i) => (
             <div key={i} className="relative block overflow-hidden py-0.5">
               <motion.h1
@@ -139,9 +139,9 @@ export default function Testimonial1() {
         </div>
 
         {/* Glassmorphic Stats Bar - Perfectly Centered & Fully Visible */}
-        <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-3 bg-white/40 dark:bg-zinc-900/40 backdrop-blur-xl px-4 py-3 sm:py-4 border rounded-2xl border-white/20 dark:border-white/5 shadow-2xl relative overflow-hidden">
+        <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-3 bg-[#0e061b]/95 dark:bg-[#0c0614]/95 backdrop-blur-xl px-4 py-3 sm:py-4 border-2 border-purple-500/60 dark:border-purple-500/60 rounded-2xl shadow-[0_0_30px_rgba(168,85,247,0.3)] hover:border-purple-400 transition-all duration-300 relative overflow-hidden">
           {/* Subtle Background Glow inside the bar */}
-          <div className="absolute top-0 left-1/4 w-1/2 h-full bg-blue-500/5 blur-[100px] pointer-events-none" />
+          <div className="absolute top-0 left-1/4 w-1/2 h-full bg-purple-500/10 blur-[100px] pointer-events-none" />
 
           {stats.map((stat, index) => (
             <Link
@@ -150,6 +150,16 @@ export default function Testimonial1() {
               className="flex-1 relative"
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
+              onClick={(e) => {
+                if (stat.href.startsWith('/#')) {
+                  const targetId = stat.href.replace('/#', '');
+                  const elem = document.getElementById(targetId);
+                  if (elem) {
+                    e.preventDefault();
+                    elem.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }
+              }}
             >
               <div className="flex flex-col items-center justify-center relative h-full group py-1">
                 {index !== 0 && (
@@ -185,7 +195,7 @@ export default function Testimonial1() {
 
                       <span className="relative text-[10px] sm:text-xs font-bold text-neutral-900 dark:text-white flex items-center gap-1 drop-shadow-md z-30">
                         {stat.cta}
-                        <ExternalLink className="w-3 h-3" />
+                        <ExternalLink className="w-3 h-3 text-teal-400" />
                       </span>
                     </motion.div>
                   )}

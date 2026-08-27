@@ -32,41 +32,30 @@ const signature = Alex_Brush({
 
 export const metadata: Metadata = {
     title: {
-        default: 'TEJESWARA SAI APPIKATLA | Data Analyst',
+        default: 'PUTTA SHIVANI | Full Stack Developer',
         template: '%s | Portfolio',
     },
-    description: 'Data Analyst with 3+ years of combined analytics experience supporting product, operational, executive, academic, and data quality reporting.',
-    keywords: ['data analyst', 'business intelligence', 'power bi', 'tableau', 'sql', 'python', 'analytics', 'data modeling', 'dax'],
-    authors: [{ name: 'TEJESWARA SAI APPIKATLA' }],
-    creator: 'TEJESWARA SAI APPIKATLA',
-    metadataBase: new URL('https://your-domain.com'),
+    description: 'Motivated B.Tech (ECE) graduate with hands-on experience in building responsive web applications using React and Node.js.',
+    keywords: ['full stack developer', 'react.js', 'node.js', 'express.js', 'mongodb', 'ece', 'web development', 'putta shivani'],
+    authors: [{ name: 'PUTTA SHIVANI' }],
+    creator: 'PUTTA SHIVANI',
+    metadataBase: new URL('https://portfolio-shivani-five.vercel.app/'),
     openGraph: {
         type: 'website',
         locale: 'en_US',
-        url: 'https://your-domain.com',
-        title: 'TEJESWARA SAI APPIKATLA | Data Analyst',
-        description: 'Data Analyst specializing in Business Intelligence, Power BI, Tableau, SQL, and Python.',
-        siteName: 'Portfolio',
+        url: 'https://portfolio-shivani-five.vercel.app/',
+        title: 'PUTTA SHIVANI | Full Stack Developer',
+        description: 'Full Stack Web Developer specializing in React.js, Node.js, Express.js, and MongoDB.',
+        siteName: 'Putta Shivani Portfolio',
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'TEJESWARA SAI APPIKATLA | Data Analyst',
-        description: 'Data Analyst specializing in Business Intelligence, Power BI, Tableau, SQL, and Python.',
-        creator: '@TejeswaraSai',
-    },
-    robots: {
-        index: true,
-        follow: true,
-        googleBot: {
-            index: true,
-            follow: true,
-            'max-video-preview': -1,
-            'max-image-preview': 'large',
-            'max-snippet': -1,
-        },
+        title: 'PUTTA SHIVANI | Full Stack Developer',
+        description: 'Full Stack Web Developer specializing in React.js, Node.js, Express.js, and MongoDB.',
+        creator: '@PuttaShivani',
     },
     icons: {
-        icon: '/logo2.png',
+        icon: '/shivaniimage.png',
     },
 };
 

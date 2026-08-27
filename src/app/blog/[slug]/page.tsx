@@ -128,7 +128,7 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
                             )}
                         </button>
                         <div className="w-px h-6 bg-border/40 hidden sm:block" />
-                        <Link href="https://www.linkedin.com/in/d-jasper-d/" target="_blank" className="p-2 text-muted-foreground hover:text-primary transition-colors bg-secondary/10 rounded-lg hover:bg-primary/10">
+                        <Link href="https://www.linkedin.com/in/shivanimahendra/" target="_blank" className="p-2 text-muted-foreground hover:text-primary transition-colors bg-secondary/10 rounded-lg hover:bg-primary/10">
                             <FaLinkedin className="w-4 h-4" />
                         </Link>
                     </div>

@@ -29,12 +29,12 @@ export const IdentitySequence = ({ scrollYProgress, isVisible }: IdentitySequenc
     const cardBorderRadius = useTransform(localProgress, [0.1, 0.4], ["60px", "0px"], { ease: easeInOut });
 
     // 2. Internal Content Scroll
-    const contentY = useTransform(localProgress, [0.35, 1], ["0%", "-45%"], { ease: easeInOut });
+    const contentY = useTransform(localProgress, [0.35, 1], ["0%", "-15%"], { ease: easeInOut });
 
     // 3. Elements specific animations
     const phase0Opacity = useTransform(localProgress, [0, 0.15], [1, 0]);
-    const cardContentOpacity = useTransform(localProgress, [0.1, 0.3], [0, 1]);
-    const textOpacity = useTransform(localProgress, [0.3, 0.55], [0, 1]);
+    const cardContentOpacity = useTransform(localProgress, [0.05, 0.25], [0, 1]);
+    const textOpacity = useTransform(localProgress, [0.1, 0.35], [0, 1]);
 
     // 4. Background Color Transition (Smoothing the exit)
     const cardBg = useTransform(
@@ -63,7 +63,7 @@ export const IdentitySequence = ({ scrollYProgress, isVisible }: IdentitySequenc
     ];
 
     return (
-        <div className="relative w-screen h-full flex flex-col items-center justify-center overflow-hidden bg-background dark:bg-black">
+        <div className="relative w-full max-w-full min-h-screen flex flex-col items-center justify-center overflow-hidden bg-background dark:bg-black">
             {/* Phase 0: The Lead-in UI (Visible before card scales) */}
             <motion.div
                 style={{ opacity: phase0Opacity }}
@@ -135,49 +135,24 @@ export const IdentitySequence = ({ scrollYProgress, isVisible }: IdentitySequenc
                     style={{ y: contentY }}
                     className="relative w-full flex flex-col items-center"
                 >
-                    {/* Phase 1: Marquee Header (Top of the long card) */}
-                    <div className="w-full h-screen flex items-center justify-center flex-shrink-0">
+                    {/* Phase 1: Marquee Header */}
+                    <div className="w-full py-12 md:py-16 flex items-center justify-center flex-shrink-0">
                         <motion.div style={{ opacity: cardContentOpacity }} className="w-full">
                             <InfiniteMarquee
                                 items={marqueeItems}
                                 speed={18}
                                 className="w-full"
-                                itemClassName="py-12"
+                                itemClassName="py-4"
                             />
                         </motion.div>
                     </div>
 
-
-
-                    {/* Phase 3: Final Layout Text */}
-                    <motion.div
-                        style={{ opacity: textOpacity }}
-                        className="w-full max-w-[1700px] mx-auto px-8 md:px-16 lg:px-24 pt-24 pb-8 md:pt-32 md:pb-12 flex-shrink-0"
-                    >
-                        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-start">
-                            {/* Header Left */}
-                            <div className="md:col-span-7">
-                                <h3
-                                    className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-snug text-black dark:text-white"
-                                    dangerouslySetInnerHTML={{ __html: t.raw("profile.title") }}
-                                />
-                            </div>
-
-                            {/* Paragraph Right */}
-                            <div className="md:col-span-5 pt-1">
-                                <p className="text-[13px] md:text-[15px] text-zinc-500 dark:text-zinc-400 leading-relaxed font-normal">
-                                    {t("profile.narrative")} {t("profile.narrative2")}
-                                </p>
-                            </div>
-                        </div>
-                    </motion.div>
-
                     {/* Phase 4: Tech Stack & Tools Scrollers */}
                     <motion.div
                         style={{ opacity: textOpacity }}
-                        className="w-full max-w-[1700px] mx-auto py-20 flex flex-col gap-8 flex-shrink-0"
+                        className="w-full max-w-[1700px] mx-auto py-6 md:py-8 flex flex-col gap-6 flex-shrink-0"
                     >
-                        <div className="px-8 md:px-16 lg:px-24 mb-6">
+                        <div className="px-8 md:px-16 lg:px-24 mb-2">
                             <h4 className="text-lg md:text-xl uppercase tracking-[0.15em] font-bold text-zinc-500 dark:text-zinc-400">
                                 Tech Stack & Ecosystem
                             </h4>

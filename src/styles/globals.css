@@ -33,31 +33,31 @@
   }
 
   .dark {
-    /* Dark Mode - Violet */
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --primary: 270 91.2% 59.8%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    /* Very Dark Violet Theme */
+    --background: 265 48% 5%;
+    --foreground: 260 40% 98%;
+    --card: 265 45% 7%;
+    --card-foreground: 260 40% 98%;
+    --primary: 272 92% 66%;
+    --primary-foreground: 265 48% 5%;
+    --secondary: 265 35% 12%;
+    --secondary-foreground: 260 40% 98%;
+    --muted: 265 30% 12%;
+    --muted-foreground: 265 25% 72%;
+    --accent: 265 35% 15%;
+    --accent-foreground: 260 40% 98%;
+    --border: 265 35% 18%;
+    --ring: 272 92% 66%;
+    --popover: 265 48% 5%;
+    --popover-foreground: 260 40% 98%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --input: 217.2 32.6% 17.5%;
-    --chart-1: 270 91.2% 59.8%;
+    --destructive-foreground: 260 40% 98%;
+    --input: 265 35% 18%;
+    --chart-1: 272 92% 66%;
     --chart-2: 270 83.2% 53.3%;
     --chart-3: 270 96% 78%;
-    --chart-4: 201 96% 32%;
-    --chart-5: 199 89% 48%;
+    --chart-4: 280 85% 60%;
+    --chart-5: 260 90% 70%;
   }
   .theme {
     --animate-marquee-left: marquee-left var(--duration, 30s) linear infinite;
@@ -87,46 +87,81 @@
 }
 
 @layer components {
-  /* Light mode glass */
+  /* Ultra-Premium Glassmorphism Design System */
   .glass {
-    @apply backdrop-blur-2xl;
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
     background: rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
   }
 
   .dark .glass {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(16, 8, 28, 0.65);
+    border: 1px solid rgba(168, 85, 247, 0.22);
+    box-shadow: 0 8px 32px 0 rgba(8, 3, 16, 0.6);
   }
 
   .glass-card {
-    @apply backdrop-blur-2xl rounded-3xl transition-colors relative;
-    background: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(24px) saturate(190%);
+    -webkit-backdrop-filter: blur(24px) saturate(190%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.5) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.4);
     box-shadow: 
-      0 0 0 1px rgba(0, 0, 0, 0.03),
-      0 20px 50px -20px rgba(0,0,0,0.15);
+      0 20px 40px -15px rgba(0, 0, 0, 0.05),
+      inset 0 1px 1px 0 rgba(255, 255, 255, 0.8);
+    border-radius: 1.5rem;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark .glass-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.08) 0%, rgba(18, 9, 32, 0.6) 100%);
+    border: 1px solid rgba(168, 85, 247, 0.22);
     box-shadow: 
-      0 0 0 1px rgba(255, 255, 255, 0.05),
-      0 20px 50px -20px rgba(0,0,0,0.5);
+      0 20px 50px -10px rgba(8, 3, 16, 0.8),
+      inset 0 1px 1px 0 rgba(255, 255, 255, 0.12);
+  }
+
+  .glass-card:hover {
+    transform: translateY(-3px) scale(1.01);
+  }
+
+  .dark .glass-card:hover {
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.15) 0%, rgba(30, 14, 52, 0.7) 100%);
+    border-color: rgba(168, 85, 247, 0.45);
+    box-shadow: 
+      0 25px 60px -10px rgba(139, 92, 246, 0.25),
+      inset 0 1px 2px 0 rgba(255, 255, 255, 0.25);
   }
 
   .glass-strong {
-    @apply backdrop-blur-3xl rounded-3xl transition-colors relative;
-    background: rgba(255, 255, 255, 0.9);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
+    backdrop-filter: blur(28px) saturate(200%);
+    -webkit-backdrop-filter: blur(28px) saturate(200%);
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
   }
 
   .dark .glass-strong {
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+    background: linear-gradient(135deg, rgba(20, 10, 36, 0.9) 0%, rgba(12, 5, 22, 0.85) 100%);
+    border: 1px solid rgba(168, 85, 247, 0.35);
+    box-shadow: 
+      0 25px 60px -12px rgba(0, 0, 0, 0.8),
+      inset 0 1px 2px rgba(255, 255, 255, 0.2);
+  }
+
+  .glass-pill {
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 9999px;
+  }
+
+  .dark .glass-pill {
+    background: rgba(168, 85, 247, 0.12);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    color: rgba(233, 213, 255, 1);
   }
 
   /* Light mode gradient - violet theme */
@@ -151,6 +186,7 @@
     );
     background-size: 200% auto;
     animation: text-shiny 4s linear infinite;
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -497,7 +533,7 @@ html, body, * {
 /* Dark Mode Overrides */
 .dark ::-webkit-scrollbar-thumb,
 .dark::-webkit-scrollbar-thumb {
-  background-color: #ffffff !important;
+  background-color: #8b5cf6 !important;
   border-radius: 0 !important;
 }
 
@@ -508,7 +544,7 @@ html, body, * {
 
 .dark ::-webkit-scrollbar-thumb:hover,
 .dark::-webkit-scrollbar-thumb:hover {
-  background-color: #e5e5e5 !important;
+  background-color: #a78bfa !important;
 }
 
 /* Hide scrollbar corner */

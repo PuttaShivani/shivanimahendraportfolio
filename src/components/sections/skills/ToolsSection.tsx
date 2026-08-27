@@ -118,18 +118,18 @@ const ToolPill = ({ tool }: { tool: any }) => {
     const iconUrl = getOnlineSkillIcon(tool.name, toolLogos[tool.name] || tool.icon);
 
     return (
-        <div className="flex items-center gap-3 xs:gap-6 px-4 py-2.5 xs:px-8 xs:py-4 sm:px-10 sm:py-5 bg-[#0a0a0a]/10 dark:bg-white/5 backdrop-blur-xl border border-black/10 dark:border-white/10 rounded-full transition-all duration-300 hover:scale-105 hover:bg-black/20 dark:hover:bg-white/10 group select-none">
+        <div className="flex items-center gap-3 xs:gap-6 px-4 py-2.5 xs:px-8 xs:py-4 sm:px-10 sm:py-5 bg-[#0c0614]/90 backdrop-blur-xl border-2 border-purple-500/50 hover:border-purple-400 rounded-full transition-all duration-300 hover:scale-105 hover:bg-purple-950/40 shadow-lg shadow-purple-950/40 group select-none">
             <div className="relative w-6 h-6 xs:w-8 xs:h-8 md:w-12 md:h-12 shrink-0">
                 <IconColorizer
                     name={tool.name}
                     iconUrl={iconUrl}
                     className={cn(
-                        "object-contain filter grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]",
+                        "object-contain filter grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:drop-shadow-[0_0_15px_rgba(168,85,247,0.5)]",
                         tool.name === 'GitHub' && "dark:invert"
                     )}
                 />
             </div>
-            <span className="text-sm xs:text-lg sm:text-xl md:text-2xl font-bold uppercase tracking-[0.1em] text-black/70 dark:text-white/70 group-hover:text-black dark:group-hover:text-white transition-colors duration-300">
+            <span className="text-sm xs:text-lg sm:text-xl md:text-2xl font-bold uppercase tracking-[0.1em] text-purple-200 group-hover:text-white transition-colors duration-300">
                 {tool.name}
             </span>
         </div>

@@ -154,6 +154,23 @@ export const SplineScene: FC<SplineSceneProps> = ({ scene, className }) => {
         };
     }, [isLowPowerMode]); // Re-run if low power mode changes
 
+    useEffect(() => {
+        const container = containerRef.current;
+        if (!container) return;
+
+        const handleTouchMove = (e: TouchEvent) => {
+            if (e.cancelable) {
+                e.preventDefault();
+            }
+            e.stopPropagation();
+        };
+
+        container.addEventListener('touchmove', handleTouchMove, { passive: false });
+        return () => {
+            container.removeEventListener('touchmove', handleTouchMove);
+        };
+    }, []);
+
     if (isLowPowerMode) {
         return (
             <div className={`relative w-full h-full bg-background overflow-hidden ${className}`}>
@@ -167,8 +184,14 @@ export const SplineScene: FC<SplineSceneProps> = ({ scene, className }) => {
     }
 
     return (
-        <div ref={containerRef} className={`relative w-full h-full overflow-hidden ${className || ''}`}>
-            <div className="w-full h-full pt-20">
+        <div 
+            ref={containerRef} 
+            className={`relative w-full h-full overflow-hidden touch-none select-none ${className || ''}`}
+            style={{ touchAction: 'none' }}
+            onPointerDown={(e) => e.stopPropagation()}
+            onTouchStart={(e) => e.stopPropagation()}
+        >
+            <div className="w-full h-full pt-20 touch-none" style={{ touchAction: 'none' }}>
                 <spline-viewer
                     ref={splineRef}
                     url={scene}
@@ -180,7 +203,8 @@ export const SplineScene: FC<SplineSceneProps> = ({ scene, className }) => {
                         transformOrigin: 'center center',
                         display: isLoaded ? 'block' : 'none',
                         opacity: isLoaded ? 1 : 0,
-                        transition: 'opacity 0.8s ease-in-out'
+                        transition: 'opacity 0.8s ease-in-out',
+                        touchAction: 'none'
                     }}
                 />
             </div>

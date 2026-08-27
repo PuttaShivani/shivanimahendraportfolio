@@ -29,38 +29,38 @@ interface CertificateHeroScrollProps {
 const getCertDescription = (id: string): string => {
     switch (id) {
         case 'cert-1':
-            return 'Professional certification covering Power BI, DAX measures, Power Query, data modeling, and executive dashboards.';
+            return 'Meta professional certification covering Python, Django, REST APIs, microservices, and database administration.';
         case 'cert-2':
-            return 'Google professional certification covering data cleaning, SQL analytics, Python, data visualization, and storytelling.';
+            return 'IBM professional certification covering full-stack web development, React, Node.js, Cloud Native, and DevOps.';
         case 'cert-3':
-            return 'HackerRank Advanced SQL certification covering complex joins, subqueries, CTEs, window functions, and optimization.';
+            return 'IBM professional certification covering DevOps methodology, CI/CD pipelines, Docker, Kubernetes, and Agile.';
         case 'cert-4':
-            return 'IBM certification covering Python programming, Pandas, NumPy, data structures, and automated processing.';
+            return 'Meta professional certification covering advanced React, JavaScript (ES6+), responsive UI engineering, and web performance.';
         case 'cert-5':
-            return 'Cognitive Class AI certification covering exploratory data analysis, data wrangling, and statistical modeling with Python.';
+            return 'LinkedIn Learning certification covering building scalable REST APIs, async endpoints, Pydantic, and OpenAPI with FastAPI.';
         case 'cert-6':
-            return 'Coursera certification focusing on data visualization, Matplotlib, Seaborn, and visual data storytelling.';
+            return 'LinkedIn Learning certification covering RESTful architectural principles, endpoint security, authentication, and API lifecycle.';
         default:
-            return 'Verification of technical competency in Data Analytics, Business Intelligence, and visualization.';
+            return 'Verification of technical competency in Software Engineering, REST APIs, and Full Stack Development.';
     }
 };
 
 const getCertSkills = (id: string): string[] => {
     switch (id) {
         case 'cert-1':
-            return ['Power BI', 'DAX', 'Power Query', 'Data Modeling'];
+            return ['Meta', 'Python', 'Django', 'REST APIs'];
         case 'cert-2':
-            return ['Data Analysis', 'SQL', 'Data Cleaning', 'Visualization'];
+            return ['IBM', 'Full Stack', 'React', 'Node.js'];
         case 'cert-3':
-            return ['Advanced SQL', 'CTEs', 'Window Functions', 'Optimization'];
+            return ['IBM', 'DevOps', 'Docker', 'CI/CD'];
         case 'cert-4':
-            return ['Python', 'Pandas', 'NumPy', 'Processing'];
+            return ['Meta', 'Front-End', 'React', 'JavaScript'];
         case 'cert-5':
-            return ['EDA', 'Data Wrangling', 'SciPy', 'Statistics'];
+            return ['FastAPI', 'Python', 'REST APIs', 'LinkedIn'];
         case 'cert-6':
-            return ['Visualization', 'Matplotlib', 'Seaborn', 'Storytelling'];
+            return ['RESTful APIs', 'API Design', 'LinkedIn', 'Backend'];
         default:
-            return ['Data Analytics', 'Business Intelligence', 'SQL'];
+            return ['Full Stack', 'REST APIs', 'DevOps'];
     }
 };
 
@@ -309,37 +309,37 @@ const CertificateHeroScroll: FC<CertificateHeroScrollProps> = ({ isLowPowerMode:
                             ref={(el) => {
                                 cardRefs.current[index] = el;
                             }}
-                            className="absolute overflow-hidden shadow-2xl border border-teal-400/25 dark:border-teal-400/35 bg-white dark:bg-zinc-950 backdrop-blur-xl rounded-xl p-2.5 sm:p-4 md:p-5 flex flex-col justify-between group pointer-events-auto hover:border-teal-400 dark:hover:border-teal-300 transition-all duration-300 hover:shadow-teal-500/10"
+                            className="absolute overflow-hidden shadow-2xl border-2 border-violet-500/80 dark:border-purple-500/80 bg-[#0e061b] dark:bg-[#0c0614] backdrop-blur-xl rounded-xl p-2.5 sm:p-4 md:p-5 flex flex-col justify-between group pointer-events-auto hover:border-purple-400 dark:hover:border-purple-300 transition-all duration-300 shadow-[0_0_20px_rgba(168,85,247,0.3)] hover:shadow-[0_0_35px_rgba(168,85,247,0.65)]"
                         >
                             {/* Accent tag */}
-                            <div className="absolute top-0 left-0 w-2 h-2 sm:w-2.5 sm:h-2.5 bg-teal-400 rounded-br-md" />
+                            <div className="absolute top-0 left-0 w-2.5 h-2.5 sm:w-3 sm:h-3 bg-purple-400 rounded-br-md shadow-[0_0_8px_#a855f7]" />
 
                             <div className="relative z-10 flex flex-col h-full justify-between gap-1 overflow-hidden">
                                 {/* Header: Issuer & Date */}
                                 <div className="flex justify-between items-center shrink-0">
-                                    <span className="text-teal-500 dark:text-teal-300 text-[9px] sm:text-xs font-bold uppercase tracking-wider font-mono">
+                                    <span className="text-purple-400 dark:text-purple-300 text-[9px] sm:text-xs font-bold uppercase tracking-wider font-mono">
                                         {cert.issuer}
                                     </span>
-                                    <span className="text-[8px] sm:text-[10px] text-muted-foreground font-mono">
+                                    <span className="text-[8px] sm:text-[10px] text-purple-200/60 font-mono">
                                         {cert.date}
                                     </span>
                                 </div>
 
                                 {/* Title */}
                                 <div className="shrink-0">
-                                    <h4 className="text-[10px] sm:text-xs md:text-sm lg:text-base font-bold text-zinc-900 dark:text-white leading-tight tracking-tight group-hover:text-teal-400 dark:group-hover:text-teal-300 transition-colors duration-200 line-clamp-2">
+                                    <h4 className="text-[10px] sm:text-xs md:text-sm lg:text-base font-bold text-white leading-tight tracking-tight group-hover:text-purple-300 transition-colors duration-200 line-clamp-2">
                                         {cert.title}
                                     </h4>
                                 </div>
 
                                 {/* Description & Skill Badges */}
-                                <div className="border-t border-zinc-200 dark:border-zinc-800/80 pt-1 flex flex-col gap-1 shrink-0">
-                                    <p className="text-[8px] sm:text-[10px] md:text-xs text-zinc-600 dark:text-zinc-400 font-normal leading-tight line-clamp-2">
+                                <div className="border-t border-purple-500/20 pt-1 flex flex-col gap-1 shrink-0">
+                                    <p className="text-[8px] sm:text-[10px] md:text-xs text-purple-200/80 font-normal leading-tight line-clamp-2">
                                         {getCertDescription(cert.id)}
                                     </p>
                                     <div className="flex flex-wrap gap-0.5 sm:gap-1 pt-0.5">
                                         {getCertSkills(cert.id).slice(0, 3).map((skill) => (
-                                            <span key={skill} className="px-1 py-0.5 rounded bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-[7px] sm:text-[8px] md:text-[9px] font-mono text-zinc-700 dark:text-zinc-300 font-semibold uppercase">
+                                            <span key={skill} className="px-1 py-0.5 rounded bg-purple-900/40 border border-purple-500/30 text-[7px] sm:text-[8px] md:text-[9px] font-mono text-purple-200 font-semibold uppercase">
                                                 {skill}
                                             </span>
                                         ))}

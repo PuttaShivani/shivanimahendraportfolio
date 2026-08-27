@@ -219,18 +219,18 @@ const config: Config = {
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-				'glass-gradient': 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)',
-				'mesh-gradient': 'radial-gradient(at 40% 20%, hsla(280,100%,70%,1) 0px, transparent 50%), radial-gradient(at 80% 0%, hsla(189,100%,56%,1) 0px, transparent 50%), radial-gradient(at 0% 50%, hsla(355,100%,93%,1) 0px, transparent 50%)'
+				'glass-gradient': 'linear-gradient(135deg, rgba(168,85,247,0.15) 0%, rgba(139,92,246,0.05) 100%)',
+				'mesh-gradient': 'radial-gradient(at 40% 20%, hsla(272,90%,60%,0.4) 0px, transparent 50%), radial-gradient(at 80% 0%, hsla(260,85%,50%,0.3) 0px, transparent 50%), radial-gradient(at 0% 50%, hsla(280,80%,40%,0.3) 0px, transparent 50%)'
 			},
 			backdropBlur: {
 				xs: '2px'
 			},
 			boxShadow: {
-				glass: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
-				'glow-sm': '0 0 10px rgba(0, 255, 255, 0.3)',
-				'glow-md': '0 0 20px rgba(0, 255, 255, 0.4)',
-				'glow-lg': '0 0 40px rgba(0, 255, 255, 0.5)',
-				'inner-glow': 'inset 0 0 20px rgba(0, 255, 255, 0.1)'
+				glass: '0 8px 32px 0 rgba(11, 4, 16, 0.6)',
+				'glow-sm': '0 0 10px rgba(168, 85, 247, 0.4)',
+				'glow-md': '0 0 20px rgba(168, 85, 247, 0.5)',
+				'glow-lg': '0 0 40px rgba(168, 85, 247, 0.6)',
+				'inner-glow': 'inset 0 0 20px rgba(168, 85, 247, 0.2)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

@@ -11,6 +11,8 @@ import { cn } from '@/lib/utils';
 import { portfolioData } from '@/data/portfolio';
 import { Project } from '@/types';
 
+import { ProjectUniverseModal } from '@/components/projects/ProjectUniverseModal';
+
 import { LogoTimeline, LogoItem } from '@/components/ui/logo-timeline';
 import { Icons } from '@/components/icons';
 import { Meteors } from '@/components/ui/meteors';
@@ -282,6 +284,8 @@ function ProjectListItem({
 function FeaturedCard({ project, onClick, index, isLowPowerMode }: { project: Project; onClick: () => void; index: number; isLowPowerMode?: boolean }) {
     const cardRef = useRef<HTMLDivElement>(null);
     const [isHovered, setIsHovered] = useState(false);
+    const [showAllTech, setShowAllTech] = useState(false);
+    const visibleTech = showAllTech ? project.techStack : project.techStack.slice(0, 6);
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);
     const pixelX = useMotionValue(0);
@@ -361,190 +365,156 @@ function FeaturedCard({ project, onClick, index, isLowPowerMode }: { project: Pr
                 {/* Main Card Body */}
                 <div className="relative h-full bg-white/50 dark:bg-black/40 backdrop-blur-2xl rounded-3xl overflow-hidden border border-black/5 dark:border-white/10 transition-colors duration-500">
 
-                    {/* Spotlight Effect */}
-                    {!isLowPowerMode && (
-                        <motion.div
-                            className="pointer-events-none absolute inset-0 z-20 transition-opacity duration-500"
-                            style={{
-                                opacity: isHovered ? 1 : 0,
-                                background: bgGradient
-                            }}
-                        />
-                    )}
-
-                    {/* Meteors Effect */}
-                    {!isLowPowerMode && (
-                        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-                            <Meteors number={10} isLowPowerMode={isLowPowerMode} />
+                    {/* Project Cover & Preview Image */}
+                    {project.image && (
+                        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none opacity-20 group-hover:opacity-35 transition-opacity duration-700">
+                            <img
+                                src={project.image}
+                                alt={project.title}
+                                className="w-full h-full object-cover object-right-top transition-transform duration-1000 group-hover:scale-105"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-transparent z-10" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
                         </div>
                     )}
-                    {/* Meteors on Hover */}
-                    {!isLowPowerMode && (
-                        <AnimatePresence>
-                            {isHovered && (
-                                <motion.div
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    exit={{ opacity: 0 }}
-                                    className="absolute inset-0 z-10 overflow-hidden mix-blend-screen"
-                                >
-                                    <Meteors number={12} minDuration={3} maxDuration={8} isLowPowerMode={isLowPowerMode} />
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
-                    )}
 
-                    {/* Floating Orbs - Subtle Blending */}
-                    {!isLowPowerMode && (
-                        <>
+                    {/* Content Body: Responsive Flex Layout */}
+                    <div className="relative z-30 p-6 sm:p-10 md:p-12 flex flex-col lg:flex-row items-center justify-between gap-8 h-full min-h-[500px]">
+                        
+                        {/* Left Section: Text & Data */}
+                        <div className="flex-1 min-w-0 max-w-2xl">
+                            {/* Status Badge */}
                             <motion.div
-                                className={cn(
-                                    "absolute w-40 h-40 rounded-full blur-[80px] z-0 opacity-40",
-                                    isOngoing ? "bg-emerald-500/20" : "bg-blue-500/20"
-                                )}
-                                style={{ top: '10%', right: '15%' }}
-                                animate={{
-                                    scale: isHovered ? [1, 1.4, 1] : 1,
-                                    x: isHovered ? [0, 30, 0] : 0,
-                                    y: isHovered ? [0, -20, 0] : 0,
-                                }}
-                                transition={{ duration: 4, repeat: Infinity }}
-                            />
-                            <motion.div
-                                className="absolute w-32 h-32 rounded-full bg-violet-500/20 blur-[60px] z-0 opacity-40"
-                                style={{ bottom: '20%', left: '10%' }}
-                                animate={{
-                                    scale: isHovered ? [1, 1.3, 1] : 1,
-                                    x: isHovered ? [0, -20, 0] : 0,
-                                }}
-                                transition={{ duration: 5, repeat: Infinity, delay: 0.5 }}
-                            />
-                        </>
-                    )}
-
-                    {/* Grid Pattern - Very Subtle */}
-                    {!isLowPowerMode && (
-                        <div className="absolute inset-0 z-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none" style={{
-                            backgroundImage: `linear-gradient(currentColor 1px, transparent 1px), linear-gradient(90deg, currentColor 1px, transparent 1px)`,
-                            backgroundSize: '40px 40px'
-                        }} />
-                    )}
-
-                    {/* Floating Initial Letter */}
-                    {!isLowPowerMode && (
-                        <motion.div
-                            className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0"
-                            animate={{
-                                scale: isHovered ? 1.15 : 1,
-                                rotate: isHovered ? 8 : 0,
-                                y: isHovered ? -10 : 0,
-                            }}
-                            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                        >
-                            <span className="text-[14rem] sm:text-[18rem] md:text-[22rem] font-black text-black/[0.02] dark:text-white/[0.025] select-none leading-none">
-                                {project.title.charAt(0)}
-                            </span>
-                        </motion.div>
-                    )}
-
-                    {/* Content */}
-                    <div className="absolute bottom-0 left-0 right-0 p-8 sm:p-10 md:p-14 z-30">
-                        {/* Sparkle Icon + Status */}
-                        <motion.div
-                            className="flex items-center gap-3 mb-5"
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 0.2 }}
-                        >
-                            <motion.div
-                                animate={{ rotate: isHovered ? 360 : 0 }}
-                                transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
+                                className="flex items-center gap-3 mb-5"
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 0.2 }}
                             >
-                                <Sparkles className={cn("w-5 h-5", isOngoing ? "text-emerald-400" : "text-blue-400")} />
-                            </motion.div>
-                            <span className={cn(
-                                "inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold backdrop-blur-md",
-                                isOngoing
-                                    ? "bg-emerald-500/15 text-emerald-400 border border-emerald-500/25"
-                                    : "bg-blue-500/15 text-blue-400 border border-blue-500/25"
-                            )}>
                                 <span className={cn(
-                                    "w-2 h-2 rounded-full",
-                                    isOngoing ? "bg-emerald-400 animate-pulse" : "bg-blue-400"
-                                )} />
-                                {isOngoing ? 'In Development' : 'Completed'}
-                            </span>
-                        </motion.div>
+                                    "inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold backdrop-blur-md",
+                                    isOngoing
+                                        ? "bg-emerald-500/15 text-emerald-400 border border-emerald-500/25"
+                                        : "bg-blue-500/15 text-blue-400 border border-blue-500/25"
+                                )}>
+                                    <span className={cn(
+                                        "w-2 h-2 rounded-full",
+                                        isOngoing ? "bg-emerald-400 animate-pulse" : "bg-blue-400"
+                                    )} />
+                                    {isOngoing ? 'In Development' : 'Completed'}
+                                </span>
+                            </motion.div>
 
-                        {/* Title with underline effect */}
-                        <motion.h2
-                            className="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4"
-                            animate={{ x: isHovered ? 6 : 0 }}
-                        >
-                            {project.title}
+                            {/* Title with underline effect */}
+                            <motion.h2
+                                className="relative text-2xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight"
+                                animate={{ x: isHovered ? 6 : 0 }}
+                            >
+                                {project.title}
+                                <motion.div
+                                    className={cn(
+                                        "absolute -bottom-1 left-0 h-1 rounded-full",
+                                        isOngoing ? "bg-gradient-to-r from-emerald-400 to-cyan-400" : "bg-gradient-to-r from-blue-400 to-violet-400"
+                                    )}
+                                    initial={{ width: 0 }}
+                                    animate={{ width: isHovered ? '60%' : '0%' }}
+                                    transition={{ duration: 0.4 }}
+                                />
+                            </motion.h2>
+
+                            {/* Description */}
+                            <p className="text-zinc-600 dark:text-zinc-300 text-base sm:text-lg mb-6 leading-relaxed line-clamp-3">
+                                {project.description}
+                            </p>
+
+                            {/* Tech Stack with stagger */}
+                            <div className="flex flex-wrap gap-2 mb-8 relative z-40">
+                                {visibleTech.map((tech, i) => (
+                                    <motion.span
+                                        key={tech}
+                                        className="px-3 py-1.5 rounded-xl text-xs sm:text-sm font-medium bg-purple-950/50 text-purple-200 border border-purple-500/30 backdrop-blur-sm shadow-sm"
+                                        initial={{ opacity: 0, y: 15, scale: 0.9 }}
+                                        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                                        transition={{ delay: 0.1 + i * 0.04, duration: 0.3 }}
+                                    >
+                                        {tech}
+                                    </motion.span>
+                                ))}
+                                {project.techStack.length > 6 && !showAllTech && (
+                                    <motion.button
+                                        type="button"
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            setShowAllTech(true);
+                                        }}
+                                        className={cn(
+                                            "px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-bold border backdrop-blur-sm cursor-pointer transition-all hover:scale-105 shadow-md z-50",
+                                            isOngoing
+                                                ? "bg-emerald-500/20 text-emerald-300 border-emerald-400/50 hover:bg-emerald-500/30"
+                                                : "bg-purple-900/70 text-purple-200 border-purple-400/50 hover:bg-purple-800/90"
+                                        )}
+                                        initial={{ opacity: 0, scale: 0.9 }}
+                                        whileInView={{ opacity: 1, scale: 1 }}
+                                        transition={{ delay: 0.3 }}
+                                        title="Click to show more skills"
+                                    >
+                                        +{project.techStack.length - 6} more
+                                    </motion.button>
+                                )}
+                                {showAllTech && project.techStack.length > 6 && (
+                                    <button
+                                        type="button"
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            setShowAllTech(false);
+                                        }}
+                                        className="text-xs font-mono text-purple-300 hover:underline ml-1 cursor-pointer font-bold self-center z-50"
+                                    >
+                                        Show Less
+                                    </button>
+                                )}
+                            </div>
+
+                            {/* CTA Button */}
                             <motion.div
                                 className={cn(
-                                    "absolute -bottom-1 left-0 h-1 rounded-full",
-                                    isOngoing ? "bg-gradient-to-r from-emerald-400 to-cyan-400" : "bg-gradient-to-r from-blue-400 to-violet-400"
+                                    "inline-flex items-center gap-2 px-6 py-3 rounded-2xl font-semibold transition-all duration-300",
+                                    isOngoing
+                                        ? "bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500/25"
+                                        : "bg-blue-500/15 text-blue-400 border border-blue-500/30 hover:bg-blue-500/25"
                                 )}
-                                initial={{ width: 0 }}
-                                animate={{ width: isHovered ? '60%' : '0%' }}
-                                transition={{ duration: 0.4 }}
-                            />
-                        </motion.h2>
-
-                        {/* Description */}
-                        <p className="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg md:text-xl mb-6 max-w-2xl line-clamp-2">
-                            {project.description}
-                        </p>
-
-                        {/* Tech Stack with stagger */}
-                        <div className="flex flex-wrap gap-2 mb-8">
-                            {project.techStack.slice(0, 6).map((tech, i) => (
-                                <motion.span
-                                    key={tech}
-                                    className="px-3 py-1.5 rounded-xl text-sm font-medium bg-black/5 dark:bg-white/5 text-zinc-700 dark:text-zinc-300 border border-black/5 dark:border-white/10 backdrop-blur-sm"
-                                    initial={{ opacity: 0, y: 15, scale: 0.9 }}
-                                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                                    transition={{ delay: 0.3 + i * 0.08, duration: 0.4 }}
-                                >
-                                    {tech}
-                                </motion.span>
-                            ))}
-                            {project.techStack.length > 6 && (
-                                <motion.span
-                                    className={cn(
-                                        "px-3 py-1.5 rounded-xl text-sm font-medium border backdrop-blur-sm",
-                                        isOngoing
-                                            ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
-                                            : "bg-blue-500/10 text-blue-400 border-blue-500/20"
-                                    )}
-                                    initial={{ opacity: 0, scale: 0.9 }}
-                                    whileInView={{ opacity: 1, scale: 1 }}
-                                    transition={{ delay: 0.6 }}
-                                >
-                                    +{project.techStack.length - 6} more
-                                </motion.span>
-                            )}
+                                animate={{ x: isHovered ? 8 : 0 }}
+                            >
+                                <Zap className="w-4 h-4" />
+                                <span>Explore Project</span>
+                                <ArrowRight className={cn(
+                                    "w-5 h-5 transition-transform duration-300",
+                                    "group-hover:translate-x-1"
+                                )} />
+                            </motion.div>
                         </div>
 
-                        {/* CTA Button */}
-                        <motion.div
-                            className={cn(
-                                "inline-flex items-center gap-2 px-6 py-3 rounded-2xl font-semibold transition-all duration-300",
-                                isOngoing
-                                    ? "bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500/25"
-                                    : "bg-blue-500/15 text-blue-400 border border-blue-500/30 hover:bg-blue-500/25"
-                            )}
-                            animate={{ x: isHovered ? 8 : 0 }}
-                        >
-                            <Zap className="w-4 h-4" />
-                            <span>Explore Project</span>
-                            <ArrowRight className={cn(
-                                "w-5 h-5 transition-transform duration-300",
-                                "group-hover:translate-x-1"
-                            )} />
-                        </motion.div>
+                        {/* Right Section: Image Showcase Preview Box */}
+                        {project.image && (
+                            <motion.div
+                                className="w-full lg:w-[380px] xl:w-[440px] h-[260px] sm:h-[300px] lg:h-[340px] shrink-0 rounded-2xl border border-white/15 overflow-hidden shadow-2xl bg-zinc-950/80 backdrop-blur-md p-3 relative z-20"
+                                animate={{ y: isHovered ? -8 : 0, scale: isHovered ? 1.02 : 1 }}
+                                transition={{ duration: 0.4 }}
+                            >
+                                <div className="relative w-full h-full rounded-xl overflow-hidden border border-white/10 bg-black/60 flex items-center justify-center">
+                                    <img
+                                        src={project.image}
+                                        alt={project.title}
+                                        className="w-full h-full object-contain object-center transition-transform duration-700 group-hover:scale-105"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10 pointer-events-none" />
+                                    <div className="absolute bottom-3 left-3 right-3 z-20 flex items-center justify-between text-xs font-mono text-zinc-300 bg-black/80 px-3.5 py-2 rounded-xl border border-white/10 backdrop-blur-md">
+                                        <span className="truncate font-semibold text-white">{project.title}</span>
+                                        <span className="text-cyan-400 font-bold shrink-0 ml-2">PREVIEW</span>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        )}
+
                     </div>
                 </div>
             </motion.div>
@@ -553,7 +523,9 @@ function FeaturedCard({ project, onClick, index, isLowPowerMode }: { project: Pr
 }
 
 function ProjectCard({ project, onClick, index }: { project: Project; onClick: () => void; index: number; }) {
+    const [showAllTech, setShowAllTech] = useState(false);
     const isOngoing = project.status === 'ongoing';
+    const visibleTech = showAllTech ? project.techStack : project.techStack.slice(0, 4);
 
     return (
         <motion.article
@@ -561,36 +533,50 @@ function ProjectCard({ project, onClick, index }: { project: Project; onClick: (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-30px" }}
             transition={{ duration: 0.6, delay: 0.1 * (index % 2) }}
-            className="group cursor-default flex flex-col gap-6"
+            className="group cursor-pointer flex flex-col gap-6 p-6 sm:p-8 rounded-3xl bg-zinc-950/60 hover:bg-zinc-900/80 border border-white/10 hover:border-cyan-500/40 backdrop-blur-2xl transition-all duration-500 hover:-translate-y-2 shadow-xl hover:shadow-cyan-500/10 relative overflow-hidden"
             onClick={onClick}
         >
+            {/* Top Glow Ambient Accent */}
+            <div className={cn(
+                "absolute top-0 right-0 w-36 h-36 rounded-full blur-[70px] opacity-20 pointer-events-none transition-opacity group-hover:opacity-40",
+                isOngoing ? "bg-emerald-500" : "bg-cyan-500"
+            )} />
+
             {/* Top Image Box */}
-            <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] rounded-3xl overflow-hidden bg-secondary/10 border border-foreground/5 dark:border-white/10 shadow-sm transition-all duration-500 group-hover:shadow-2xl dark:shadow-none shadow-black/5 group-hover:-translate-y-1">
+            <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] rounded-2xl overflow-hidden bg-black/40 border border-white/10 shadow-inner transition-all duration-500 group-hover:shadow-2xl">
                 {project.image ? (
                     <img
                         src={project.image}
                         alt={project.title}
                         loading="lazy"
-                        className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105 bg-black/5 dark:bg-white/5"
+                        className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105 bg-black/40"
                     />
                 ) : (
                     <ProjectPlaceholder className="absolute inset-0" title={project.title} />
                 )}
                 
-                {/* Subtle overlay on hover */}
-                <div className="absolute inset-0 bg-foreground/5 dark:bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                {/* Overlay hover icon badge */}
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+                    <span className="px-4 py-2 rounded-full bg-purple-500/20 border border-purple-400/40 text-purple-300 text-xs font-semibold backdrop-blur-md flex items-center gap-2">
+                        <span>Inspect Details</span>
+                        <ArrowUpRight className="w-4 h-4" />
+                    </span>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0c0614] via-transparent to-transparent opacity-60" />
             </div>
 
-            {/* Bottom Content Box */}
-            <div className="flex flex-col flex-grow px-1 md:px-0">
-                
-                {/* Title & Badge Row */}
-                <div className="flex flex-col xs:flex-row items-start xs:items-center justify-between gap-2 xs:gap-4 mb-3">
-                    <h3 className="text-xl xs:text-2xl sm:text-4xl font-serif-elegant text-foreground group-hover:text-primary transition-colors tracking-tight">
+            {/* Content Body */}
+            <div className="flex flex-col flex-grow">
+                {/* Title & Badge Header */}
+                <div className="flex items-start justify-between gap-4 mb-4">
+                    <h3 className="text-xl xs:text-2xl font-bold text-white group-hover:text-purple-300 transition-colors tracking-tight">
                         {project.title}
                     </h3>
-                    <div className="shrink-0 mt-1 sm:mt-2">
-                        <span className="px-4 py-1.5 rounded-full text-[10px] sm:text-xs font-mono tracking-wide border border-foreground/15 dark:border-white/20 text-muted-foreground bg-transparent transition-colors group-hover:border-primary/30 group-hover:bg-primary/5 uppercase">
+                    <div className="shrink-0">
+                        <span className={cn(
+                            "px-3 py-1 rounded-full text-[10px] font-mono tracking-wide border uppercase font-semibold",
+                            isOngoing ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/30" : "bg-purple-500/15 text-purple-300 border-purple-500/40"
+                        )}>
                             {project.category || (isOngoing ? 'In Development' : 'Completed')}
                         </span>
                     </div>
@@ -598,10 +584,10 @@ function ProjectCard({ project, onClick, index }: { project: Project; onClick: (
 
                 {/* Description - Bullet Points */}
                 {project.highlights && (
-                    <ul className="space-y-3 mb-6 flex-grow">
+                    <ul className="space-y-2.5 mb-6 flex-grow">
                         {project.highlights.map((point, idx) => (
-                            <li key={idx} className="flex items-start gap-2.5 text-muted-foreground/80 text-sm sm:text-base leading-relaxed">
-                                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                            <li key={idx} className="flex items-start gap-2.5 text-purple-200/90 text-xs sm:text-sm leading-relaxed">
+                                <span className={cn("mt-1.5 w-1.5 h-1.5 rounded-full shrink-0", isOngoing ? "bg-emerald-400" : "bg-purple-400")} />
                                 <span>{point}</span>
                             </li>
                         ))}
@@ -609,20 +595,40 @@ function ProjectCard({ project, onClick, index }: { project: Project; onClick: (
                 )}
 
                 {/* Footer Tech Badges */}
-                <div className="mt-auto flex flex-wrap gap-2 sm:gap-2.5 items-center">
-                    {project.techStack.slice(0, 4).map((tech) => {
+                <div className="mt-auto flex flex-wrap gap-2 items-center pt-2 border-t border-purple-500/20">
+                    {visibleTech.map((tech) => {
                         const Icon = Icons[getIconKey(tech)];
                         return (
-                            <div key={tech} className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-foreground/10 dark:border-white/10 text-[11px] sm:text-xs font-medium text-foreground/70 bg-transparent transition-colors group-hover:border-foreground/20 dark:group-hover:border-white/20 hover:!bg-secondary/10">
-                                {Icon ? <Icon className="w-3.5 h-3.5" /> : <div className="w-1.5 h-1.5 rounded-full bg-foreground/30" />}
+                            <div key={tech} className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-purple-500/30 text-[11px] font-medium text-purple-200 bg-purple-950/50 transition-colors group-hover:border-purple-400">
+                                {Icon ? <Icon className="w-3.5 h-3.5 text-purple-400" /> : <div className="w-1.5 h-1.5 rounded-full bg-purple-400" />}
                                 {tech}
                             </div>
                         );
                     })}
-                    {project.techStack.length > 4 && (
-                        <span className="text-xs font-mono text-muted-foreground opacity-60 ml-1">
-                            +{project.techStack.length - 4}
-                        </span>
+                    {project.techStack.length > 4 && !showAllTech && (
+                        <button
+                            type="button"
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                setShowAllTech(true);
+                            }}
+                            className="text-xs font-mono font-bold text-purple-300 bg-purple-900/60 hover:bg-purple-800/80 border border-purple-400/50 px-2.5 py-1.5 rounded-xl transition-all cursor-pointer hover:scale-105 shadow-md"
+                            title="Click to show more skills"
+                        >
+                            +{project.techStack.length - 4} more
+                        </button>
+                    )}
+                    {showAllTech && project.techStack.length > 4 && (
+                        <button
+                            type="button"
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                setShowAllTech(false);
+                            }}
+                            className="text-[10px] font-mono text-purple-400 hover:underline ml-1 cursor-pointer font-bold"
+                        >
+                            Show Less
+                        </button>
                     )}
                 </div>
             </div>
@@ -802,7 +808,8 @@ export default function ProjectsPage() {
         return currentProjects;
     }, [searchQuery, filter, selectedCategory, projects]);
 
-    const [viewMode, setViewMode] = useState<'list' | 'grid'>('grid');
+    const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+    const [selectedProjectModal, setSelectedProjectModal] = useState<Project | null>(null);
 
     const lenis = useLenis();
 
@@ -859,10 +866,50 @@ export default function ProjectsPage() {
 
             <div id="project-archive" className="container-creative relative z-10 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6 md:px-8">
 
+                {/* Layout View Switcher Header */}
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
+                    <div>
+                        <h2 className="text-xl sm:text-2xl font-bold text-foreground tracking-tight flex items-center gap-2">
+                            <span>Project Showcase</span>
+                            <span className="text-xs font-mono px-2 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20">
+                                {filteredProjects.length} Projects
+                            </span>
+                        </h2>
+                        <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">
+                            Switch between Grid view or List view
+                        </p>
+                    </div>
 
-                {/* Projects List Layout */}
+                    <div className="flex items-center gap-1.5 p-1 rounded-2xl bg-zinc-950/80 border border-white/10 backdrop-blur-md">
+                        <button
+                            onClick={() => setViewMode('grid')}
+                            className={cn(
+                                "px-3.5 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-2 transition-all",
+                                viewMode === 'grid' 
+                                    ? "bg-gradient-to-r from-purple-600 to-cyan-600 text-white shadow-lg shadow-purple-500/20" 
+                                    : "text-zinc-400 hover:text-white hover:bg-white/5"
+                            )}
+                        >
+                            <LayoutGrid className="w-4 h-4" />
+                            <span>Grid View</span>
+                        </button>
+                        <button
+                            onClick={() => setViewMode('list')}
+                            className={cn(
+                                "px-3.5 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-2 transition-all",
+                                viewMode === 'list' 
+                                    ? "bg-gradient-to-r from-purple-600 to-cyan-600 text-white shadow-lg shadow-purple-500/20" 
+                                    : "text-zinc-400 hover:text-white hover:bg-white/5"
+                            )}
+                        >
+                            <List className="w-4 h-4" />
+                            <span>List View</span>
+                        </button>
+                    </div>
+                </div>
+
+                {/* Projects Content View Modes */}
                 <div className="space-y-0 mb-8 sm:mb-10 md:mb-12">
-
                     {viewMode === 'list' ? (
                         <div className="border-t border-white/5">
                             <AnimatePresence mode="popLayout">
@@ -870,7 +917,7 @@ export default function ProjectsPage() {
                                     <ProjectListItem
                                         key={project.id}
                                         project={project}
-                                        onClick={() => {}}
+                                        onClick={() => setSelectedProjectModal(project)}
                                         index={index}
                                         isLowPowerMode={isLowPowerMode}
                                     />
@@ -878,14 +925,15 @@ export default function ProjectsPage() {
                             </AnimatePresence>
                         </div>
                     ) : (
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 sm:gap-16 md:gap-y-24">
+                        <div className="flex flex-col gap-12 sm:gap-16">
                             <AnimatePresence mode="popLayout">
                                 {filteredProjects.slice(0, visibleCount).map((project, index) => (
-                                    <ProjectCard
+                                    <FeaturedCard
                                         key={project.id}
                                         project={project}
-                                        onClick={() => {}}
+                                        onClick={() => setSelectedProjectModal(project)}
                                         index={index}
+                                        isLowPowerMode={isLowPowerMode}
                                     />
                                 ))}
                             </AnimatePresence>
@@ -893,7 +941,7 @@ export default function ProjectsPage() {
                     )}
                 </div>
 
-                {/* View All Button */}
+                {/* View All Button for Grid/List */}
                 {
                     filteredProjects.length > 10 && (
                         <motion.div
@@ -925,10 +973,15 @@ export default function ProjectsPage() {
                     )
                 }
 
-            </div >
+            </div>
 
-        </div >
+            {/* Project Details Modal */}
+            <ProjectUniverseModal
+                project={selectedProjectModal}
+                isOpen={!!selectedProjectModal}
+                onClose={() => setSelectedProjectModal(null)}
+            />
 
-
+        </div>
     );
 }

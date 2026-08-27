@@ -44,9 +44,24 @@ export function ArchedTechIconsInteractive({ icons }: ArchedIconsProps) {
       setIsDragging(false);
     };
 
+    const container = containerRef.current;
+    const handleTouchMove = (e: TouchEvent) => {
+      if (e.cancelable) {
+        e.preventDefault();
+      }
+      e.stopPropagation();
+    };
+
+    if (container) {
+      container.addEventListener('touchmove', handleTouchMove, { passive: false });
+    }
+
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      if (container) {
+        container.removeEventListener('touchmove', handleTouchMove);
+      }
     };
   }, [rotation]);
 
@@ -100,8 +115,8 @@ export function ArchedTechIconsInteractive({ icons }: ArchedIconsProps) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onMouseMove={handleMouseMove}
-      className="relative w-full max-w-full overflow-hidden flex justify-center z-0 h-[220px] sm:h-[280px] md:h-[350px] cursor-none select-none"
-      style={{ touchAction: 'pan-y' }}
+      className="relative w-full max-w-full overflow-hidden flex justify-center z-0 h-[220px] sm:h-[280px] md:h-[350px] cursor-none select-none touch-none"
+      style={{ touchAction: 'none' }}
     >
       <div style={wrapperStyle}>
         {/* REDESIGNED DRAG CURSOR - Adaptive Glassmorphic Pill */}

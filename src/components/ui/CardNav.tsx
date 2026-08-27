@@ -217,7 +217,7 @@ export default function CardNav({
                             className={cn(
                                 "relative px-4 py-3 rounded-[2.5rem] border shadow-2xl flex items-end gap-1 backdrop-blur-3xl transition-all duration-500 min-h-[100px]",
                                 theme === 'dark'
-                                    ? "bg-[#0a0a0a]/60 border-white/10 shadow-black/80"
+                                    ? "bg-[#0c0614]/85 border-purple-500/30 shadow-purple-950/60"
                                     : "bg-white/80 border-black/10 shadow-black/5"
                             )}
                         >

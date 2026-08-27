@@ -151,7 +151,7 @@ export function HeroVisual({ isExiting }: { isExiting?: boolean }) {
 
           {/* CTA Buttons & Social Links */}
           <div className="flex flex-wrap items-center gap-3 sm:gap-4 z-30 w-full sm:w-auto">
-            <a href={personal.resumeUrl || '/ShivaniNew_resume.docx'} download="ShivaniNew_resume.docx" target="_blank" rel="noopener noreferrer" className="shrink-0">
+            <a href={personal.resumeUrl || '/ShivaniMahendra_resume.docx'} download="Shivanimahendra_resume.docx" target="_blank" rel="noopener noreferrer" className="shrink-0">
               <button className="bg-purple-600 hover:bg-purple-700 text-white px-5 sm:px-7 py-3 sm:py-3.5 rounded-full flex items-center gap-2 sm:gap-2.5 font-semibold transition-all shadow-xl shadow-purple-950/60 text-xs sm:text-sm md:text-base hover:scale-105 active:scale-95 border border-purple-400/30">
                 Resume <Download className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </button>

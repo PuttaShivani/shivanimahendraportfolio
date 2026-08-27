@@ -10,7 +10,7 @@ export const portfolioData: PortfolioData = {
         location: ' Siddipet , Telangana ',
         email: 'puttashivani2003@gmail.com',
         phone: '+91 9493692116',
-        resumeUrl: '/ShivaniNew_resume.docx',
+        resumeUrl: '/ShivaniMahendra_resume.docx',
         website: 'https://portfolio-shivani-five.vercel.app/',
         languages: [
             { name: 'English', level: 'Fluent' },

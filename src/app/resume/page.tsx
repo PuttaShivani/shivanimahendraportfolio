@@ -27,8 +27,8 @@ export default function ResumePage() {
                     <span>Back to Portfolio</span>
                 </Link>
                 <a
-                    href={personal.resumeUrl || '/ShivaniNew_resume.docx'}
-                    download="ShivaniNew_resume.docx"
+                    href={personal.resumeUrl || '/ShivaniMahendra_resume.docx'}
+                    download="ShivaniMahendra_resume.docx"
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-purple-600 hover:bg-purple-700 text-white font-semibold text-xs sm:text-sm shadow-lg shadow-purple-950/40 transition-all hover:scale-105 active:scale-95"
                 >
                     <Download className="w-4 h-4" />

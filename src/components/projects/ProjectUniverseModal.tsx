@@ -50,7 +50,10 @@ export function ProjectUniverseModal({ project, isOpen, onClose }: ProjectUniver
     return createPortal(
         <AnimatePresence>
             <div 
-                className="fixed inset-0 z-[99999] flex items-center justify-center p-3 sm:p-6"
+                data-lenis-prevent="true"
+                data-lenis-prevent-wheel="true"
+                data-lenis-prevent-touch="true"
+                className="fixed inset-0 z-[99999] flex items-center justify-center p-3 sm:p-6 touch-pan-y"
                 onWheel={(e) => e.stopPropagation()}
             >
                 {/* Backdrop */}
@@ -64,11 +67,14 @@ export function ProjectUniverseModal({ project, isOpen, onClose }: ProjectUniver
 
                 {/* Modal Container */}
                 <motion.div
+                    data-lenis-prevent="true"
+                    data-lenis-prevent-wheel="true"
+                    data-lenis-prevent-touch="true"
                     initial={{ opacity: 0, scale: 0.95, y: 20 }}
                     animate={{ opacity: 1, scale: 1, y: 0 }}
                     exit={{ opacity: 0, scale: 0.95, y: 20 }}
                     transition={{ type: 'spring', duration: 0.5, bounce: 0.1 }}
-                    className="relative w-full max-w-4xl max-h-[85dvh] sm:max-h-[90vh] overflow-y-auto overscroll-contain touch-pan-y bg-zinc-950/85 backdrop-blur-3xl border border-purple-500/30 rounded-2xl sm:rounded-3xl shadow-2xl shadow-purple-950/60 text-slate-100 z-10 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden no-scrollbar my-auto"
+                    className="relative w-full max-w-4xl max-h-[85dvh] sm:max-h-[90vh] overflow-y-auto overscroll-contain touch-pan-y [webkit-overflow-scrolling:touch] pointer-events-auto bg-zinc-950/95 backdrop-blur-3xl border border-purple-500/30 rounded-2xl sm:rounded-3xl shadow-2xl shadow-purple-950/60 text-slate-100 z-10 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden no-scrollbar"
                 >
                     {/* Header Controls */}
                     <div className="sticky top-0 z-20 flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 bg-zinc-950/95 backdrop-blur-2xl border-b border-purple-500/20">

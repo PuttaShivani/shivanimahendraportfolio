@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useLenis } from 'lenis/react';
 import { CheckCircle2, Building2, Terminal, Move3D, Sparkles } from 'lucide-react';
 
 export interface ExperienceItem {
@@ -21,13 +22,63 @@ interface ExperienceCarouselProps {
 export default function ExperienceCarousel({ members }: ExperienceCarouselProps) {
     const member = members[0];
     const containerRef = useRef<HTMLDivElement>(null);
+    const lenis = useLenis();
     
     // Interactive 3D Drag-to-Rotate State
     const [rotation, setRotation] = useState({ x: 16, y: -22 });
     const [isDragging, setIsDragging] = useState(false);
     const startPos = useRef({ x: 0, y: 0 });
 
+    // Lock screen movement & Lenis scroll when 3D scene is being dragged
+    useEffect(() => {
+        if (!isDragging) return;
+
+        lenis?.stop();
+        document.body.style.overflow = 'hidden';
+        document.body.style.touchAction = 'none';
+
+        const preventScroll = (e: Event) => {
+            if (e.cancelable) {
+                e.preventDefault();
+            }
+            e.stopPropagation();
+        };
+
+        window.addEventListener('touchmove', preventScroll, { passive: false });
+        window.addEventListener('wheel', preventScroll, { passive: false });
+        window.addEventListener('scroll', preventScroll, { passive: false });
+
+        return () => {
+            window.removeEventListener('touchmove', preventScroll);
+            window.removeEventListener('wheel', preventScroll);
+            window.removeEventListener('scroll', preventScroll);
+            lenis?.start();
+            document.body.style.overflow = '';
+            document.body.style.touchAction = '';
+        };
+    }, [isDragging, lenis]);
+
+    // Container level non-passive touchmove prevention
+    useEffect(() => {
+        const el = containerRef.current;
+        if (!el) return;
+
+        const preventPageScroll = (e: TouchEvent) => {
+            if (e.cancelable) {
+                e.preventDefault();
+            }
+            e.stopPropagation();
+        };
+
+        el.addEventListener('touchmove', preventPageScroll, { passive: false });
+        return () => {
+            el.removeEventListener('touchmove', preventPageScroll);
+        };
+    }, []);
+
     const handlePointerDown = (e: React.PointerEvent) => {
+        e.preventDefault();
+        e.stopPropagation();
         setIsDragging(true);
         startPos.current = { x: e.clientX, y: e.clientY };
         if (containerRef.current) {
@@ -37,6 +88,8 @@ export default function ExperienceCarousel({ members }: ExperienceCarouselProps)
 
     const handlePointerMove = (e: React.PointerEvent) => {
         if (!isDragging) return;
+        e.preventDefault();
+        e.stopPropagation();
         const deltaX = e.clientX - startPos.current.x;
         const deltaY = e.clientY - startPos.current.y;
         startPos.current = { x: e.clientX, y: e.clientY };

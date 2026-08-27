@@ -48,21 +48,21 @@ export function Footer() {
         <footer className={cn(
             isBlog ? 'absolute bottom-0 w-full border-t-0 pointer-events-none !bg-transparent z-20' : 'relative z-20 mt-auto dark:bg-[#07030c]'
         )}>
-            <div className={`max-w-[1600px] mx-auto relative z-10 px-6 md:px-12 lg:px-24 py-6 md:py-8 pointer-events-auto ${isBlog ? '!bg-transparent' : ''}`}>
+            <div className={`max-w-[1600px] mx-auto relative z-10 px-3 sm:px-6 md:px-12 lg:px-24 py-4 sm:py-6 md:py-8 pointer-events-auto ${isBlog ? '!bg-transparent' : ''}`}>
                 <div className={`
-                    px-6 md:px-8 py-4 md:py-6 transition-all duration-300
+                    px-4 sm:px-6 md:px-8 py-3.5 sm:py-4 md:py-6 transition-all duration-300
                     ${isBlog
                         ? 'bg-card dark:bg-[#0c0614]/60 dark:backdrop-blur-xl border-2 border-foreground/10 dark:border-purple-500/20 rounded-[2rem] shadow-xl dark:shadow-purple-950/20'
                         : 'glass-card'
                     }
                 `}>
-                    <div className="flex items-center justify-between gap-4">
+                    <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
                         {/* Left Side - Animated Copyright */}
-                        <div className="flex items-center gap-1.5 md:gap-2 pl-2 md:pl-4 z-10 overflow-hidden h-6">
-                            <span className={`text-xs md:text-sm font-bold uppercase tracking-widest ${isBlog ? 'text-muted-foreground' : 'text-gradient'}`}>
+                        <div className="flex items-center justify-center sm:justify-start gap-1.5 md:gap-2 z-10 overflow-hidden h-6 w-full sm:w-auto">
+                            <span className={`text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-wider sm:tracking-widest shrink-0 ${isBlog ? 'text-muted-foreground' : 'text-gradient'}`}>
                                 © {currentYear}
                             </span>
-                            <div className="relative w-[280px] h-full flex items-center">
+                            <div className="relative w-[180px] xs:w-[220px] sm:w-[260px] md:w-[280px] h-full flex items-center">
                                 <AnimatePresence mode="popLayout">
                                     {mounted && (
                                         <motion.span
@@ -71,7 +71,7 @@ export function Footer() {
                                             animate={{ y: 0, opacity: 1 }}
                                             exit={{ y: -20, opacity: 0 }}
                                             transition={{ duration: 0.5, ease: "easeInOut" }}
-                                            className={`absolute left-0 text-xs md:text-sm font-bold uppercase tracking-widest whitespace-nowrap ${isBlog ? 'text-muted-foreground' : 'text-gradient'}`}
+                                            className={`absolute left-0 text-[10px] sm:text-xs md:text-sm font-bold uppercase tracking-wider sm:tracking-widest whitespace-nowrap ${isBlog ? 'text-muted-foreground' : 'text-gradient'}`}
                                         >
                                             {copyrightIndex === 0
                                                 ? `${portfolioData.personal.name}.`
@@ -83,8 +83,8 @@ export function Footer() {
                         </div>
 
                         {/* Right Side - Socials Only */}
-                        <div className="flex items-center justify-end gap-4 md:gap-8 z-10 ml-auto">
-                            <div className="flex items-center gap-1.5 sm:gap-2">
+                        <div className="flex items-center justify-center sm:justify-end gap-3 sm:gap-4 md:gap-8 z-10 sm:ml-auto">
+                            <div className="flex items-center gap-2 sm:gap-3">
                                 {/* Social Icons */}
                                 {previewSocials.map((social: SocialLink) => {
                                     const Icon = socialIcons[social.icon];

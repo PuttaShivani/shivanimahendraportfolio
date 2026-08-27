@@ -32,21 +32,15 @@ export function ProjectUniverseModal({ project, isOpen, onClose }: ProjectUniver
             // Lock Lenis smooth scroll and native body scroll
             lenis?.stop();
             document.body.style.overflow = 'hidden';
-            document.documentElement.style.overflow = 'hidden';
-            document.body.style.touchAction = 'none';
             window.addEventListener('keydown', handleKeyDown);
         } else {
             lenis?.start();
             document.body.style.overflow = '';
-            document.documentElement.style.overflow = '';
-            document.body.style.touchAction = '';
         }
 
         return () => {
             lenis?.start();
             document.body.style.overflow = '';
-            document.documentElement.style.overflow = '';
-            document.body.style.touchAction = '';
             window.removeEventListener('keydown', handleKeyDown);
         };
     }, [isOpen, onClose, lenis]);
@@ -56,7 +50,7 @@ export function ProjectUniverseModal({ project, isOpen, onClose }: ProjectUniver
     return createPortal(
         <AnimatePresence>
             <div 
-                className="fixed inset-0 z-[99999] flex items-center justify-center p-4 sm:p-6 overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden no-scrollbar"
+                className="fixed inset-0 z-[99999] flex items-center justify-center p-3 sm:p-6"
                 onWheel={(e) => e.stopPropagation()}
             >
                 {/* Backdrop */}
@@ -74,10 +68,10 @@ export function ProjectUniverseModal({ project, isOpen, onClose }: ProjectUniver
                     animate={{ opacity: 1, scale: 1, y: 0 }}
                     exit={{ opacity: 0, scale: 0.95, y: 20 }}
                     transition={{ type: 'spring', duration: 0.5, bounce: 0.1 }}
-                    className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-zinc-950/85 backdrop-blur-3xl border border-purple-500/30 rounded-3xl shadow-2xl shadow-purple-950/60 text-slate-100 z-10 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden no-scrollbar"
+                    className="relative w-full max-w-4xl max-h-[85dvh] sm:max-h-[90vh] overflow-y-auto overscroll-contain touch-pan-y bg-zinc-950/85 backdrop-blur-3xl border border-purple-500/30 rounded-2xl sm:rounded-3xl shadow-2xl shadow-purple-950/60 text-slate-100 z-10 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden no-scrollbar my-auto"
                 >
                     {/* Header Controls */}
-                    <div className="sticky top-0 z-20 flex items-center justify-between px-6 py-4 bg-zinc-950/90 backdrop-blur-2xl border-b border-purple-500/20">
+                    <div className="sticky top-0 z-20 flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 bg-zinc-950/95 backdrop-blur-2xl border-b border-purple-500/20">
                         <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-purple-300">
                             <Layers className="w-4 h-4 text-purple-400" />
                             <span>Project Deep Dive</span>
@@ -92,9 +86,9 @@ export function ProjectUniverseModal({ project, isOpen, onClose }: ProjectUniver
                     </div>
 
                     {/* Content Body */}
-                    <div className="p-6 sm:p-8 space-y-8">
+                    <div className="p-4 sm:p-8 space-y-6 sm:space-y-8">
                         {/* Banner Image / Placeholder */}
-                        <div className="relative h-64 sm:h-80 md:h-96 w-full rounded-2xl overflow-hidden border border-slate-800 bg-slate-950/90 shadow-inner group">
+                        <div className="relative h-48 xs:h-60 sm:h-80 md:h-96 w-full rounded-2xl overflow-hidden border border-slate-800 bg-slate-950/90 shadow-inner group">
                             {project.image ? (
                                 <>
                                     {/* Ambient Blurred Background */}
